@@ -1,0 +1,46 @@
+.item {
+  border-bottom: 1px solid var(--pp-warm-1);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--pp-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--pp-text);
+  text-align: left;
+}
+
+.caret {
+  font-size: 10px;
+  color: var(--pp-text-muted);
+  transition: transform 0.2s;
+}
+
+.caretOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.contentOpen {
+  max-height: 300px;
+  padding-bottom: 16px;
+}
+
+.answer {
+  font-size: 13px;
+  color: var(--pp-text-soft);
+  line-height: 1.7;
+}

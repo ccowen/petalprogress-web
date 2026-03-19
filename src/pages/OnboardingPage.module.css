@@ -1,0 +1,322 @@
+.page {
+  padding: 72px 24px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.logo {
+  font-family: var(--pp-font-display);
+  font-size: 20px;
+  color: var(--pp-text);
+  text-align: center;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.step {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.stepDone {
+  background: var(--pp-sage);
+}
+
+.stepActive {
+  background: var(--pp-text);
+}
+
+.substepRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.substepDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.substepActive {
+  background: var(--pp-text);
+  width: 22px;
+  border-radius: 4px;
+}
+
+.substepDone {
+  background: var(--pp-sage);
+}
+
+.substepFuture {
+  background: var(--pp-warm-2);
+}
+
+.title {
+  font-family: var(--pp-font-display);
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pp-text-soft);
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--pp-text-soft);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+/* Framing cards */
+.framingCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.framingCard {
+  padding: 16px 14px;
+  background: var(--pp-surface);
+  border: 1.5px solid var(--pp-warm-1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.framingCard:hover {
+  border-color: var(--pp-warm-2);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.framingSelected {
+  border-color: var(--pp-sage);
+  background: rgba(143, 166, 140, 0.05);
+}
+
+.framingTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pp-text);
+  margin-bottom: 4px;
+}
+
+.framingDesc {
+  font-size: 11.5px;
+  color: var(--pp-text-muted);
+  line-height: 1.6;
+}
+
+/* Field */
+.fieldGroup {
+  margin-bottom: 16px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pp-text-soft);
+  margin-bottom: 7px;
+  letter-spacing: 0.02em;
+}
+
+.fieldLabelOptional {
+  font-weight: 400;
+  color: var(--pp-text-muted);
+}
+
+.fieldInput {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--pp-bg);
+  border: 1.5px solid var(--pp-warm-2);
+  border-radius: var(--pp-radius-input);
+  font-family: var(--pp-font-body);
+  font-size: 14px;
+  color: var(--pp-text);
+  outline: none;
+  transition: border-color 0.16s;
+}
+
+.fieldInput:focus {
+  border-color: var(--pp-sage);
+}
+
+.fieldInput::placeholder {
+  color: var(--pp-text-muted);
+}
+
+.fieldHint {
+  font-size: 11.5px;
+  color: var(--pp-text-muted);
+  margin-top: 6px;
+}
+
+/* Frequency */
+.freqOpts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.freqOpt {
+  padding: 10px 8px;
+  text-align: center;
+  background: var(--pp-surface);
+  border: 1.5px solid var(--pp-warm-1);
+  border-radius: var(--pp-radius-input);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--pp-text-soft);
+  transition: all 0.18s;
+}
+
+.freqOpt:hover {
+  border-color: var(--pp-warm-2);
+}
+
+.freqSelected {
+  border-color: var(--pp-sage);
+  background: rgba(143, 166, 140, 0.06);
+  color: var(--pp-text);
+  font-weight: 500;
+}
+
+.freqMain {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--pp-text);
+  margin-bottom: 2px;
+}
+
+/* Swatches */
+.swatchRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.15s;
+}
+
+.swatch:hover,
+.swatchSelected {
+  border-color: var(--pp-text);
+  transform: scale(1.1);
+}
+
+/* Mandala reveal */
+.mandalaReveal {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.revealLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pp-text-muted);
+  margin-bottom: 20px;
+}
+
+.revealName {
+  font-family: var(--pp-font-display);
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.revealSub {
+  font-size: 13px;
+  color: var(--pp-text-muted);
+}
+
+/* Nav buttons */
+.stepNav {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btnBack {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  background: none;
+  border: 1.5px solid var(--pp-warm-2);
+  border-radius: var(--pp-radius-input);
+  font-family: var(--pp-font-body);
+  font-size: 13.5px;
+  color: var(--pp-text-soft);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.btnBack:hover {
+  background: var(--pp-warm-1);
+  color: var(--pp-text);
+}
+
+.btnNext {
+  flex: 1;
+  padding: 12px;
+  background: var(--pp-dark);
+  color: rgba(255, 255, 255, 0.88);
+  border: none;
+  border-radius: var(--pp-radius-input);
+  font-family: var(--pp-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.btnNext:hover {
+  background: #111;
+}
+
+.btnNextSage {
+  background: var(--pp-sage);
+  box-shadow: var(--pp-shadow-sage);
+}
+
+.btnNextSage:hover {
+  background: var(--pp-sage-hover);
+}

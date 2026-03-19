@@ -1,0 +1,1093 @@
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 52px 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--pp-dark);
+}
+
+/* Grain overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Radial glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(143, 166, 140, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroText {
+  animation: fadeUp 0.8s ease both;
+}
+
+.heroTitle {
+  font-family: var(--pp-font-display);
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.93);
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: rgba(143, 166, 140, 0.9);
+}
+
+.heroSub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 440px;
+  font-weight: 300;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btnPrimaryHero {
+  padding: 14px 30px;
+  background: var(--pp-sage);
+  color: white;
+  border-radius: var(--pp-radius-pill);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.22s;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  box-shadow: 0 8px 32px rgba(143, 166, 140, 0.35);
+  border: none;
+  cursor: pointer;
+}
+
+.btnPrimaryHero:hover {
+  background: var(--pp-sage-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(143, 166, 140, 0.45);
+}
+
+.btnGhostHero {
+  padding: 14px 24px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btnGhostHero:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.heroChecks {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.heroCheck {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.heroCheckMark {
+  color: var(--pp-sage);
+  font-size: 13px;
+}
+
+/* Hero quote */
+.heroQuote {
+  margin-top: 48px;
+  padding: 18px 22px;
+  border-left: 2px solid rgba(143, 166, 140, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 10px 10px 0;
+}
+
+.heroQuoteText {
+  font-family: var(--pp-font-display);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.75;
+  margin-bottom: 5px;
+}
+
+.heroQuoteAttr {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.06em;
+}
+
+/* Hero visual */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeUp 0.8s 0.15s ease both;
+  position: relative;
+}
+
+.mandalaHeroWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mandalaGlow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle, rgba(196, 90, 90, 0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.heroRingsLbl {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ringLbl {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ringLbl::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
+}
+
+.mandalaSlowSpin {
+  animation: slowSpin 90s linear infinite;
+  transform-origin: center;
+}
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 100px 52px;
+}
+
+.sectionInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionEyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--pp-text-muted);
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: var(--pp-font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.sectionTitle em {
+  font-style: italic;
+  color: var(--pp-text-soft);
+}
+
+.sectionDesc {
+  font-size: 15px;
+  color: var(--pp-text-soft);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* ── HOW IT WORKS ── */
+.howItWorks {
+  background: var(--pp-surface);
+}
+
+.hiwGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--pp-warm-1);
+  border-radius: var(--pp-radius-card);
+  overflow: hidden;
+  margin-top: 52px;
+}
+
+.hiwCard {
+  background: var(--pp-surface);
+  padding: 36px 32px;
+  transition: background 0.2s;
+}
+
+.hiwCard:hover {
+  background: var(--pp-bg);
+}
+
+.hiwNum {
+  font-family: var(--pp-font-display);
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--pp-warm-2);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.hiwTitle {
+  font-family: var(--pp-font-display);
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hiwDesc {
+  font-size: 13.5px;
+  color: var(--pp-text-soft);
+  line-height: 1.75;
+}
+
+.hiwTag {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 12px;
+  border-radius: var(--pp-radius-pill);
+  font-size: 11px;
+  background: var(--pp-warm-1);
+  color: var(--pp-text-muted);
+}
+
+/* ── SHOWCASE GALLERY ── */
+.showcase {
+  background: var(--pp-bg);
+  overflow: hidden;
+}
+
+.showcaseGrid {
+  display: flex;
+  gap: 18px;
+  margin-top: 48px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.showcasePin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.22s;
+}
+
+.showcasePin:hover {
+  transform: translateY(-6px);
+}
+
+.showcaseDisc {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(253, 252, 250, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), 0 14px 40px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcaseDisc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+}
+
+.showcaseLbl {
+  font-family: var(--pp-font-display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--pp-text-soft);
+}
+
+/* ── READING THE MANDALA ── */
+.reading {
+  background: var(--pp-dark);
+  padding: 100px 52px;
+  color: white;
+}
+
+.reading .sectionTitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.reading .sectionTitle em {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.reading .sectionDesc {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.reading .sectionEyebrow {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.readingRows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 52px;
+}
+
+.readingRow {
+  display: grid;
+  grid-template-columns: 110px repeat(6, 1fr);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.readingRowLbl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.75);
+  border-right: none;
+  padding: 6px 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  align-self: center;
+  justify-self: center;
+  width: fit-content;
+}
+
+/* Toggle wrapper styles */
+.quarterlyLblWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  align-self: center;
+  justify-self: center;
+}
+
+.qToggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2px;
+  cursor: pointer;
+  border: none;
+}
+
+.qToggleOpt {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.qToggleOptActive {
+  background: rgba(143, 166, 140, 0.45);
+  color: #c8d8c6;
+}
+
+.monthlyLblWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  align-self: center;
+  justify-self: center;
+}
+
+.mToggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2px;
+  cursor: pointer;
+  border: none;
+}
+
+.mToggleOpt {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mToggleOptActive {
+  background: rgba(123, 155, 175, 0.45);
+  color: #b8ced9;
+}
+
+/* Row color variants */
+.readingRowSage .readIconWrap {
+  background: rgba(143, 166, 140, 0.35);
+}
+
+.readingRowSage .readingRowLbl {
+  background: rgba(143, 166, 140, 0.35);
+  color: #c8d8c6;
+}
+
+.readingRowBlue .readIconWrap {
+  background: rgba(123, 155, 175, 0.35);
+}
+
+.readingRowBlue .readingRowLbl {
+  background: rgba(123, 155, 175, 0.35);
+  color: #b8ced9;
+}
+
+.readingRowAmber .readIconWrap {
+  background: rgba(196, 136, 122, 0.35);
+}
+
+.readingRowAmber .readingRowLbl {
+  background: rgba(196, 136, 122, 0.35);
+  color: #dbbdb4;
+}
+
+/* Reading card cells — each spans 2 of 6 cols */
+.rc {
+  grid-column: span 2;
+}
+
+.readCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.2s;
+}
+
+.readCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.readHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.readIconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.readTitle {
+  font-family: var(--pp-font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.readDesc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.75;
+}
+
+/* ── PRICING (HOME) ── */
+.pricingHome {
+  background: var(--pp-bg);
+  padding: 100px 52px;
+}
+
+/* Note: wireframe has white-on-light eyebrow here (likely copy-paste artifact).
+   Keeping default text-muted for visibility on light bg. */
+
+.pricingHome .sectionTitle em {
+  font-style: italic;
+  color: var(--pp-text-soft);
+}
+
+.pricingCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 780px;
+  margin: 52px auto 0;
+}
+
+.priceCard {
+  padding: 32px;
+  border-radius: 22px;
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-warm-1);
+}
+
+/* Featured card — dark on light bg */
+.priceFeatured {
+  background: var(--pp-dark) !important;
+  border-color: var(--pp-dark) !important;
+  box-shadow: 0 16px 48px rgba(30, 26, 23, 0.18);
+  position: relative;
+}
+
+.priceFeaturedPill {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  border-radius: var(--pp-radius-pill);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  background: var(--pp-sage);
+  color: white;
+}
+
+.priceCardTitle {
+  font-family: var(--pp-font-display);
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.priceFeatured .priceCardTitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.priceAmountRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.priceBig {
+  font-family: var(--pp-font-display);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--pp-text);
+}
+
+.priceFeatured .priceBig {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pricePer {
+  font-size: 13px;
+  color: var(--pp-text-muted);
+}
+
+.priceFeatured .pricePer {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.priceAnnualHint {
+  font-size: 11.5px;
+  color: var(--pp-sage);
+  margin-bottom: 18px;
+  min-height: 16px;
+}
+
+.priceDesc {
+  font-size: 13.5px;
+  color: var(--pp-text-soft);
+  line-height: 1.75;
+}
+
+.priceFeatured .priceDesc {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.priceFeatList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 28px;
+}
+
+.priceFeat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.pfDot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 1px;
+  background: rgba(143, 166, 140, 0.2);
+  color: var(--pp-sage);
+}
+
+.pfDotOff {
+  background: var(--pp-warm-1);
+  color: var(--pp-warm-3);
+}
+
+.priceFeatured .pfDotOff {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.pfText {
+  color: var(--pp-text-soft);
+  line-height: 1.5;
+}
+
+.pfText strong {
+  color: var(--pp-text);
+  font-weight: 500;
+}
+
+.priceFeatured .pfText {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.priceFeatured .pfText strong {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pfBadge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  padding: 1px 7px;
+  border-radius: var(--pp-radius-pill);
+  font-size: 10.5px;
+  background: rgba(143, 166, 140, 0.15);
+  color: var(--pp-sage);
+}
+
+/* CTA buttons */
+.btnPriceGhost {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--pp-warm-2);
+  color: var(--pp-text-soft);
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+  background: none;
+  cursor: pointer;
+}
+
+.btnPriceGhost:hover {
+  background: var(--pp-warm-1);
+  color: var(--pp-text);
+}
+
+.btnPricePaid {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--pp-sage);
+  color: white;
+  box-shadow: 0 4px 16px rgba(143, 166, 140, 0.35);
+  transition: all 0.22s;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+}
+
+.btnPricePaid:hover {
+  background: var(--pp-sage-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(143, 166, 140, 0.45);
+}
+
+.pricingSeeMore {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.pricingSeeMore a {
+  font-size: 13px;
+  color: var(--pp-text-muted);
+  text-decoration: none;
+  transition: color 0.16s;
+}
+
+.pricingSeeMore a:hover {
+  color: var(--pp-text-soft);
+}
+
+/* ── ADMIN SECTION ── */
+.adminSection {
+  background: var(--pp-warm-1);
+}
+
+.adminInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.adminBadgeRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.adminBadge {
+  padding: 4px 12px;
+  border-radius: var(--pp-radius-pill);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.abTrainer {
+  background: rgba(143, 166, 140, 0.2);
+  color: var(--pp-sage);
+}
+
+.abGym {
+  background: rgba(123, 155, 175, 0.2);
+  color: var(--pp-blue);
+}
+
+.abWellness {
+  background: rgba(196, 136, 122, 0.2);
+  color: var(--pp-amber);
+}
+
+.adminFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.adminFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: var(--pp-surface);
+  border-radius: 13px;
+  border: 1px solid var(--pp-warm-1);
+}
+
+.adminFeatureIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--pp-warm-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.adminFeatureTitle {
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.adminFeatureDesc {
+  font-size: 12px;
+  color: var(--pp-text-muted);
+  line-height: 1.6;
+}
+
+.btnAdminLearn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: var(--pp-dark);
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: var(--pp-radius-pill);
+  font-size: 13.5px;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+}
+
+.btnAdminLearn:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
+
+/* Admin mockup */
+.adminMockup {
+  background: var(--pp-dark-2);
+  border-radius: var(--pp-radius-card);
+  padding: 24px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mockTopbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.mockDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mockTitle {
+  font-family: var(--pp-font-display);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 8px;
+}
+
+.mockBadgeAdmin {
+  padding: 2px 8px;
+  border-radius: var(--pp-radius-pill);
+  font-size: 9.5px;
+  background: rgba(143, 166, 140, 0.2);
+  color: var(--pp-sage);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.mockStatRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.mockStat {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mockStatN {
+  font-family: var(--pp-font-display);
+  font-size: 26px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1;
+}
+
+.mockStatNPct {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mockStatNDanger {
+  color: var(--pp-coral);
+}
+
+.mockStatL {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mockMembersLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 10px;
+}
+
+.mockMemberRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 11px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockAv {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.mockName {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  flex: 1;
+}
+
+.mockNameDim {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.mockProg {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mockProgBar {
+  width: 60px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.mockProgFill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.mockPct {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.mockPctDanger {
+  color: var(--pp-coral);
+}
+
+.adminSectionDesc {
+  margin-bottom: 0;
+}

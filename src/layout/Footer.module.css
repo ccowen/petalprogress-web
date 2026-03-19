@@ -1,0 +1,92 @@
+.footer {
+  background: var(--pp-dark);
+  padding: 52px 52px 32px;
+  font-family: var(--pp-font-body);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-family: var(--pp-font-display);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.logo:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tagline {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.3);
+  max-width: 300px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 8px;
+}
+
+.socialBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.18s;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.links {
+  display: flex;
+  gap: 18px;
+}
+
+.links a {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.16s;
+}
+
+.links a:hover {
+  color: rgba(255, 255, 255, 0.55);
+}

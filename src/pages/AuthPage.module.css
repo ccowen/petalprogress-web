@@ -1,0 +1,204 @@
+.page {
+  padding: 72px 24px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-warm-1);
+  border-radius: 22px;
+  padding: 40px;
+  box-shadow: var(--pp-shadow-card);
+}
+
+.logo {
+  font-family: var(--pp-font-display);
+  font-size: 20px;
+  color: var(--pp-text);
+  text-align: center;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.step {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.stepActive {
+  background: var(--pp-text);
+}
+
+.stepFuture {
+  background: var(--pp-warm-2);
+}
+
+.title {
+  font-family: var(--pp-font-display);
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--pp-text-soft);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.sso {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--pp-surface);
+  border: 1.5px solid var(--pp-warm-2);
+  border-radius: var(--pp-radius-input);
+  font-family: var(--pp-font-body);
+  font-size: 13.5px;
+  color: var(--pp-text-soft);
+  cursor: pointer;
+  transition: all 0.18s;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.sso:hover {
+  background: var(--pp-warm-1);
+  color: var(--pp-text);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: var(--pp-text-muted);
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--pp-warm-1);
+}
+
+.fieldGroup {
+  margin-bottom: 14px;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.forgotLink {
+  font-size: 11.5px;
+  color: var(--pp-text-muted);
+  text-decoration: none;
+  transition: color 0.16s;
+}
+
+.forgotLink:hover {
+  color: var(--pp-text-soft);
+}
+
+.submitDark {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: var(--pp-dark);
+  color: rgba(255, 255, 255, 0.88);
+  border: none;
+  border-radius: var(--pp-radius-input);
+  font-family: var(--pp-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.submitDark:hover {
+  background: #111;
+}
+
+.submitSage {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: var(--pp-sage);
+  color: white;
+  border: none;
+  border-radius: var(--pp-radius-input);
+  font-family: var(--pp-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-shadow: var(--pp-shadow-sage);
+}
+
+.submitSage:hover {
+  background: var(--pp-sage-hover);
+}
+
+.legal {
+  font-size: 11.5px;
+  color: var(--pp-text-muted);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.65;
+}
+
+.legal a {
+  color: var(--pp-text-muted);
+  text-decoration: underline;
+}
+
+.legal a:hover {
+  color: var(--pp-text-soft);
+}
+
+.switchText {
+  font-size: 12.5px;
+  color: var(--pp-text-muted);
+  text-align: center;
+  margin-top: 22px;
+}
+
+.switchText a {
+  color: var(--pp-sage);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.switchText a:hover {
+  text-decoration: underline;
+}

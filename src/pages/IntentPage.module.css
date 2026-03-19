@@ -1,0 +1,255 @@
+.page {
+  padding: 72px 24px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.logo {
+  font-family: var(--pp-font-display);
+  font-size: 20px;
+  color: var(--pp-text);
+  text-align: center;
+  margin-bottom: 24px;
+  display: block;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.step {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.stepDone {
+  background: var(--pp-sage);
+}
+
+.stepActive {
+  background: var(--pp-text);
+}
+
+.stepFuture {
+  background: var(--pp-warm-2);
+}
+
+.title {
+  font-family: var(--pp-font-display);
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--pp-text-soft);
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--pp-surface);
+  border: 1.5px solid var(--pp-warm-1);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.18s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.option:hover {
+  border-color: var(--pp-warm-2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.optionPrimary:hover {
+  border-color: var(--pp-sage);
+}
+
+.optionSelected {
+  border-color: var(--pp-sage);
+  box-shadow: 0 4px 16px rgba(143, 166, 140, 0.18);
+  transform: translateY(-1px);
+}
+
+.optionIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.optionBody {
+  flex: 1;
+}
+
+.optionLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pp-text);
+  margin-bottom: 2px;
+}
+
+.optionDesc {
+  font-size: 12.5px;
+  color: var(--pp-text-muted);
+  line-height: 1.5;
+}
+
+.optionArrow {
+  font-size: 14px;
+  color: var(--pp-warm-2);
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.option:hover .optionArrow {
+  transform: translateX(3px);
+  color: var(--pp-text-soft);
+}
+
+.confirmBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: var(--pp-sage);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.16s;
+  margin-left: 4px;
+}
+
+.confirmBtn:hover {
+  background: var(--pp-sage-hover);
+}
+
+.referralInput {
+  width: 100%;
+  padding: 9px 12px;
+  margin-top: 10px;
+  background: var(--pp-bg);
+  border: 1.5px solid var(--pp-warm-2);
+  border-radius: 8px;
+  font-family: var(--pp-font-body);
+  font-size: 13px;
+  color: var(--pp-text);
+  outline: none;
+  transition: border-color 0.16s;
+}
+
+.referralInput:focus {
+  border-color: var(--pp-sage);
+}
+
+.referralInput::placeholder {
+  color: var(--pp-text-muted);
+}
+
+/* Confirmation */
+.confirmBlock {
+  text-align: center;
+  padding: 8px 0 28px;
+}
+
+.confirmIcon {
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.confirmDetails {
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-warm-1);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--pp-text-soft);
+  padding: 5px 0;
+}
+
+.confirmRow + .confirmRow {
+  border-top: 1px solid var(--pp-warm-1);
+  margin-top: 4px;
+  padding-top: 9px;
+}
+
+.confirmDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pp-sage);
+  flex-shrink: 0;
+}
+
+.confirmDotAmber {
+  background: var(--pp-amber);
+}
+
+.btnConfirm {
+  display: inline-block;
+  padding: 13px 32px;
+  background: var(--pp-dark);
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 12px;
+  font-family: var(--pp-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.18s;
+}
+
+.btnConfirm:hover {
+  background: #111;
+}
+
+.btnConfirmAmber {
+  background: var(--pp-amber);
+  box-shadow: 0 4px 16px rgba(196, 136, 122, 0.3);
+}
+
+.btnConfirmAmber:hover {
+  background: #b87060;
+}

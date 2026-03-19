@@ -1,0 +1,23 @@
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pp-warm-2);
+  transition: background 0.2s;
+}
+
+.done {
+  background: var(--pp-sage);
+}
+
+.active {
+  background: var(--pp-text);
+}

@@ -1,0 +1,42 @@
+.tabList {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+
+.tab {
+  padding: 8px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--pp-font-body);
+  font-size: 13px;
+  color: var(--pp-text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab:hover {
+  color: var(--pp-text-soft);
+}
+
+.tabActive {
+  color: var(--pp-text);
+  font-weight: 500;
+  border-bottom-color: var(--pp-amber);
+}
+
+.panel {
+  animation: fadeUp 0.2s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
