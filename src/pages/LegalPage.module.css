@@ -66,3 +66,18 @@
 .back:hover {
   text-decoration: underline;
 }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .page {
+    padding: 48px 20px 60px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .placeholder {
+    padding: 24px 20px;
+  }
+}

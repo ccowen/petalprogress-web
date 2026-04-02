@@ -96,3 +96,127 @@
 .main {
   min-height: calc(100vh - 56px);
 }
+
+/* ── Hamburger (hidden on desktop) ── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+}
+
+.hamburgerBar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--pp-text);
+  border-radius: 1px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.hamburgerBar::before,
+.hamburgerBar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--pp-text);
+  border-radius: 1px;
+  transition: transform 0.2s;
+}
+
+.hamburgerBar::before { top: -6px; }
+.hamburgerBar::after  { top: 6px; }
+
+.hamburgerOpen {
+  background: transparent;
+}
+
+.hamburgerOpen::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburgerOpen::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* ── Mobile menu (hidden on desktop) ── */
+.mobileMenu {
+  display: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 0 16px;
+  }
+
+  .navLinks,
+  .navRight {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px 20px;
+    background: var(--pp-surface);
+    border-bottom: 1px solid var(--pp-warm-1);
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+  }
+
+  .mobileLink {
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--pp-text-soft);
+    text-decoration: none;
+    border-radius: var(--pp-radius-sm);
+    transition: background 0.15s;
+  }
+
+  .mobileLink:hover {
+    background: var(--pp-warm-1);
+  }
+
+  .mobileLinkActive {
+    color: var(--pp-text);
+    font-weight: 500;
+  }
+
+  .mobileDivider {
+    height: 1px;
+    background: var(--pp-warm-1);
+    margin: 8px 0;
+  }
+
+  .mobileCta {
+    display: block;
+    text-align: center;
+    padding: 11px 18px;
+    margin-top: 4px;
+    background: var(--pp-text);
+    color: var(--pp-bg);
+    border-radius: var(--pp-radius-pill);
+    font-size: 13.5px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}

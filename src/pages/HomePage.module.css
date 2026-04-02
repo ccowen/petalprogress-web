@@ -1091,3 +1091,176 @@
 .adminSectionDesc {
   margin-bottom: 0;
 }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 32px 60px;
+  }
+
+  .heroInner {
+    gap: 48px;
+  }
+
+  .heroRingsLbl {
+    display: none;
+  }
+
+  .section {
+    padding: 72px 32px;
+  }
+
+  .hiwGrid {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .readingRow {
+    grid-template-columns: 90px repeat(6, 1fr);
+    gap: 8px;
+  }
+
+  .readCard {
+    padding: 20px;
+  }
+
+  .pricingHome {
+    padding: 72px 32px;
+  }
+
+  .pricingCards {
+    max-width: 100%;
+  }
+
+  .adminInner {
+    gap: 40px;
+  }
+
+  .reading {
+    padding: 72px 32px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤640px)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  /* Hero */
+  .hero {
+    padding: 60px 20px 48px;
+    min-height: auto;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .heroVisual {
+    order: -1;
+  }
+
+  .heroSub {
+    max-width: 100%;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btnPrimaryHero,
+  .btnGhostHero {
+    text-align: center;
+  }
+
+  .heroQuote {
+    margin-top: 32px;
+  }
+
+  /* Section base */
+  .section {
+    padding: 56px 20px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  /* How it works */
+  .hiwGrid {
+    margin-top: 28px;
+  }
+
+  .hiwCard {
+    padding: 28px 24px;
+  }
+
+  /* Showcase */
+  .showcaseGrid {
+    gap: 14px;
+  }
+
+  .showcaseDisc {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Reading the mandala */
+  .reading {
+    padding: 56px 20px;
+  }
+
+  .readingRow {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .readingRowLbl {
+    justify-self: start;
+  }
+
+  .rc {
+    grid-column: span 1;
+  }
+
+  .readCard {
+    padding: 22px;
+  }
+
+  .readTitle {
+    font-size: 19px;
+  }
+
+  /* Pricing (home) */
+  .pricingHome {
+    padding: 56px 20px;
+  }
+
+  .pricingCards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 36px;
+  }
+
+  .priceCard {
+    padding: 28px 24px;
+  }
+
+  /* Admin / Teams section */
+  .adminInner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .adminMockup {
+    padding: 18px;
+  }
+
+  .mockStatRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

@@ -709,3 +709,98 @@
   margin-bottom: 36px;
   text-align: center;
 }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 32px 44px;
+  }
+
+  .cardsWrap {
+    padding: 0 32px 60px;
+  }
+
+  .compareWrap {
+    padding: 0 32px;
+    margin-bottom: 72px;
+  }
+
+  .shopSection {
+    padding: 72px 32px;
+  }
+
+  .shopGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faqSection {
+    padding: 60px 32px;
+  }
+
+  .guarantee {
+    padding: 40px 32px 0;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤640px)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .hero {
+    padding: 48px 20px 36px;
+  }
+
+  .cardsWrap {
+    grid-template-columns: 1fr;
+    padding: 0 20px 48px;
+    gap: 20px;
+  }
+
+  .planCard {
+    padding: 28px 24px;
+  }
+
+  /* Comparison table: horizontal scroll */
+  .compareWrap {
+    padding: 0 20px;
+    margin-bottom: 56px;
+  }
+
+  .compareTable {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ctHead th,
+  .ctSection td,
+  .ctRow td {
+    padding: 10px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Shop section */
+  .shopSection {
+    padding: 56px 20px;
+  }
+
+  .shopGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .shopCardVisual {
+    height: 150px;
+  }
+
+  /* FAQ */
+  .faqSection {
+    padding: 48px 20px;
+  }
+
+  .guarantee {
+    padding: 36px 20px 0;
+  }
+}

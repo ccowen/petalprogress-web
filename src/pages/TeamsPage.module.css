@@ -1268,3 +1268,212 @@
   border-color: rgba(255,255,255,0.3);
   color: rgba(255,255,255,0.8);
 }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 72px 32px 0;
+  }
+
+  .heroInner {
+    gap: 48px;
+  }
+
+  .audienceSection {
+    padding: 72px 32px;
+  }
+
+  .audiencePanel {
+    gap: 40px;
+  }
+
+  .howAdmin {
+    padding: 72px 32px;
+  }
+
+  .permissionShowcase {
+    gap: 14px;
+  }
+
+  .featureStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .printSection {
+    padding: 72px 32px;
+  }
+
+  .printInner {
+    gap: 48px;
+  }
+
+  .memberExp {
+    padding: 72px 32px;
+  }
+
+  .meGrid {
+    gap: 40px;
+  }
+
+  .teamsPricing {
+    padding: 72px 32px;
+  }
+
+  .finalCta {
+    padding: 72px 32px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤640px)
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  /* Hero */
+  .hero {
+    padding: 56px 20px 0;
+    min-height: auto;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .heroText {
+    padding-bottom: 0;
+  }
+
+  .heroSub {
+    max-width: 100%;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btnHeroPrimary,
+  .btnHeroGhost {
+    text-align: center;
+  }
+
+  .adminPanelPreview {
+    max-width: 100%;
+  }
+
+  .apStats {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  /* Audience section */
+  .audienceSection {
+    padding: 56px 20px;
+  }
+
+  .audienceTabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 32px;
+    margin-top: 28px;
+  }
+
+  .atab {
+    padding: 10px 16px;
+    font-size: 12.5px;
+  }
+
+  .audiencePanel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* How admin works */
+  .howAdmin {
+    padding: 56px 20px;
+  }
+
+  .permissionShowcase {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .permCard {
+    padding: 22px;
+  }
+
+  .featureStrip {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .fsCard {
+    padding: 22px 20px;
+  }
+
+  /* Print section */
+  .printSection {
+    padding: 56px 20px;
+  }
+
+  .printInner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .printVisual {
+    order: -1;
+  }
+
+  .printStack {
+    width: 220px;
+    height: 220px;
+  }
+
+  .pp1, .pp2, .pp3 {
+    width: 190px;
+    height: 190px;
+  }
+
+  /* Member experience */
+  .memberExp {
+    padding: 56px 20px;
+  }
+
+  .meGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Teams pricing */
+  .teamsPricing {
+    padding: 56px 20px;
+  }
+
+  .teamsPlans {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .tpCard {
+    padding: 26px 22px;
+  }
+
+  /* Final CTA */
+  .finalCta {
+    padding: 56px 20px;
+  }
+
+  .fcCtas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fcBtnPrimary,
+  .fcBtnGhost {
+    text-align: center;
+  }
+}
