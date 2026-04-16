@@ -57,8 +57,18 @@ src/
 
 ## Dependencies
 
-- **@petalprogress/ui** — shared design tokens and components (linked locally via `file:../petalprogress-ui`)
+- **@ccowen/petalprogress-ui** — shared design tokens and components. Linked locally via `file:../petalprogress-ui` for development; Vercel builds install the published version from GitHub Packages (see `scripts/vercel-install.mjs`).
 - **react-router** — client-side routing
+
+## Deployment
+
+Hosted on **Vercel**. The project deploys from the GitHub `main` branch automatically.
+
+The UI package (`@ccowen/petalprogress-ui`) is installed via `file:../petalprogress-ui` locally but Vercel doesn't have access to that sibling directory. `vercel.json` overrides the install command to run `scripts/vercel-install.mjs` first, which rewrites the `file:` reference to the published version (`^0.1.0`) before `npm install` runs. Vercel then pulls the package from GitHub Packages using the `NODE_AUTH_TOKEN` environment variable.
+
+**When you publish a new version of `@ccowen/petalprogress-ui`**, bump the version string in `scripts/vercel-install.mjs` to pick it up on the next Vercel deploy.
+
+**Required Vercel env var:** `NODE_AUTH_TOKEN` — a GitHub personal access token (classic) with `read:packages` scope.
 
 ## Working with the UI package
 

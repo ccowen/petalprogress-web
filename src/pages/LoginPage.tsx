@@ -1,4 +1,4 @@
-import { Input } from "@petalprogress/ui";
+import { Input } from "@ccowen/petalprogress-ui";
 import styles from "./AuthPage.module.css";
 
 export function LoginPage() {

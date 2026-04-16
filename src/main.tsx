@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";
 import { router } from "./routes";
-import "@petalprogress/ui/styles.css";
+import "@ccowen/petalprogress-ui/styles.css";
 import "./App.css";
 
 createRoot(document.getElementById("root")!).render(

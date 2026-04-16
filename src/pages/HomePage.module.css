@@ -413,6 +413,38 @@
   color: rgba(255, 255, 255, 0.3);
 }
 
+.readingLayout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.readingCtaWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.readingLink {
+  display: inline-block;
+  padding: 12px 26px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--pp-radius-pill);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all 0.2s;
+}
+
+.readingLink:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.95);
+}
+
 .readingRows {
   display: flex;
   flex-direction: column;
@@ -596,6 +628,94 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.4);
   line-height: 1.75;
+}
+
+/* ── COMING SOON TEASER ── */
+.comingSoon {
+  padding: 72px 52px;
+}
+
+.comingSoonBg {
+  background: var(--pp-bg);
+}
+
+.comingSoonBgWarm {
+  background: var(--pp-warm-1);
+}
+
+.comingSoonInner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.comingSoonPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 14px;
+  border-radius: var(--pp-radius-pill);
+  background: rgba(196, 136, 122, 0.12);
+  border: 1px solid rgba(196, 136, 122, 0.3);
+  font-size: 11px;
+  color: var(--pp-amber);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.comingSoonPillBold {
+  background: var(--pp-amber);
+  border-color: var(--pp-amber);
+  color: white;
+  font-weight: 500;
+  padding: 5px 16px;
+  box-shadow: 0 4px 14px rgba(196, 136, 122, 0.3);
+}
+
+.comingSoonTitle {
+  font-family: var(--pp-font-display);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.comingSoonTitle em {
+  font-style: italic;
+  color: var(--pp-text-soft);
+}
+
+.comingSoonDesc {
+  font-size: 14.5px;
+  color: var(--pp-text-soft);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  font-weight: 300;
+}
+
+.comingSoonChips {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.comingSoonChip {
+  padding: 6px 14px;
+  border-radius: var(--pp-radius-pill);
+  font-size: 12px;
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-warm-2);
+  color: var(--pp-text-soft);
+}
+
+@media (max-width: 640px) {
+  .comingSoon {
+    padding: 56px 20px;
+  }
 }
 
 /* ── PRICING (HOME) ── */
@@ -1141,6 +1261,10 @@
   .reading {
     padding: 72px 32px;
   }
+
+  .readingLayout {
+    gap: 40px;
+  }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -1211,6 +1335,15 @@
   /* Reading the mandala */
   .reading {
     padding: 56px 20px;
+  }
+
+  .readingLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .readingCtaWrap {
+    justify-content: flex-start;
   }
 
   .readingRow {

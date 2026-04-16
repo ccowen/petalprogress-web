@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@petalprogress/ui": "file:../petalprogress-ui",
+    "@ccowen/petalprogress-ui": "file:../petalprogress-ui",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "^7.0.0"

@@ -1,28 +1,27 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
 import { Footer } from "./Footer";
-import { SignInModal } from "./SignInModal";
-import { SignInModalContext } from "../hooks/useSignInModal";
 import styles from "./MarketingLayout.module.css";
 
 export function MarketingLayout() {
-  const [signInOpen, setSignInOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu on navigation
+  // Close mobile menu and scroll to top on navigation
   useEffect(() => {
     setMenuOpen(false);
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   const links = [
     { label: "Home", to: "/", page: "/" },
-    { label: "For Teams", to: "/teams", page: "/teams" },
-    { label: "Pricing", to: "/pricing", page: "/pricing" },
+    { label: "Philosophy", to: "/philosophy", page: "/philosophy" },
+    { label: "Mandala Types", to: "/mandala-types", page: "/mandala-types" },
+    { label: "Shop", to: "/shop", page: "/shop" },
   ];
 
   return (
-    <SignInModalContext.Provider value={{ open: () => setSignInOpen(true) }}>
+    <>
       <nav className={styles.nav}>
         <Link to="/" className={styles.navLogo}>
           <span>𖢻</span> PetalProgress
@@ -37,21 +36,6 @@ export function MarketingLayout() {
               {l.label}
             </Link>
           ))}
-        </div>
-        <div className={styles.navRight}>
-          <a
-            href="#"
-            className={styles.navSignIn}
-            onClick={(e) => {
-              e.preventDefault();
-              setSignInOpen(true);
-            }}
-          >
-            Sign in
-          </a>
-          <Link to="/signup" className={styles.navCta}>
-            Sign up free
-          </Link>
         </div>
         <button
           className={styles.hamburger}
@@ -74,21 +58,6 @@ export function MarketingLayout() {
               {l.label}
             </Link>
           ))}
-          <div className={styles.mobileDivider} />
-          <a
-            href="#"
-            className={styles.mobileLink}
-            onClick={(e) => {
-              e.preventDefault();
-              setMenuOpen(false);
-              setSignInOpen(true);
-            }}
-          >
-            Sign in
-          </a>
-          <Link to="/signup" className={styles.mobileCta}>
-            Sign up free
-          </Link>
         </div>
       )}
 
@@ -96,7 +65,6 @@ export function MarketingLayout() {
         <Outlet />
       </main>
       <Footer />
-      <SignInModal open={signInOpen} onClose={() => setSignInOpen(false)} />
-    </SignInModalContext.Provider>
+    </>
   );
 }

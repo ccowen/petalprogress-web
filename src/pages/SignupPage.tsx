@@ -1,4 +1,4 @@
-import { Input } from "@petalprogress/ui";
+import { Input } from "@ccowen/petalprogress-ui";
 import { useSignInModal } from "../hooks/useSignInModal";
 import styles from "./AuthPage.module.css";
 

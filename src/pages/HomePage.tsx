@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router";
 import styles from "./HomePage.module.css";
 
 /* ── Helper: build a ring of ellipse petals ── */
@@ -195,34 +195,10 @@ const showcaseData = [
   { color: "#9B8FA6", name: "Creative Practice" },
 ];
 
-/* ── Reading card component ── */
-function ReadCard({
-  icon,
-  title,
-  desc,
-}: {
-  icon: string;
-  title: string;
-  desc: string;
-}) {
-  return (
-    <div className={`${styles.readCard} ${styles.rc}`}>
-      <div className={styles.readHeader}>
-        <div className={styles.readIconWrap}>{icon}</div>
-        <div className={styles.readTitle}>{title}</div>
-      </div>
-      <div className={styles.readDesc}>{desc}</div>
-    </div>
-  );
-}
-
 /* ══════════════════════════════════════════════════════
    HomePage
    ══════════════════════════════════════════════════════ */
 export function HomePage() {
-  const [monthlyView, setMonthlyView] = useState<1 | 2>(1);
-  const [quarterlyView, setQuarterlyView] = useState<1 | 2>(1);
-
   return (
     <>
       {/* ── HERO ── */}
@@ -242,13 +218,16 @@ export function HomePage() {
               counter. A growing work of art.
             </p>
             <div className={styles.heroCtas}>
+              {/* Signup CTA hidden pre-launch — see RESTORE_LATER.md
               <a href="#" className={styles.btnPrimaryHero}>
                 Create for free
               </a>
+              */}
               <a href="#how-it-works" className={styles.btnGhostHero}>
                 See how it works →
               </a>
             </div>
+            {/* Hero checks hidden pre-launch — see RESTORE_LATER.md
             <div className={styles.heroChecks}>
               <div className={styles.heroCheck}>
                 <span className={styles.heroCheckMark}>✓</span> 3 habits,
@@ -261,6 +240,7 @@ export function HomePage() {
                 <span className={styles.heroCheckMark}>✓</span> No credit card
               </div>
             </div>
+            */}
           </div>
 
           {/* Hero mandala SVG */}
@@ -303,27 +283,23 @@ export function HomePage() {
                 work toward in different ways. Single habits or multiple daily
                 goals, it's up to you.
               </div>
-              <div className={styles.hiwTag}>Obvious + Easy</div>
             </div>
             <div className={styles.hiwCard}>
               <div className={styles.hiwNum}>02</div>
               <div className={styles.hiwTitle}>Make it yours</div>
               <div className={styles.hiwDesc}>
-                Choose from 4 themes and 6 petal colors — 24 combinations. Add a
+                Choose your themes and colors. Add a
                 center figure. Give your mandala a name. The more it feels like
                 you, the more you'll return to it.
               </div>
-              <div className={styles.hiwTag}>Attractive</div>
             </div>
             <div className={styles.hiwCard}>
               <div className={styles.hiwNum}>03</div>
-              <div className={styles.hiwTitle}>Check in daily</div>
+              <div className={styles.hiwTitle}>Check in</div>
               <div className={styles.hiwDesc}>
-                Every day you complete your habit, a new layer blooms. Your
-                weekly goal shapes the outer ring. Miss a day — it's okay. Just
-                show up tomorrow.
+                Every day you complete your habit, a new layer blooms. Miss a
+                day — it's okay. Your mandala will be here when you return
               </div>
-              <div className={styles.hiwTag}>Satisfying</div>
             </div>
           </div>
         </div>
@@ -358,551 +334,51 @@ export function HomePage() {
       {/* ── READING THE MANDALA ── */}
       <section className={styles.reading}>
         <div className={styles.sectionInner}>
-          <div className={styles.sectionEyebrow}>Reading your mandala</div>
-          <h2 className={styles.sectionTitle}>
-            Every layer <em>means something.</em>
-          </h2>
-          <p className={styles.sectionDesc}>
-            Your mandala is a data visualization — but one you can feel. Here's
-            how to read it.
-          </p>
-
-          <div className={styles.readingRows}>
-            {/* Weekly — 1 cell */}
-            <div
-              className={`${styles.readingRow} ${styles.readingRowSage}`}
-            >
-              <div className={styles.readingRowLbl}>Weekly</div>
-              <ReadCard
-                icon="◈"
-                title="Daily Petals"
-                desc="Seven petals — one for each day of the week. The most focused mandala, where every single day has a shape."
-              />
+          <div className={styles.readingLayout}>
+            <div className={styles.readingContent}>
+              <div className={styles.sectionEyebrow}>Reading your mandala</div>
+              <h2 className={styles.sectionTitle}>
+                Every layer <em>means something.</em>
+              </h2>
+              <p className={styles.sectionDesc}>
+                Your mandala is a data visualization, but one you can feel.
+                Each element encodes something specific, from the days and
+                weeks you showed up to the milestones you closed.
+              </p>
             </div>
-
-            {/* Monthly (toggleable) */}
-            {monthlyView === 1 ? (
-              <div
-                className={`${styles.readingRow} ${styles.readingRowBlue}`}
-              >
-                <div className={styles.monthlyLblWrap}>
-                  <div className={styles.readingRowLbl}>Monthly</div>
-                  <div
-                    className={styles.mToggle}
-                    onClick={() => setMonthlyView(monthlyView === 1 ? 2 : 1)}
-                  >
-                    <div
-                      className={`${styles.mToggleOpt} ${styles.mToggleOptActive}`}
-                    >
-                      1
-                    </div>
-                    <div className={styles.mToggleOpt}>2</div>
-                  </div>
-                </div>
-                <ReadCard
-                  icon="◈"
-                  title="Daily Shapes"
-                  desc="28–31 day markers trace your daily completions. The clearest view of how consistently you showed up through the month."
-                />
-                <ReadCard
-                  icon="◎"
-                  title="Weekly Petals"
-                  desc="4–5 week petals break the month into segments. Highlighted petals mark weeks where you met your weekly target."
-                />
-              </div>
-            ) : (
-              <div
-                className={`${styles.readingRow} ${styles.readingRowBlue}`}
-              >
-                <div className={styles.monthlyLblWrap}>
-                  <div className={styles.readingRowLbl}>Monthly</div>
-                  <div
-                    className={styles.mToggle}
-                    onClick={() => setMonthlyView((v) => (v === 1 ? 2 : 1))}
-                  >
-                    <div className={styles.mToggleOpt}>1</div>
-                    <div
-                      className={`${styles.mToggleOpt} ${styles.mToggleOptActive}`}
-                    >
-                      2
-                    </div>
-                  </div>
-                </div>
-                <ReadCard
-                  icon="◈"
-                  title="Daily Petals"
-                  desc="28–31 day petals trace your daily completions. The simplest monthly mandala — every petal is a day you showed up."
-                />
-              </div>
-            )}
-
-            {/* Quarterly (toggleable) */}
-            {quarterlyView === 1 ? (
-              <div
-                className={`${styles.readingRow} ${styles.readingRowSage}`}
-              >
-                <div className={styles.quarterlyLblWrap}>
-                  <div className={styles.readingRowLbl}>Quarterly</div>
-                  <div
-                    className={styles.qToggle}
-                    onClick={() =>
-                      setQuarterlyView(quarterlyView === 1 ? 2 : 1)
-                    }
-                  >
-                    <div
-                      className={`${styles.qToggleOpt} ${styles.qToggleOptActive}`}
-                    >
-                      1
-                    </div>
-                    <div className={styles.qToggleOpt}>2</div>
-                  </div>
-                </div>
-                <ReadCard
-                  icon="◈"
-                  title="Daily Shapes"
-                  desc="91 day markers fill the outer ring over one quarter. Each shape shows whether you checked in that day."
-                />
-                <ReadCard
-                  icon="◎"
-                  title="Weekly Petals"
-                  desc="13 week petals mark the weeks of the quarter. Each petal highlights a week where you hit your weekly goal."
-                />
-              </div>
-            ) : (
-              <div
-                className={`${styles.readingRow} ${styles.readingRowSage}`}
-              >
-                <div className={styles.quarterlyLblWrap}>
-                  <div className={styles.readingRowLbl}>Quarterly</div>
-                  <div
-                    className={styles.qToggle}
-                    onClick={() =>
-                      setQuarterlyView((v) => (v === 1 ? 2 : 1))
-                    }
-                  >
-                    <div className={styles.qToggleOpt}>1</div>
-                    <div
-                      className={`${styles.qToggleOpt} ${styles.qToggleOptActive}`}
-                    >
-                      2
-                    </div>
-                  </div>
-                </div>
-                <ReadCard
-                  icon="◈"
-                  title="Daily Shapes"
-                  desc="91 day markers fill the outer ring over one quarter. Each shape shows whether you checked in that day."
-                />
-                <ReadCard
-                  icon="◎"
-                  title="Weekly Markers"
-                  desc="13 week markers for the weeks of the quarter. Each highlights a week where you hit your weekly goal."
-                />
-                <ReadCard
-                  icon="❋"
-                  title="Monthly Petals"
-                  desc="Each of the 3 petals represents a month. It blooms fully when you meet your monthly goal."
-                />
-              </div>
-            )}
-
-            {/* Yearly — 3 cells */}
-            <div
-              className={`${styles.readingRow} ${styles.readingRowBlue}`}
-            >
-              <div className={styles.readingRowLbl}>Yearly</div>
-              <ReadCard
-                icon="◈"
-                title="Daily Shapes"
-                desc="Each marker is one day of the year. 365 shapes fill the outer ring — highlighted days are ones you completed your habit."
-              />
-              <ReadCard
-                icon="◎"
-                title="Weekly Markers"
-                desc="52 weekly markers sit between each month segment. A marker highlights when you hit your weekly target — small wins, made visible."
-              />
-              <ReadCard
-                icon="❋"
-                title="Monthly Petals"
-                desc="Each of the 12 petals represents a month. It blooms fully when you meet your monthly goal — a year of practice in one image."
-              />
+            <div className={styles.readingCtaWrap}>
+              <Link to="/mandala-types" className={styles.readingLink}>
+                See how to read each mandala type →
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── PRICING ── */}
-      <section className={styles.pricingHome} id="pricing">
-        <div className={styles.sectionInner}>
-          <div className={styles.sectionEyebrow}>Pricing</div>
-          <h2 className={styles.sectionTitle}>
-            Create for free. <em>Bloom further</em> for $1.99.
-          </h2>
-          <p className={styles.sectionDesc}>
-            You don't need to subscribe to actually use PetalProgress. Track 3
-            habits for a full year — free, no expiry. Petal+ is for the people
-            who want to go deeper.
-          </p>
-
-          <div className={styles.pricingCards}>
-            {/* Free */}
-            <div className={styles.priceCard}>
-              <div className={styles.priceCardTitle}>Free</div>
-              <div className={styles.priceAmountRow}>
-                <div className={styles.priceBig}>$0</div>
-              </div>
-              <div className={styles.priceAnnualHint}>&nbsp;</div>
-              <div className={styles.priceDesc}>
-                Everything you need to start a habit and watch it grow. No credit
-                card required.
-              </div>
-              <div className={styles.priceFeatList}>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>3 active mandalas</strong> — full check-in &amp;
-                    gallery
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>All 4 themes + 6 petal colors</strong>
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Calendar view</strong> + weekly progress
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Mandala shop</strong> at full price
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={`${styles.pfDot} ${styles.pfDotOff}`}>–</div>
-                  <div className={styles.pfText}>
-                    Multiple habits per mandala option
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={`${styles.pfDot} ${styles.pfDotOff}`}>–</div>
-                  <div className={styles.pfText}>Email reminders</div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={`${styles.pfDot} ${styles.pfDotOff}`}>–</div>
-                  <div className={styles.pfText}>
-                    Year-end high-res export
-                  </div>
-                </div>
-              </div>
-              <a href="#" className={styles.btnPriceGhost}>
-                Get started free
-              </a>
-            </div>
-
-            {/* Petal+ */}
-            <div className={`${styles.priceCard} ${styles.priceFeatured}`}>
-              <div className={styles.priceFeaturedPill}>Most popular</div>
-              <div className={styles.priceCardTitle}>Petal+</div>
-              <div className={styles.priceAmountRow}>
-                <div className={styles.priceBig}>$1.99</div>
-                <div className={styles.pricePer}>/mo</div>
-              </div>
-              <div className={styles.priceAnnualHint}>
-                Or $1.66/mo billed annually — 2 months free
-              </div>
-              <div className={styles.priceDesc}>
-                For the committed practitioner. Reminders, unlimited mandalas,
-                and a discount every time you order from the shop.
-              </div>
-              <div className={styles.priceFeatList}>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Unlimited mandalas</strong>
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>All 4 themes + 6 petal colors</strong>
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Calendar view</strong> + weekly progress
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>20% off everything in the shop</strong>
-                    <span className={styles.pfBadge}>Petal+ discount</span>
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Multiple habits per mandala option</strong>
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Email reminders</strong> — daily, weekly, or custom
-                  </div>
-                </div>
-                <div className={styles.priceFeat}>
-                  <div className={styles.pfDot}>✓</div>
-                  <div className={styles.pfText}>
-                    <strong>Year-end export</strong> — high-res PNG + SVG, free
-                  </div>
-                </div>
-              </div>
-              <a href="#" className={styles.btnPricePaid}>
-                Start Petal+ free for 7 days
-              </a>
-            </div>
-          </div>
-
-          <div className={styles.pricingSeeMore}>
-            <a href="/pricing">
-              See full comparison including Teams &amp; Shop pricing →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── ADMIN / TEAMS ── */}
+      {/* ── ADMIN / TEAMS (coming soon teaser) ── */}
       <section
-        className={`${styles.adminSection} ${styles.section}`}
+        className={`${styles.comingSoon} ${styles.comingSoonBgWarm}`}
         id="teams"
       >
-        <div className={styles.sectionInner}>
-          <div className={styles.adminInner}>
-            <div>
-              <div className={styles.sectionEyebrow}>
-                For teams &amp; organizations
-              </div>
-              <h2 className={styles.sectionTitle}>
-                Also available for <em>coaches,</em> gyms, and wellness
-                programs.
-              </h2>
-              <p
-                className={`${styles.sectionDesc} ${styles.adminSectionDesc}`}
-              >
-                Assign habits to your clients, monitor progress, and let
-                PetalProgress do the motivating for you — all without disrupting
-                how your members use the app.
-              </p>
-
-              <div className={styles.adminBadgeRow}>
-                <div className={`${styles.adminBadge} ${styles.abTrainer}`}>
-                  Personal trainers
-                </div>
-                <div className={`${styles.adminBadge} ${styles.abGym}`}>
-                  Gyms &amp; studios
-                </div>
-                <div className={`${styles.adminBadge} ${styles.abWellness}`}>
-                  Wellness coaches
-                </div>
-              </div>
-
-              <div className={styles.adminFeatures}>
-                <div className={styles.adminFeature}>
-                  <div className={styles.adminFeatureIcon}>◎</div>
-                  <div>
-                    <div className={styles.adminFeatureTitle}>
-                      Assign or gift habits
-                    </div>
-                    <div className={styles.adminFeatureDesc}>
-                      Assign a habit to your clients with your settings, or give
-                      them access to set up their own. You control how much they
-                      can edit.
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.adminFeature}>
-                  <div className={styles.adminFeatureIcon}>◇</div>
-                  <div>
-                    <div className={styles.adminFeatureTitle}>
-                      Monitor without micromanaging
-                    </div>
-                    <div className={styles.adminFeatureDesc}>
-                      See streaks, weekly completion, and at-risk members at a
-                      glance. Get notified when someone hasn't checked in for a
-                      week.
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.adminFeature}>
-                  <div className={styles.adminFeatureIcon}>✦</div>
-                  <div>
-                    <div className={styles.adminFeatureTitle}>
-                      Generate printed mandalas
-                    </div>
-                    <div className={styles.adminFeatureDesc}>
-                      At the end of a program or year, generate a beautiful
-                      printed mandala for each member — a tangible record of
-                      their work.
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.adminFeature}>
-                  <div className={styles.adminFeatureIcon}>◈</div>
-                  <div>
-                    <div className={styles.adminFeatureTitle}>
-                      Independent user accounts
-                    </div>
-                    <div className={styles.adminFeatureDesc}>
-                      Members keep their accounts and mandalas forever — even if
-                      they leave your program. Their data is theirs.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <a href="#" className={styles.btnAdminLearn}>
-                Learn more about Teams →
-              </a>
-            </div>
-
-            {/* Admin mockup */}
-            <div className={styles.adminMockup}>
-              <div className={styles.mockTopbar}>
-                <div
-                  className={styles.mockDot}
-                  style={{ background: "#C45A5A", opacity: 0.7 }}
-                />
-                <div
-                  className={styles.mockDot}
-                  style={{ background: "#C4887A", opacity: 0.5 }}
-                />
-                <div
-                  className={styles.mockDot}
-                  style={{ background: "#8FA68C", opacity: 0.5 }}
-                />
-                <div className={styles.mockTitle}>Bloom Wellness Studio</div>
-                <div className={styles.mockBadgeAdmin}>Teams</div>
-              </div>
-
-              <div className={styles.mockStatRow}>
-                <div className={styles.mockStat}>
-                  <div className={styles.mockStatN}>12</div>
-                  <div className={styles.mockStatL}>Members</div>
-                </div>
-                <div className={styles.mockStat}>
-                  <div className={styles.mockStatN}>
-                    71
-                    <span className={styles.mockStatNPct}>%</span>
-                  </div>
-                  <div className={styles.mockStatL}>Avg completion</div>
-                </div>
-                <div className={styles.mockStat}>
-                  <div
-                    className={`${styles.mockStatN} ${styles.mockStatNDanger}`}
-                  >
-                    3
-                  </div>
-                  <div className={styles.mockStatL}>At risk</div>
-                </div>
-              </div>
-
-              <div className={styles.mockMembersLabel}>Members</div>
-
-              {/* Sarah K. */}
-              <div className={styles.mockMemberRow}>
-                <div
-                  className={styles.mockAv}
-                  style={{ background: "#C45A5A" }}
-                >
-                  SK
-                </div>
-                <div className={styles.mockName}>Sarah K.</div>
-                <div className={styles.mockProg}>
-                  <div className={styles.mockProgBar}>
-                    <div
-                      className={styles.mockProgFill}
-                      style={{ width: "80%", background: "#8FA68C" }}
-                    />
-                  </div>
-                  <div className={styles.mockPct}>80% · 🔥 12 days</div>
-                </div>
-              </div>
-
-              {/* Maya R. */}
-              <div className={styles.mockMemberRow}>
-                <div
-                  className={styles.mockAv}
-                  style={{ background: "#8FA68C" }}
-                >
-                  MR
-                </div>
-                <div className={styles.mockName}>Maya R.</div>
-                <div className={styles.mockProg}>
-                  <div className={styles.mockProgBar}>
-                    <div
-                      className={styles.mockProgFill}
-                      style={{ width: "95%", background: "#8FA68C" }}
-                    />
-                  </div>
-                  <div className={styles.mockPct}>95% · 🔥 21 days</div>
-                </div>
-              </div>
-
-              {/* Alex P. */}
-              <div className={styles.mockMemberRow}>
-                <div
-                  className={styles.mockAv}
-                  style={{ background: "#C45A5A", opacity: 0.6 }}
-                >
-                  AP
-                </div>
-                <div
-                  className={`${styles.mockName} ${styles.mockNameDim}`}
-                >
-                  Alex P.
-                </div>
-                <div className={styles.mockProg}>
-                  <div className={styles.mockProgBar}>
-                    <div
-                      className={styles.mockProgFill}
-                      style={{ width: "0%", background: "#C45A5A" }}
-                    />
-                  </div>
-                  <div
-                    className={`${styles.mockPct} ${styles.mockPctDanger}`}
-                  >
-                    No check-in · 7 days
-                  </div>
-                </div>
-              </div>
-
-              {/* Jordan T. */}
-              <div className={styles.mockMemberRow}>
-                <div
-                  className={styles.mockAv}
-                  style={{ background: "#7B9BAF" }}
-                >
-                  JT
-                </div>
-                <div className={styles.mockName}>Jordan T.</div>
-                <div className={styles.mockProg}>
-                  <div className={styles.mockProgBar}>
-                    <div
-                      className={styles.mockProgFill}
-                      style={{ width: "50%", background: "#C4887A" }}
-                    />
-                  </div>
-                  <div className={styles.mockPct}>50% · 🔥 4 days</div>
-                </div>
-              </div>
-            </div>
+        <div className={styles.comingSoonInner}>
+          <div
+            className={`${styles.comingSoonPill} ${styles.comingSoonPillBold}`}
+          >
+            ◈ For teams — coming soon
+          </div>
+          <h2 className={styles.comingSoonTitle}>
+            Built for <em>coaches,</em> gyms, and wellness programs.
+          </h2>
+          <p className={styles.comingSoonDesc}>
+            Assign habits to your clients, monitor progress without
+            micromanaging, and generate printed mandalas at the end of each
+            program. We're rolling this out after launch — get in touch if
+            you'd like early access.
+          </p>
+          <div className={styles.comingSoonChips}>
+            <div className={styles.comingSoonChip}>Personal trainers</div>
+            <div className={styles.comingSoonChip}>Gyms &amp; studios</div>
+            <div className={styles.comingSoonChip}>Wellness coaches</div>
           </div>
         </div>
       </section>

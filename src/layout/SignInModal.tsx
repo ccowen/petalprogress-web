@@ -1,4 +1,4 @@
-import { Modal, Input } from "@petalprogress/ui";
+import { Modal, Input } from "@ccowen/petalprogress-ui";
 import styles from "./SignInModal.module.css";
 
 interface SignInModalProps {

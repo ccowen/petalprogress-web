@@ -11,9 +11,10 @@ export function Footer() {
             </a>
             <div className={styles.tagline}>
               A habit tracker that turns your daily practice into a living
-              mandala. Built on the science of habit formation.
+              mandala.
             </div>
           </div>
+          {/* Social media buttons hidden pre-launch — see RESTORE_LATER.md
           <div className={styles.socialRow}>
             <a href="#" className={styles.socialBtn} title="Instagram">
               📷
@@ -28,6 +29,7 @@ export function Footer() {
               📌
             </a>
           </div>
+          */}
         </div>
         <div className={styles.bottom}>
           <div className={styles.copy}>
@@ -36,7 +38,6 @@ export function Footer() {
           <div className={styles.links}>
             <a href="/privacy" target="_blank" rel="noopener">Privacy</a>
             <a href="/terms" target="_blank" rel="noopener">Terms</a>
-            <a href="/contact">Contact</a>
           </div>
         </div>
       </div>
