@@ -6,8 +6,15 @@ import { MandalaTypesPage } from "./pages/MandalaTypesPage";
 import { ShopPage } from "./pages/ShopPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
+import { ScanPage } from "./pages/ScanPage";
+import { OnlinePage } from "./pages/OnlinePage";
 
 export const router = createBrowserRouter([
+  // /scan is printed on physical products. Deliberately outside
+  // MarketingLayout: /scan is its own menu, and /online is a focused
+  // page — site nav would only invite people to wander off.
+  { path: "scan", element: <ScanPage /> },
+  { path: "online", element: <OnlinePage /> },
   {
     element: <MarketingLayout />,
     children: [
