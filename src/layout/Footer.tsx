@@ -10,8 +10,8 @@ export function Footer() {
               𖢻 PetalProgress
             </a>
             <div className={styles.tagline}>
-              A habit tracker that turns your daily practice into a living
-              mandala.
+              Gratitude prompts on paper and by text, and soon, habits that
+              bloom into a living mandala.
             </div>
           </div>
           {/* Social media buttons hidden pre-launch — see RESTORE_LATER.md

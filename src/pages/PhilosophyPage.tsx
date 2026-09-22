@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "./PhilosophyPage.module.css";
 
 export function PhilosophyPage() {
@@ -86,6 +87,25 @@ export function PhilosophyPage() {
             We built PetalProgress to make that rhythm visible. Not to grade
             it. Not to preserve it. Just to hold it, for as long as you want
             to look.
+          </p>
+        </div>
+
+        <div className={styles.prose}>
+          <h2 className={styles.proseTitle}>
+            What we keep, and <em>what we let go.</em>
+          </h2>
+          <p className={styles.proseText}>
+            Our daily texts work like the sand. You answer a prompt, and that's
+            the practice complete. We don't hand your old answers back to you,
+            because rereading happier days in a hard moment can make the
+            contrast sharper, not softer.
+          </p>
+          <p className={styles.proseText}>
+            Some people want to look back anyway, and that's a real choice
+            too. So we made{" "}
+            <Link to="/journal">a journal</Link> with the same prompts, to fill
+            in by hand and keep for as long as you like. It's a deliberate
+            choice, not a workaround.
           </p>
         </div>
 

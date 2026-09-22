@@ -1,0 +1,114 @@
+.card {
+  position: relative;
+  padding: 26px;
+  background: #fffdf8;
+  border: 1px solid var(--pp-warm-1);
+  border-radius: 6px;
+  box-shadow: var(--pp-shadow-card);
+  text-align: left;
+  transition: opacity 1.6s ease, filter 1.6s ease;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pp-text-muted);
+  margin-bottom: 14px;
+}
+
+.dir {
+  color: var(--pp-sage);
+}
+
+.text {
+  font-family: var(--pp-font-display);
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--pp-text);
+  margin-bottom: 18px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scaleRow {
+  display: flex;
+  gap: 8px;
+}
+
+.option {
+  display: block;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  color: var(--pp-text-soft);
+  background: none;
+  border: 1px solid var(--pp-warm-1);
+  border-radius: var(--pp-radius-sm);
+  padding: 8px 12px;
+}
+
+.scaleRow .option {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+}
+
+button.option {
+  cursor: pointer;
+  transition: all var(--pp-transition-fast);
+}
+
+button.option:hover {
+  border-color: var(--pp-sage);
+  color: var(--pp-text);
+  background: rgba(143, 166, 140, 0.08);
+}
+
+.scaleHint {
+  font-size: 11.5px;
+  color: var(--pp-text-muted);
+  margin-top: 8px;
+}
+
+.released > :not(.releasedNote) {
+  opacity: 0.12;
+  filter: blur(1.5px);
+  transition: opacity 1.6s ease, filter 1.6s ease;
+}
+
+.releasedNote {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  font-family: var(--pp-font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--pp-sage);
+  animation: fadeIn 1.2s ease 0.4s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .released > :not(.releasedNote),
+  .releasedNote {
+    transition: none;
+    animation: none;
+  }
+}

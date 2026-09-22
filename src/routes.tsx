@@ -1,9 +1,12 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import { MarketingLayout } from "./layout/MarketingLayout";
 import { HomePage } from "./pages/HomePage";
+import { JournalPage } from "./pages/JournalPage";
+import { DailyPage } from "./pages/DailyPage";
+import { ScanPage } from "./pages/ScanPage";
+import { AppPage } from "./pages/AppPage";
 import { PhilosophyPage } from "./pages/PhilosophyPage";
 import { MandalaTypesPage } from "./pages/MandalaTypesPage";
-import { ShopPage } from "./pages/ShopPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
 
@@ -12,9 +15,14 @@ export const router = createBrowserRouter([
     element: <MarketingLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: "journal", element: <JournalPage /> },
+      { path: "daily", element: <DailyPage /> },
+      { path: "scan", element: <ScanPage /> },
       { path: "philosophy", element: <PhilosophyPage /> },
+      { path: "app", element: <AppPage /> },
       { path: "mandala-types", element: <MandalaTypesPage /> },
-      { path: "shop", element: <ShopPage /> },
+      // Shop folded into /journal while the journal is the only product
+      { path: "shop", element: <Navigate to="/journal#buy" replace /> },
       { path: "pricing", element: <Navigate to="/" replace /> },
       { path: "teams", element: <Navigate to="/" replace /> },
       { path: "login", element: <Navigate to="/" replace /> },

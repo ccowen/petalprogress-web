@@ -7,17 +7,19 @@ export function MarketingLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu and scroll to top on navigation
+  // Close mobile menu and scroll to top (or to #hash) on navigation
   useEffect(() => {
     setMenuOpen(false);
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    const target = location.hash && document.getElementById(location.hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [location.pathname, location.hash]);
 
   const links = [
-    { label: "Home", to: "/", page: "/" },
+    { label: "Journal", to: "/journal", page: "/journal" },
+    { label: "Daily Texts", to: "/daily", page: "/daily" },
     { label: "Philosophy", to: "/philosophy", page: "/philosophy" },
-    { label: "Mandala Types", to: "/mandala-types", page: "/mandala-types" },
-    { label: "Shop", to: "/shop", page: "/shop" },
+    { label: "The App", to: "/app", page: "/app" },
   ];
 
   return (
