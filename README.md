@@ -9,7 +9,8 @@ Marketing website for PetalProgress. Built with Vite + React + TypeScript.
 | `/` | Homepage: the journal and daily texts ("one set of prompts, two ways"), try-a-prompt, where to buy, app teaser |
 | `/journal` | The prompt journal: why a book, three directions, sample prompts, where to buy |
 | `/daily` | Daily texts: how it works, try-a-prompt, sign-up or waitlist |
-| `/scan` | QR-code landing for journal owners (keep this URL stable) |
+| `/scan` | QR-code link hub for every printed product. It sits outside the site layout, and its links are set in `src/config/links.ts`. Keep this URL stable. |
+| `/online` | PetalProgress on the web: the app as an alternative to paper trackers. Reached from `/scan` |
 | `/philosophy` | Philosophy: sand mandalas, and what we keep vs. let go |
 | `/app` | The mandala habit-tracking app (coming later): how it works, showcase, reading the mandala |
 | `/mandala-types` | Reading each mandala type (part of the app story) |
@@ -59,7 +60,8 @@ src/
     HomePage.tsx            # product pages share ProductPage.module.css
     JournalPage.tsx
     DailyPage.tsx
-    ScanPage.tsx
+    ScanPage.tsx            # standalone QR hub, own .module.css
+    OnlinePage.tsx          # standalone, reached from /scan
     AppPage.tsx             # former homepage (app story), own .module.css
     PricingPage.tsx
     TeamsPage.tsx

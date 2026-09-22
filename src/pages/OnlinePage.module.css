@@ -1,0 +1,290 @@
+/* ══════════════════════════════════════════════════════
+   OnlinePage — what the web version is, reached
+   from /scan. Serves newcomers and returning users.
+   Mobile-first: nearly every visitor arrives from a
+   phone camera, so the phone layout is the base case.
+   ══════════════════════════════════════════════════════ */
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── PAGE ── */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--pp-dark);
+  font-family: var(--pp-font-body);
+  padding: var(--pp-space-10) var(--pp-space-6) var(--pp-space-12);
+}
+
+/* Grain overlay — same texture as the marketing hero */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Warm radial glow behind the mandala */
+.page::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  max-width: 160vw;
+  background: radial-gradient(
+    circle,
+    rgba(143, 166, 140, 0.1) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pp-space-8);
+}
+
+/* ── MANDALA ── */
+.art {
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 0.9s ease both;
+}
+
+.mandala {
+  width: 200px;
+}
+
+/* ── CONTENT ── */
+.content {
+  text-align: center;
+  max-width: 540px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pp-sage);
+  margin-bottom: var(--pp-space-5);
+}
+
+.title {
+  font-family: var(--pp-font-display);
+  font-size: clamp(32px, 7vw, 52px);
+  font-weight: 400;
+  line-height: 1.14;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0 0 var(--pp-space-5);
+}
+
+.titleAccent {
+  font-style: italic;
+  color: var(--pp-amber);
+}
+
+.lede {
+  font-size: clamp(15px, 2.2vw, 17px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 var(--pp-space-4);
+}
+
+.body {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.52);
+  margin: 0 0 var(--pp-space-8);
+}
+
+/* ── PRIMARY CTA ──
+   Doubled class raises specificity over the shared
+   .pp-btn-md sizing regardless of stylesheet order. */
+.ctaRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--pp-space-3);
+  margin-bottom: var(--pp-space-3);
+}
+
+/* ── STEPS CAPTION ── */
+.stepsCaption {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  margin: 0 0 var(--pp-space-4);
+}
+
+.cta.cta,
+.ctaAlt.ctaAlt {
+  padding: 16px 32px;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+/* The shared "secondary" variant is built for light
+   backgrounds — its text and border vanish on the dark
+   ground, so both are restated here. */
+.ctaAlt.ctaAlt {
+  color: rgba(255, 255, 255, 0.82);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: transparent;
+}
+
+.ctaAlt.ctaAlt:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.cta.cta:focus-visible,
+.ctaAlt.ctaAlt:focus-visible {
+  outline: 2px solid var(--pp-sage);
+  outline-offset: 3px;
+}
+
+.ctaHint {
+  display: block;
+  font-size: 12px;
+  color: var(--pp-text-muted);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--pp-space-10);
+}
+
+/* ── STEPS ── */
+.steps {
+  list-style: none;
+  margin: 0 0 var(--pp-space-10);
+  padding: var(--pp-space-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pp-space-3);
+}
+
+.stepNum {
+  font-family: var(--pp-font-display);
+  font-size: 13px;
+  color: var(--pp-sage);
+  letter-spacing: 0.08em;
+}
+
+.stepLabel {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── SECONDARY LINK ── */
+.secondary {
+  display: inline-block;
+  font-size: 13.5px;
+  color: var(--pp-text-muted);
+  text-decoration: none;
+  padding: var(--pp-space-2) var(--pp-space-3);
+  border-radius: var(--pp-radius-pill);
+  transition: color var(--pp-transition-base);
+}
+
+.secondary:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.secondary:focus-visible {
+  outline: 2px solid var(--pp-sage);
+  outline-offset: 2px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── TABLET AND UP ── */
+@media (min-width: 640px) {
+  .mandala {
+    width: 260px;
+  }
+
+  .steps {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--pp-space-8);
+  }
+}
+
+/* ── DESKTOP: side by side, art to the right ── */
+@media (min-width: 900px) {
+  .page {
+    padding: var(--pp-space-12) var(--pp-space-12);
+  }
+
+  .inner {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pp-space-12);
+  }
+
+  .mandala {
+    width: 360px;
+  }
+
+  .content {
+    text-align: left;
+    max-width: 520px;
+  }
+
+  .ctaRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--pp-space-3);
+  }
+
+  .step {
+    justify-content: flex-start;
+  }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .art,
+  .content {
+    animation: none;
+  }
+}

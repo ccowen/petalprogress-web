@@ -1,66 +1,85 @@
 import { Link } from "react-router";
-import { TextsCta } from "../components/ProductBlocks";
-import styles from "./ProductPage.module.css";
+import { BloomMandala } from "../components/BloomMandala";
+import { HUB_LINKS, SOCIALS } from "../config/links";
+import styles from "./ScanPage.module.css";
 
-/**
- * QR-code landing for people holding a printed PetalProgress product.
- * Keep this URL stable (petalprogress.com/scan); change what's here instead
- * of reprinting codes.
- */
+/* ══════════════════════════════════════════════════════
+   ScanPage — the hub every printed QR code points at.
+   Standalone (no site nav): this page *is* the menu.
+   ══════════════════════════════════════════════════════ */
 export function ScanPage() {
-  return (
-    <>
-      <section className={styles.hero}>
-        <div className={styles.heroCentered}>
-          <div className={styles.heroEyebrow}>❋ Welcome</div>
-          <h1 className={styles.heroTitle}>
-            You found us <em>from the page.</em>
-          </h1>
-          <p className={styles.heroSub}>
-            Thank you for practicing with PetalProgress. Here's how to keep
-            going when the journal isn't in your hands.
-          </p>
-        </div>
-      </section>
+  const socials = SOCIALS.filter((s) => s.url);
 
-      <section className={`${styles.section} ${styles.sectionSurface}`}>
-        <div className={styles.sectionInner}>
-          <div className={styles.grid3} style={{ marginTop: 0 }}>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>✉</div>
-              <div className={styles.cardTitle}>Get prompts by text</div>
-              <p className={styles.cardText}>
-                The same prompts as your journal, one a day, by text. Answer,
-                and let it go.
-              </p>
-              <div style={{ marginTop: 20 }}>
-                <TextsCta light />
-              </div>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>◎</div>
-              <div className={styles.cardTitle}>Why we let go</div>
-              <p className={styles.cardText}>
-                The idea behind the practice, and why the journal is there
-                for the things you want to keep.
-              </p>
-              <Link to="/philosophy" className={styles.cardLink}>
-                Read our philosophy →
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>❋</div>
-              <div className={styles.cardTitle}>Coming later</div>
-              <p className={styles.cardText}>
-                The PetalProgress app turns your habits into a living mandala.
-              </p>
-              <Link to="/app" className={styles.cardLink}>
-                See what's coming →
-              </Link>
-            </div>
+  return (
+    <main className={styles.page}>
+      <div className={styles.inner}>
+        <header className={styles.head}>
+          <div className={styles.art}>
+            <BloomMandala className={styles.mandala} stagger={0.008} />
           </div>
-        </div>
-      </section>
-    </>
+          <span className={styles.wordmark}>𖢻 PetalProgress</span>
+          <h1 className={styles.tagline}>
+            Everything, <em className={styles.taglineAccent}>in one place.</em>
+          </h1>
+        </header>
+
+        <nav className={styles.links} aria-label="PetalProgress links">
+          {HUB_LINKS.map((l) => {
+            const className = `${styles.link}${l.featured ? ` ${styles.linkFeatured}` : ""}`;
+            const inner = (
+              <>
+                <span className={styles.linkText}>
+                  <span className={styles.linkLabel}>{l.label}</span>
+                  {l.note && <span className={styles.linkNote}>{l.note}</span>}
+                </span>
+                <span className={styles.linkArrow} aria-hidden="true">
+                  →
+                </span>
+              </>
+            );
+
+            return l.internal ? (
+              <Link key={l.href} to={l.href} className={className}>
+                {inner}
+              </Link>
+            ) : (
+              <a key={l.href} href={l.href} className={className}>
+                {inner}
+              </a>
+            );
+          })}
+        </nav>
+
+        {socials.length > 0 && (
+          <div className={styles.socials}>
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.url}
+                className={styles.social}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                title={s.label}
+              >
+                <span aria-hidden="true">{s.icon}</span>
+              </a>
+            ))}
+          </div>
+        )}
+
+        <footer className={styles.foot}>
+          <Link to="/privacy" className={styles.footLink}>
+            Privacy
+          </Link>
+          <span className={styles.footDot} aria-hidden="true">
+            ·
+          </span>
+          <Link to="/terms" className={styles.footLink}>
+            Terms
+          </Link>
+        </footer>
+      </div>
+    </main>
   );
 }

@@ -3,21 +3,26 @@ import { MarketingLayout } from "./layout/MarketingLayout";
 import { HomePage } from "./pages/HomePage";
 import { JournalPage } from "./pages/JournalPage";
 import { DailyPage } from "./pages/DailyPage";
-import { ScanPage } from "./pages/ScanPage";
 import { AppPage } from "./pages/AppPage";
 import { PhilosophyPage } from "./pages/PhilosophyPage";
 import { MandalaTypesPage } from "./pages/MandalaTypesPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
+import { ScanPage } from "./pages/ScanPage";
+import { OnlinePage } from "./pages/OnlinePage";
 
 export const router = createBrowserRouter([
+  // /scan is printed on physical products. Deliberately outside
+  // MarketingLayout: /scan is its own menu, and /online is a focused
+  // page — site nav would only invite people to wander off.
+  { path: "scan", element: <ScanPage /> },
+  { path: "online", element: <OnlinePage /> },
   {
     element: <MarketingLayout />,
     children: [
       { index: true, element: <HomePage /> },
       { path: "journal", element: <JournalPage /> },
       { path: "daily", element: <DailyPage /> },
-      { path: "scan", element: <ScanPage /> },
       { path: "philosophy", element: <PhilosophyPage /> },
       { path: "app", element: <AppPage /> },
       { path: "mandala-types", element: <MandalaTypesPage /> },
