@@ -95,7 +95,7 @@ export function PhilosophyPage() {
             What we keep, and <em>what we let go.</em>
           </h2>
           <p className={styles.proseText}>
-            Our daily texts work like the sand. You answer a prompt, and that's
+            Our prompt texts work like the sand. You answer a prompt, and that's
             the practice complete. We don't hand your old answers back to you,
             because rereading happier days in a hard moment can make the
             contrast sharper, not softer.

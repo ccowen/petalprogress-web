@@ -12,11 +12,12 @@ export function DailyPage() {
         <div className={styles.heroCentered}>
           <div className={styles.heroEyebrow}>❋ Daily texts</div>
           <h1 className={styles.heroTitle}>
-            One prompt a day. <em>Then let it go.</em>
+            A prompt, by text. <em>Then let it go.</em>
           </h1>
           <p className={styles.heroSub}>
-            A gratitude prompt arrives by text each day. Reply with a word, a
-            number, or a choice. Answering is the practice, and when you've
+            Gratitude prompts arrive by text, two to six times a week, on days
+            we pick to keep it a small surprise. Reply with a word, a number,
+            or a choice. Answering is the practice, and when you've
             answered, you're done.
           </p>
           <div className={styles.heroCtas}>
@@ -38,16 +39,16 @@ export function DailyPage() {
               <div className={styles.stepNum}>01</div>
               <div className={styles.cardTitle}>Sign up</div>
               <p className={styles.cardText}>
-                Add your number and confirm by text. You can stop any time by
-                replying STOP.
+                Choose how many prompts a week and a time of day, then confirm
+                by text. You can stop any time by replying STOP.
               </p>
             </div>
             <div className={styles.card}>
               <div className={styles.stepNum}>02</div>
               <div className={styles.cardTitle}>Get a prompt</div>
               <p className={styles.cardText}>
-                Each day brings one prompt: inward, outward, or about growth.
-                Most take a few seconds to answer.
+                Each one looks inward, outward, or toward growth. Most take a
+                few seconds to answer.
               </p>
             </div>
             <div className={styles.card}>
@@ -55,7 +56,8 @@ export function DailyPage() {
               <div className={styles.cardTitle}>Reply, and release</div>
               <p className={styles.cardText}>
                 Send your answer back. Like a sand mandala, it isn't there to
-                be reread. Tomorrow brings a new one.
+                be reread: replies are never saved to your account or linked to
+                your number.
               </p>
             </div>
           </div>

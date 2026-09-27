@@ -26,8 +26,8 @@ export function HomePage() {
             </h1>
             <p className={styles.heroSub}>
               Gratitude prompts that meet you where you are. Write them in the
-              journal and keep what you find, or answer them by daily text and
-              let each one go.
+              journal and keep what you find, or answer them by text and let
+              each one go.
             </p>
             <div className={styles.heroCtas}>
               <Link to="/journal" className={styles.btnPrimary}>
@@ -78,7 +78,7 @@ export function HomePage() {
                 Daily texts: <em>let it go.</em>
               </div>
               <p className={styles.cardText}>
-                One prompt arrives by text each day. Reply in a word or a
+                Prompts arrive by text a few times a week. Reply in a word or a
                 number. Answering is the practice, and nothing needs to be
                 kept.
               </p>

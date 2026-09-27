@@ -41,7 +41,7 @@ export const HUB_LINKS: HubLink[] = [
   },
   {
     label: "Daily prompts by text",
-    note: "The same prompts, one a day. Answer, and let go",
+    note: "The same prompts, a few times a week. Answer, and let go",
     href: "/daily",
     internal: true,
   },
