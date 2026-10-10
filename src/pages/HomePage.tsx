@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { journalDetails } from "../launch";
-import { directions, samplePrompts } from "../data/samplePrompts";
+import { appPrompts, directions } from "../data/samplePrompts";
 import { PromptCard } from "../components/PromptCard";
 import { TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
@@ -68,7 +68,7 @@ export function HomePage() {
 
       {/* ── TRY ONE ── */}
       <section className={`${styles.section} ${styles.sectionWarm}`}>
-        <div className={styles.sectionNarrow}>
+        <div className={styles.sectionNarrow} style={{ maxWidth: 860 }}>
           <div className={styles.eyebrow}>Try one</div>
           <h2 className={styles.title}>
             Simple to answer. <em>Open to anything.</em>
@@ -77,8 +77,10 @@ export function HomePage() {
             Engaging with the question is the practice. Pick an answer.
             Nothing is saved.
           </p>
-          <div style={{ maxWidth: 420, margin: "40px auto 0" }}>
-            <PromptCard prompt={samplePrompts[0]} letGo />
+          <div className={styles.promptPair}>
+            {appPrompts.map((p) => (
+              <PromptCard key={p.text} prompt={p} letGo />
+            ))}
           </div>
         </div>
       </section>

@@ -28,6 +28,7 @@ export function PromptCard({
         </span>
         <span className={styles.format}>{prompt.format}</span>
       </div>
+      {prompt.lead && <p className={styles.lead}>{prompt.lead}</p>}
       <p className={styles.text}>{prompt.text}</p>
       <div className={prompt.scale ? styles.scaleRow : styles.options}>
         {choices.map((c) =>

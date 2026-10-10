@@ -7,6 +7,8 @@ export type Direction = "inward" | "growth" | "outward";
 export type SamplePrompt = {
   direction: Direction;
   format: string;
+  /** Optional line set before the question, as the texts do. */
+  lead?: string;
   text: string;
   options?: string[];
   scale?: string;
@@ -35,6 +37,30 @@ export const directions: Record<
     desc: "Prompts that look outward: the people, places, and patterns in nature that hold your life together.",
   },
 };
+
+/* Real prompts, the same two the app's /guided-journal sign-up shows
+   (petalprogress-app TextsSignupPage). Keep them in step with the app. */
+export const appPrompts: SamplePrompt[] = [
+  {
+    direction: "growth",
+    format: "Yes / No / Maybe",
+    lead: "Please consider this. Your yes could lose intention if you default to saying yes.",
+    text: "Did you personally, deeply value saying yes to something recently?",
+    options: ["yes", "no", "maybe", "unsure"],
+  },
+  {
+    direction: "inward",
+    format: "Multiple choice",
+    text: "Which of these animal quirks fits you right about now? Or pick one you like.",
+    options: [
+      "a squirrel burying a decoy nut pile",
+      "an emperor penguin rotating in its group huddle",
+      "a pufferfish drawing sand circles",
+      "something else",
+      "unsure",
+    ],
+  },
+];
 
 export const samplePrompts: SamplePrompt[] = [
   {

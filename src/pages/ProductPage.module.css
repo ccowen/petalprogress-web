@@ -357,6 +357,16 @@
 }
 
 /* ── PROMPT STACK ── */
+/* Two prompts side by side, in a narrow section. */
+.promptPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 860px;
+  margin: 40px auto 0;
+  align-items: start;
+}
+
 .promptStack {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -390,7 +400,17 @@
   }
 
   .grid3,
-  .promptStack {
+  /* Two prompts side by side, in a narrow section. */
+.promptPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 860px;
+  margin: 40px auto 0;
+  align-items: start;
+}
+
+.promptStack {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -405,9 +425,20 @@
   }
 
   .heroSplit,
+  .promptPair,
   .grid2,
   .grid3,
-  .promptStack {
+  /* Two prompts side by side, in a narrow section. */
+.promptPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 860px;
+  margin: 40px auto 0;
+  align-items: start;
+}
+
+.promptStack {
     grid-template-columns: 1fr;
   }
 

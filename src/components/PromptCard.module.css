@@ -24,6 +24,13 @@
   color: var(--pp-sage);
 }
 
+.lead {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--pp-text-soft);
+  margin-bottom: 10px;
+}
+
 .text {
   font-family: var(--pp-font-display);
   font-size: 20px;
