@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { launch, buyLinks, textsSignupUrl, type Availability } from "../launch";
 import styles from "../pages/ProductPage.module.css";
 
@@ -61,21 +62,37 @@ export function BuyOptions() {
   );
 }
 
-/** Texts sign-up button, or "opening soon" copy until a URL is set
- *  (nothing at all while texts are unannounced). */
-export function TextsCta({ light = false }: { light?: boolean }) {
-  const label = launch.texts === "live" ? "Start daily texts" : "Join the texts waitlist";
+/**
+ * "Sign up for texts" button, linking straight to the sign-up in the app.
+ * `from` tags where the sign-up started (the app stores it as the source).
+ * With no URL set: a link to `fallbackTo` if given, otherwise "opening soon"
+ * copy (or nothing while texts are unannounced).
+ */
+export function TextsCta({
+  from,
+  fallbackTo,
+  outline = false,
+}: {
+  from?: string;
+  fallbackTo?: string;
+  outline?: boolean;
+}) {
+  const className = outline ? styles.btnOutline : styles.btnPrimary;
   if (!textsSignupUrl) {
+    if (fallbackTo) {
+      return (
+        <Link to={fallbackTo} className={className}>
+          How the texts work
+        </Link>
+      );
+    }
     if (launch.texts === "unannounced") return null;
-    return (
-      <span className={light ? styles.btnOutline : styles.btnGhost}>
-        Daily texts are opening soon
-      </span>
-    );
+    return <span className={styles.btnOutline}>Texts are opening soon</span>;
   }
+  const href = from ? `${textsSignupUrl}?from=${encodeURIComponent(from)}` : textsSignupUrl;
   return (
-    <a href={textsSignupUrl} className={styles.btnPrimary}>
-      {label}
+    <a href={href} className={className}>
+      Sign up for texts
     </a>
   );
 }

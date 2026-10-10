@@ -191,7 +191,7 @@ const showcaseData = [
   { color: "#C45A5A", name: "Morning Meditation" },
   { color: "#8FA68C", name: "Evening Walk" },
   { color: "#7B9BAF", name: "Daily Reading" },
-  { color: "#C4887A", name: "Gratitude Journal" },
+  { color: "#C4887A", name: "Journaling" },
   { color: "#9B8FA6", name: "Creative Practice" },
 ];
 

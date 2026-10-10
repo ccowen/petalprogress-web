@@ -13,7 +13,7 @@ export type Availability = "live" | "waitlist" | "coming" | "unannounced";
 export const launch = {
   /** The prompt journal (physical book). */
   journal: "unannounced" as Availability,
-  /** Daily prompts by text message. Flip to "live" once Twilio/A2P is approved. */
+  /** The same prompts by text message (2–6 a week), signed up for in the app. */
   texts: "unannounced" as Availability,
   /** The mandala habit-tracking app. Pages under /app. */
   app: "coming" as Availability,
@@ -35,11 +35,14 @@ export const buyLinks = {
  * RESTORE_LATER.md). Once "live", point it at the real opt-in flow.
  * Leave empty to show "opening soon" copy with no button.
  */
-export const textsSignupUrl = "";
+// The guided-journal sign-up flow in petalprogress-app (pay → number → reply YES).
+export const textsSignupUrl = "https://app.petalprogress.com/guided-journal";
 
 /** Details for the journal. Fill in once final. */
 export const journalDetails = {
   title: "The PetalProgress Journal",
-  subtitle: "A gratitude prompt journal",
+  subtitle: "A guided journal",
+  /** Prompts in the book, and so in a full run of texts (petalprogress-app PROMPT_COUNT). */
+  promptCount: 147,
   price: "",
 };

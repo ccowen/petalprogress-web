@@ -33,14 +33,14 @@ export interface HubLink {
    the "try" row. */
 export const HUB_LINKS: HubLink[] = [
   {
-    label: "The prompt journal",
-    note: "Gratitude prompts to answer by hand, and keep",
+    label: "The guided journal",
+    note: "Prompts to answer by hand, and keep",
     href: "/journal",
     internal: true,
     featured: true,
   },
   {
-    label: "Daily prompts by text",
+    label: "The guided journal by text",
     note: "The same prompts, a few times a week. Answer, and let go",
     href: "/daily",
     internal: true,

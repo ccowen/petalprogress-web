@@ -4,7 +4,7 @@ import styles from "./PromptCard.module.css";
 
 /**
  * A sample prompt you can answer. When `letGo` is set, answering fades the
- * card and nothing is kept, the same way the daily texts work.
+ * card and nothing is kept, the same way the texts work.
  */
 export function PromptCard({
   prompt,

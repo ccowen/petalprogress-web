@@ -6,8 +6,8 @@ const sitemap = [
     heading: "Explore",
     links: [
       { label: "Home", to: "/" },
-      { label: "Journal", to: "/journal" },
-      { label: "Daily Texts", to: "/daily" },
+      { label: "Book", to: "/journal" },
+      { label: "Text", to: "/daily" },
       { label: "Philosophy", to: "/philosophy" },
     ],
   },
@@ -30,7 +30,7 @@ export function Footer() {
               𖢻 PetalProgress
             </a>
             <div className={styles.tagline}>
-              Gratitude prompts on paper and by text, and soon, habits that
+              A guided journal, on paper and by text, and soon, habits that
               bloom into a living mandala.
             </div>
           </div>

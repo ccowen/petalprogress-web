@@ -1,4 +1,4 @@
-/* Shared layout for the product-led pages: Home, Journal, Daily texts, Scan. */
+/* Shared layout for the product-led pages: Home, Journal, Texts, Scan. */
 
 /* ── HERO (dark, matches the original home hero) ── */
 .hero {
@@ -36,6 +36,53 @@
   text-align: center;
   position: relative;
   z-index: 1;
+}
+
+.heroWide {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroWide .heroSub {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 560px;
+}
+
+/* Book and Text side by side, deliberately equal. */
+.heroSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+.heroCard {
+  padding: 30px;
+  border-radius: var(--pp-radius-card);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroCardKicker {
+  font-family: var(--pp-font-display);
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+.heroCardText {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 24px;
+  flex: 1;
 }
 
 .heroEyebrow {
@@ -357,6 +404,7 @@
     padding: 64px 20px;
   }
 
+  .heroSplit,
   .grid2,
   .grid3,
   .promptStack {

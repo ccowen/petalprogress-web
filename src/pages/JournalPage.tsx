@@ -17,8 +17,8 @@ export function JournalPage() {
               A place to <em>keep</em> what you notice.
             </h1>
             <p className={styles.heroSub}>
-              {journalDetails.title} is a book of gratitude prompts you answer
-              by hand: circle a choice, rate a feeling, or write it out. When
+              {journalDetails.title} is a guided journal you answer by hand:
+              circle a choice, rate a feeling, or write it out. When
               you want to look back, it's all there in your own handwriting.
             </p>
             <div className={styles.heroCtas}>
@@ -115,7 +115,7 @@ export function JournalPage() {
           </p>
           <div style={{ marginTop: 28 }}>
             <Link to="/daily" className={styles.btnOutline}>
-              How the daily texts work
+              How the texts work
             </Link>
           </div>
         </div>

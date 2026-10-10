@@ -1,89 +1,46 @@
 import { Link } from "react-router";
-import { launch } from "../launch";
+import { journalDetails } from "../launch";
 import { directions, samplePrompts } from "../data/samplePrompts";
-import { BookCover } from "../components/BookCover";
 import { PromptCard } from "../components/PromptCard";
-import {
-  BuyOptions,
-  StatusPill,
-  TextsCta,
-} from "../components/ProductBlocks";
+import { TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
+/*
+ * The book and the texts get equal weight here on purpose: we don't yet
+ * know which will be more popular, so neither is featured over the other.
+ */
 export function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
       <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <div>
-            <div className={styles.heroEyebrow}>❋ Gratitude prompts, on paper and by text</div>
-            <h1 className={styles.heroTitle}>
-              One set of prompts.
-              <br />
-              <em>Two ways</em> to practice.
-            </h1>
-            <p className={styles.heroSub}>
-              Gratitude prompts that meet you where you are. Write them in the
-              journal and keep what you find, or answer them by text and let
-              each one go.
-            </p>
-            <div className={styles.heroCtas}>
-              <Link to="/journal" className={styles.btnPrimary}>
-                Look inside the journal
-              </Link>
-              <Link to="/daily" className={styles.btnGhost}>
-                How the daily texts work →
-              </Link>
-            </div>
-          </div>
-          <div className={styles.heroVisual}>
-            <BookCover />
-          </div>
-        </div>
-      </section>
-
-      {/* ── TWO WAYS ── */}
-      <section className={`${styles.section} ${styles.sectionSurface}`}>
-        <div className={styles.sectionInner}>
-          <div className={styles.eyebrow}>Same prompts, your choice</div>
-          <h2 className={styles.title}>
-            Keep it, or <em>let it go.</em>
-          </h2>
-          <p className={styles.desc}>
-            Like a sand mandala, the value is in the doing. Some days you want
-            a record in your own handwriting. Some days you just want to
-            answer and move on. PetalProgress gives you both.
+        <div className={styles.heroWide}>
+          <h1 className={styles.heroTitle}>
+            A guided <em>journal.</em>
+          </h1>
+          <p className={styles.heroSub}>
+            {journalDetails.promptCount} prompts, each crafted for open
+            thought, looking inward, outward, and toward growth. Answer them
+            in the book, or one text at a time.
           </p>
-          <div className={styles.grid2}>
-            <div className={styles.card}>
-              <StatusPill status={launch.journal} />
-              <div className={styles.cardKicker}>On paper</div>
-              <div className={styles.cardTitle}>
-                The journal: <em>keep it.</em>
-              </div>
-              <p className={styles.cardText}>
-                Answer each prompt by hand. Circle, rate, or write, then flip
-                back through it whenever you want to see where you've been.
+          <div className={styles.heroSplit}>
+            <div className={styles.heroCard}>
+              <div className={styles.heroCardKicker}>Book</div>
+              <p className={styles.heroCardText}>
+                Answer each prompt by hand: circle, rate, or write. Keep what
+                you find and flip back through it whenever you like.
               </p>
-              <Link to="/journal" className={styles.cardLink}>
-                Look inside →
+              <Link to="/journal" className={styles.btnPrimary}>
+                Look inside the book
               </Link>
             </div>
-            <div className={styles.card}>
-              <StatusPill status={launch.texts} />
-              <div className={styles.cardKicker}>By text</div>
-              <div className={styles.cardTitle}>
-                Daily texts: <em>let it go.</em>
-              </div>
-              <p className={styles.cardText}>
-                Prompts arrive by text a few times a week. Reply in a word or a
-                number. Answering is the practice, and nothing needs to be
-                kept.
+            <div className={styles.heroCard}>
+              <div className={styles.heroCardKicker}>Text</div>
+              <p className={styles.heroCardText}>
+                Prompts arrive two to six times a week. Reply with a word, a
+                number, or a choice, and let it go.
               </p>
-              <Link to="/daily" className={styles.cardLink}>
-                How it works →
-              </Link>
+              <TextsCta from="web-home" fallbackTo="/daily" />
             </div>
           </div>
         </div>
@@ -114,11 +71,11 @@ export function HomePage() {
         <div className={styles.sectionNarrow}>
           <div className={styles.eyebrow}>Try one</div>
           <h2 className={styles.title}>
-            Answer it, then <em>let it go.</em>
+            Simple to answer. <em>Open to anything.</em>
           </h2>
           <p className={styles.desc}>
-            This is how the daily texts feel. Pick an answer. Nothing is
-            saved.
+            Engaging with the question is the practice. Pick an answer.
+            Nothing is saved.
           </p>
           <div style={{ maxWidth: 420, margin: "40px auto 0" }}>
             <PromptCard prompt={samplePrompts[0]} letGo />
@@ -126,16 +83,17 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ── WHERE TO FIND IT ── */}
-      <section className={styles.section} id="buy">
-        <div className={styles.sectionInner}>
-          <div className={styles.eyebrow}>Where to find it</div>
+      {/* ── START ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionNarrow}>
           <h2 className={styles.title}>
-            Get the <em>journal.</em>
+            Start your <em>guided journal.</em>
           </h2>
-          <BuyOptions />
-          <div style={{ marginTop: 32 }}>
-            <TextsCta light />
+          <div className={styles.heroCtas} style={{ justifyContent: "center", marginTop: 28 }}>
+            <Link to="/journal" className={styles.btnOutline}>
+              Look inside the book
+            </Link>
+            <TextsCta from="web-home" fallbackTo="/daily" outline />
           </div>
         </div>
       </section>

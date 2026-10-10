@@ -10,18 +10,19 @@ export function DailyPage() {
     <>
       <section className={styles.hero}>
         <div className={styles.heroCentered}>
-          <div className={styles.heroEyebrow}>❋ Daily texts</div>
+          <div className={styles.heroEyebrow}>❋ The guided journal, by text</div>
           <h1 className={styles.heroTitle}>
-            A prompt, by text. <em>Then let it go.</em>
+            One text at a time. <em>Then let it go.</em>
           </h1>
           <p className={styles.heroSub}>
-            Gratitude prompts arrive by text, two to six times a week, on days
-            we pick to keep it a small surprise. Reply with a word, a number,
-            or a choice. Answering is the practice, and when you've
-            answered, you're done.
+            You move through the whole guided journal in small pieces, two
+            to six prompts a week, on days we pick to keep it a small
+            surprise. Each prompt is crafted for open thought, and your answer
+            can be simple or anything. Engaging with the question is the
+            practice.
           </p>
           <div className={styles.heroCtas}>
-            <TextsCta />
+            <TextsCta from="web-texts" />
           </div>
         </div>
       </section>
@@ -39,8 +40,8 @@ export function DailyPage() {
               <div className={styles.stepNum}>01</div>
               <div className={styles.cardTitle}>Sign up</div>
               <p className={styles.cardText}>
-                Choose how many prompts a week and a time of day, then confirm
-                by text. You can stop any time by replying STOP.
+                Choose how many prompts a week and a time of day, then reply
+                YES to the text we send. Cancel any time by replying STOP.
               </p>
             </div>
             <div className={styles.card}>
@@ -55,8 +56,9 @@ export function DailyPage() {
               <div className={styles.stepNum}>03</div>
               <div className={styles.cardTitle}>Reply, and release</div>
               <p className={styles.cardText}>
-                Send your answer back. Like a sand mandala, it isn't there to
-                be reread: replies are never saved to your account or linked to
+                Send your answer back, and every answer reveals more of your
+                mandala. Like a sand mandala, the words aren't there to be
+                reread: replies are never saved to your account or linked to
                 your number.
               </p>
             </div>
@@ -82,15 +84,15 @@ export function DailyPage() {
         <div className={styles.sectionNarrow}>
           <div className={styles.eyebrow}>Want to keep your answers?</div>
           <h2 className={styles.title}>
-            That's what <em>the journal</em> is for.
+            That's what <em>the book</em> is for.
           </h2>
           <p className={styles.desc}>
-            The journal holds the same prompts on paper, so you can keep a
+            The book holds the same prompts on paper, so you can keep a
             record in your own handwriting and look back whenever you like.
           </p>
           <div style={{ marginTop: 28 }}>
             <Link to="/journal" className={styles.btnOutline}>
-              Look inside the journal
+              Look inside the book
             </Link>
           </div>
         </div>
