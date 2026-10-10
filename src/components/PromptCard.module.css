@@ -23,25 +23,25 @@
   color: var(--pp-sage);
 }
 
-.lead {
-  font-size: 13px;
+/* Every word of the prompt itself (lead, question, choices, closing)
+   shares one size and font, the way it reads in a text or on the page. */
+.lead,
+.text,
+.closing,
+.option,
+.scaleHint {
+  font-family: var(--pp-font-body);
+  font-size: 15px;
   line-height: 1.6;
-  color: var(--pp-text-soft);
+  color: var(--pp-text);
+}
+
+.lead {
   margin-bottom: 10px;
 }
 
 .text {
-  font-family: var(--pp-font-display);
-  font-size: 20px;
-  line-height: 1.4;
-  color: var(--pp-text);
-  margin-bottom: 18px;
-}
-
-.closing {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--pp-text-soft);
+  margin-bottom: 14px;
 }
 
 .options {
@@ -57,10 +57,7 @@
 
 .option {
   display: block;
-  font: inherit;
-  font-size: 13px;
   text-align: left;
-  color: var(--pp-text-soft);
   background: none;
   border: 1px solid var(--pp-warm-1);
   border-radius: var(--pp-radius-sm);
@@ -89,7 +86,5 @@
 }
 
 .scaleHint {
-  font-size: 11.5px;
-  color: var(--pp-text-muted);
   margin-top: 8px;
 }
