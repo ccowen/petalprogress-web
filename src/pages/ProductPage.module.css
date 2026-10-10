@@ -52,7 +52,7 @@
   max-width: 560px;
 }
 
-/* Book and Text side by side, deliberately equal. */
+/* Journal and Texts side by side, deliberately equal. */
 .heroSplit {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -37,10 +37,10 @@ export function JournalPage() {
         </div>
       </section>
 
-      {/* ── WHY A BOOK ── */}
+      {/* ── WHY PAPER ── */}
       <section className={`${styles.section} ${styles.sectionSurface}`}>
         <div className={styles.sectionNarrow}>
-          <div className={styles.eyebrow}>Why a book</div>
+          <div className={styles.eyebrow}>Why paper</div>
           <h2 className={styles.title}>
             The texts let go. <em>The page remembers.</em>
           </h2>
@@ -110,11 +110,11 @@ export function JournalPage() {
             The same prompts, <em>by text.</em>
           </h2>
           <p className={styles.desc}>
-            On days you're away from the book, get a prompt by text instead.
+            On days you're away from the journal, get a prompt by text instead.
             Scan the code inside the cover to get started.
           </p>
           <div style={{ marginTop: 28 }}>
-            <Link to="/daily" className={styles.btnOutline}>
+            <Link to="/texts" className={styles.btnOutline}>
               How the texts work
             </Link>
           </div>

@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { MarketingLayout } from "./layout/MarketingLayout";
 import { HomePage } from "./pages/HomePage";
 import { JournalPage } from "./pages/JournalPage";
-import { DailyPage } from "./pages/DailyPage";
+import { TextsPage } from "./pages/TextsPage";
 import { NextPage } from "./pages/NextPage";
 import { PhilosophyPage } from "./pages/PhilosophyPage";
 import { MandalaTypesPage } from "./pages/MandalaTypesPage";
@@ -22,7 +22,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "journal", element: <JournalPage /> },
-      { path: "daily", element: <DailyPage /> },
+      { path: "texts", element: <TextsPage /> },
+      { path: "daily", element: <Navigate to="/texts" replace /> },
       { path: "philosophy", element: <PhilosophyPage /> },
       // Future plans (the original homepage), linked from the footer only
       { path: "next", element: <NextPage /> },

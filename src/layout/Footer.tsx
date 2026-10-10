@@ -6,8 +6,8 @@ const sitemap = [
     heading: "Explore",
     links: [
       { label: "Home", to: "/" },
-      { label: "Book", to: "/journal" },
-      { label: "Text", to: "/daily" },
+      { label: "Journal", to: "/journal" },
+      { label: "Texts", to: "/texts" },
       { label: "Philosophy", to: "/philosophy" },
     ],
   },

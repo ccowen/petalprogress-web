@@ -5,7 +5,7 @@ import { PromptCard } from "../components/PromptCard";
 import { StatusPill, TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
-export function DailyPage() {
+export function TextsPage() {
   return (
     <>
       <section className={styles.hero}>
@@ -79,20 +79,20 @@ export function DailyPage() {
         </div>
       </section>
 
-      {/* ── PAIRS WITH THE BOOK ── */}
+      {/* ── PAIRS WITH THE JOURNAL ── */}
       <section className={styles.section}>
         <div className={styles.sectionNarrow}>
           <div className={styles.eyebrow}>Want to keep your answers?</div>
           <h2 className={styles.title}>
-            That's what <em>the book</em> is for.
+            That's what <em>the journal</em> is for.
           </h2>
           <p className={styles.desc}>
-            The book holds the same prompts on paper, so you can keep a
+            The journal holds the same prompts on paper, so you can keep a
             record in your own handwriting and look back whenever you like.
           </p>
           <div style={{ marginTop: 28 }}>
             <Link to="/journal" className={styles.btnOutline}>
-              Look inside the book
+              Look inside the journal
             </Link>
           </div>
         </div>

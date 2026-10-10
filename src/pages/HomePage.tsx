@@ -6,7 +6,7 @@ import { TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
 /*
- * The book and the texts get equal weight here on purpose: we don't yet
+ * The journal and the texts get equal weight here on purpose: we don't yet
  * know which will be more popular, so neither is featured over the other.
  */
 export function HomePage() {
@@ -21,26 +21,26 @@ export function HomePage() {
           <p className={styles.heroSub}>
             {journalDetails.promptCount} prompts, each crafted for open
             thought, looking inward, outward, and toward growth. Answer them
-            in the book, or one text at a time.
+            in the journal, or one text at a time.
           </p>
           <div className={styles.heroSplit}>
             <div className={styles.heroCard}>
-              <div className={styles.heroCardKicker}>Book</div>
+              <div className={styles.heroCardKicker}>Journal</div>
               <p className={styles.heroCardText}>
                 Answer each prompt by hand: circle, rate, or write. Keep what
                 you find and flip back through it whenever you like.
               </p>
               <Link to="/journal" className={styles.btnPrimary}>
-                Look inside the book
+                Look inside the journal
               </Link>
             </div>
             <div className={styles.heroCard}>
-              <div className={styles.heroCardKicker}>Text</div>
+              <div className={styles.heroCardKicker}>Texts</div>
               <p className={styles.heroCardText}>
                 Prompts arrive two to six times a week. Reply with a word, a
                 number, or a choice, and let it go.
               </p>
-              <TextsCta from="web-home" fallbackTo="/daily" />
+              <TextsCta from="web-home" fallbackTo="/texts" />
             </div>
           </div>
         </div>
@@ -91,9 +91,9 @@ export function HomePage() {
           </h2>
           <div className={styles.heroCtas} style={{ justifyContent: "center", marginTop: 28 }}>
             <Link to="/journal" className={styles.btnOutline}>
-              Look inside the book
+              Look inside the journal
             </Link>
-            <TextsCta from="web-home" fallbackTo="/daily" outline />
+            <TextsCta from="web-home" fallbackTo="/texts" outline />
           </div>
         </div>
       </section>

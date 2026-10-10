@@ -42,7 +42,7 @@ export const HUB_LINKS: HubLink[] = [
   {
     label: "The guided journal by text",
     note: "The same prompts, a few times a week. Answer, and let go",
-    href: "/daily",
+    href: "/texts",
     internal: true,
   },
   {
