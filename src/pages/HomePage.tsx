@@ -66,20 +66,20 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ── TRY ONE ── */}
+      {/* ── SAMPLE PROMPTS ── */}
       <section className={`${styles.section} ${styles.sectionWarm}`}>
         <div className={styles.sectionNarrow} style={{ maxWidth: 860 }}>
-          <div className={styles.eyebrow}>Try one</div>
+          <div className={styles.eyebrow}>Sample prompts</div>
           <h2 className={styles.title}>
             Simple to answer. <em>Open to anything.</em>
           </h2>
           <p className={styles.desc}>
-            Engaging with the question is the practice. Pick an answer.
-            Nothing is saved.
+            Your answer can be a single word or anything at all. Engaging
+            with the question is the practice.
           </p>
           <div className={styles.promptPair}>
             {appPrompts.map((p) => (
-              <PromptCard key={p.text} prompt={p} letGo />
+              <PromptCard key={p.text} prompt={p} />
             ))}
           </div>
         </div>

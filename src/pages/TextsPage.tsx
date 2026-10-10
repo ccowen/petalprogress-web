@@ -66,15 +66,15 @@ export function TextsPage() {
         </div>
       </section>
 
-      {/* ── TRY ONE ── */}
+      {/* ── SAMPLE PROMPT ── */}
       <section className={`${styles.section} ${styles.sectionWarm}`}>
         <div className={styles.sectionNarrow}>
-          <div className={styles.eyebrow}>A prompt like this</div>
+          <div className={styles.eyebrow}>Sample prompt</div>
           <h2 className={styles.title}>
-            Try <em>one.</em>
+            A prompt <em>like this.</em>
           </h2>
           <div style={{ maxWidth: 420, margin: "36px auto 0" }}>
-            <PromptCard prompt={samplePrompts[1]} letGo />
+            <PromptCard prompt={samplePrompts[1]} />
           </div>
         </div>
       </section>
