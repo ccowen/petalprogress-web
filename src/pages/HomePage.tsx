@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { launch, journalDetails } from "../launch";
+import { launch } from "../launch";
 import { directions, samplePrompts } from "../data/samplePrompts";
 import { BookCover } from "../components/BookCover";
 import { PromptCard } from "../components/PromptCard";
@@ -17,7 +17,7 @@ export function HomePage() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div>
-            <div className={styles.heroEyebrow}>❋ New · {journalDetails.title}</div>
+            <div className={styles.heroEyebrow}>❋ Gratitude prompts, on paper and by text</div>
             <h1 className={styles.heroTitle}>
               One set of prompts.
               <br />

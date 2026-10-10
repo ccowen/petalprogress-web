@@ -4,13 +4,17 @@
    instead of hard-coding "coming soon" copy.
    ══════════════════════════════════════════════════════ */
 
-export type Availability = "live" | "waitlist" | "coming";
+/**
+ * "unannounced" shows no status and no "soon" copy at all, for when we
+ * don't want to say yet which product comes first.
+ */
+export type Availability = "live" | "waitlist" | "coming" | "unannounced";
 
 export const launch = {
   /** The prompt journal (physical book). */
-  journal: "live" as Availability,
+  journal: "unannounced" as Availability,
   /** Daily prompts by text message. Flip to "live" once Twilio/A2P is approved. */
-  texts: "waitlist" as Availability,
+  texts: "unannounced" as Availability,
   /** The mandala habit-tracking app. Pages under /app. */
   app: "coming" as Availability,
 };

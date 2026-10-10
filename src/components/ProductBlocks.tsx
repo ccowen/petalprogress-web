@@ -2,6 +2,7 @@ import { launch, buyLinks, textsSignupUrl, type Availability } from "../launch";
 import styles from "../pages/ProductPage.module.css";
 
 export function StatusPill({ status }: { status: Availability }) {
+  if (status === "unannounced") return null;
   const label =
     status === "live" ? "Available now" : status === "waitlist" ? "Opening soon" : "Coming later";
   return (
@@ -26,7 +27,9 @@ export function BuyOptions() {
             Buy the journal →
           </a>
         ) : (
-          <div className={styles.cardLink}>Online checkout opening soon</div>
+          launch.journal !== "unannounced" && (
+            <div className={styles.cardLink}>Online checkout opening soon</div>
+          )
         )}
       </div>
       <div className={styles.card}>
@@ -49,17 +52,21 @@ export function BuyOptions() {
             Visit our Etsy shop →
           </a>
         ) : (
-          <div className={styles.cardLink}>Listing coming soon</div>
+          launch.journal !== "unannounced" && (
+            <div className={styles.cardLink}>Listing coming soon</div>
+          )
         )}
       </div>
     </div>
   );
 }
 
-/** Texts sign-up button, or "opening soon" copy until a URL is set. */
+/** Texts sign-up button, or "opening soon" copy until a URL is set
+ *  (nothing at all while texts are unannounced). */
 export function TextsCta({ light = false }: { light?: boolean }) {
   const label = launch.texts === "live" ? "Start daily texts" : "Join the texts waitlist";
   if (!textsSignupUrl) {
+    if (launch.texts === "unannounced") return null;
     return (
       <span className={light ? styles.btnOutline : styles.btnGhost}>
         Daily texts are opening soon
