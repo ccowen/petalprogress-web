@@ -6,10 +6,13 @@ export type Direction = "inward" | "growth" | "outward";
 
 export type SamplePrompt = {
   direction: Direction;
-  format: string;
+  /** Shown top right of the card. Leave out for open-reply prompts. */
+  format?: string;
   /** Optional line set before the question, as the texts do. */
   lead?: string;
   text: string;
+  /** Optional closing line, shown instead of a list of choices. */
+  closing?: string;
   options?: string[];
   scale?: string;
 };
@@ -43,10 +46,9 @@ export const directions: Record<
 export const appPrompts: SamplePrompt[] = [
   {
     direction: "growth",
-    format: "Yes / No / Maybe",
     lead: "Please consider this. Your yes could lose intention if you default to saying yes.",
     text: "Did you personally, deeply value saying yes to something recently?",
-    options: ["yes", "no", "maybe", "unsure"],
+    closing: "All responses welcome, including yes no maybe unsure",
   },
   {
     direction: "inward",

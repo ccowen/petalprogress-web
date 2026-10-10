@@ -38,6 +38,12 @@
   margin-bottom: 18px;
 }
 
+.closing {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--pp-text-soft);
+}
+
 .options {
   display: flex;
   flex-direction: column;

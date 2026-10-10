@@ -17,17 +17,21 @@ export function PromptCard({ prompt }: { prompt: SamplePrompt }) {
         <span className={styles.dir}>
           {dir.icon} {dir.label}
         </span>
-        <span className={styles.format}>{prompt.format}</span>
+        {prompt.format && <span className={styles.format}>{prompt.format}</span>}
       </div>
       {prompt.lead && <p className={styles.lead}>{prompt.lead}</p>}
       <p className={styles.text}>{prompt.text}</p>
-      <div className={prompt.scale ? styles.scaleRow : styles.options}>
-        {choices.map((c) => (
-          <span key={c} className={styles.option}>
-            {c}
-          </span>
-        ))}
-      </div>
+      {prompt.closing ? (
+        <p className={styles.closing}>{prompt.closing}</p>
+      ) : (
+        <div className={prompt.scale ? styles.scaleRow : styles.options}>
+          {choices.map((c) => (
+            <span key={c} className={styles.option}>
+              {c}
+            </span>
+          ))}
+        </div>
+      )}
       {prompt.scale && <div className={styles.scaleHint}>{prompt.scale}</div>}
     </div>
   );
