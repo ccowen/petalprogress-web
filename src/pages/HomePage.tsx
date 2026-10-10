@@ -4,7 +4,6 @@ import { directions, samplePrompts } from "../data/samplePrompts";
 import { BookCover } from "../components/BookCover";
 import { PromptCard } from "../components/PromptCard";
 import {
-  AppBand,
   BuyOptions,
   StatusPill,
   TextsCta,
@@ -140,8 +139,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <AppBand />
     </>
   );
 }

@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { launch, buyLinks, textsSignupUrl, type Availability } from "../launch";
 import styles from "../pages/ProductPage.module.css";
 
@@ -71,28 +70,5 @@ export function TextsCta({ light = false }: { light?: boolean }) {
     <a href={textsSignupUrl} className={styles.btnPrimary}>
       {label}
     </a>
-  );
-}
-
-/** Quiet teaser for the habit-mandala app, which launches later. */
-export function AppBand() {
-  return (
-    <section className={styles.appBand}>
-      <div className={styles.appBandInner}>
-        <StatusPill status={launch.app} />
-        <div>
-          <div className={styles.appBandTitle}>
-            Next: the PetalProgress <em>app.</em>
-          </div>
-          <p className={styles.appBandText}>
-            A habit tracker that turns every day you show up into a living
-            mandala. Not a streak counter, a growing work of art.
-          </p>
-        </div>
-        <Link to="/app" className={styles.appBandLink}>
-          See what's coming →
-        </Link>
-      </div>
-    </section>
   );
 }

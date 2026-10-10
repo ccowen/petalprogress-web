@@ -3,7 +3,7 @@ import { MarketingLayout } from "./layout/MarketingLayout";
 import { HomePage } from "./pages/HomePage";
 import { JournalPage } from "./pages/JournalPage";
 import { DailyPage } from "./pages/DailyPage";
-import { AppPage } from "./pages/AppPage";
+import { NextPage } from "./pages/NextPage";
 import { PhilosophyPage } from "./pages/PhilosophyPage";
 import { MandalaTypesPage } from "./pages/MandalaTypesPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
@@ -24,7 +24,9 @@ export const router = createBrowserRouter([
       { path: "journal", element: <JournalPage /> },
       { path: "daily", element: <DailyPage /> },
       { path: "philosophy", element: <PhilosophyPage /> },
-      { path: "app", element: <AppPage /> },
+      // Future plans (the original homepage), linked from the footer only
+      { path: "next", element: <NextPage /> },
+      { path: "app", element: <Navigate to="/next" replace /> },
       { path: "mandala-types", element: <MandalaTypesPage /> },
       // Shop folded into /journal while the journal is the only product
       { path: "shop", element: <Navigate to="/journal#buy" replace /> },

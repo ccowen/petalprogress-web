@@ -19,7 +19,6 @@ export function MarketingLayout() {
     { label: "Journal", to: "/journal", page: "/journal" },
     { label: "Daily Texts", to: "/daily", page: "/daily" },
     { label: "Philosophy", to: "/philosophy", page: "/philosophy" },
-    { label: "The App", to: "/app", page: "/app" },
   ];
 
   return (

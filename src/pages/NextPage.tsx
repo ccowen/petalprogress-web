@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import styles from "./AppPage.module.css";
+import styles from "./NextPage.module.css";
 
 /* ── Helper: build a ring of ellipse petals ── */
 function buildRingPetals(
@@ -196,9 +196,9 @@ const showcaseData = [
 ];
 
 /* ══════════════════════════════════════════════════════
-   AppPage
+   NextPage — future plans (the original homepage)
    ══════════════════════════════════════════════════════ */
-export function AppPage() {
+export function NextPage() {
   return (
     <>
       {/* ── HERO ── */}

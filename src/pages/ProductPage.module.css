@@ -318,58 +318,6 @@
   align-items: start;
 }
 
-/* ── APP TEASER BAND ── */
-.appBand {
-  padding: 72px 52px;
-  background: var(--pp-dark);
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.appBandInner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 40px;
-  align-items: center;
-}
-
-.appBandTitle {
-  font-family: var(--pp-font-display);
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 1.25;
-  margin-bottom: 8px;
-}
-
-.appBandTitle em {
-  font-style: italic;
-  color: rgba(143, 166, 140, 0.9);
-}
-
-.appBandText {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.75;
-  max-width: 520px;
-}
-
-.appBandLink {
-  padding: 11px 22px;
-  border-radius: var(--pp-radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 13px;
-  white-space: nowrap;
-  transition: all var(--pp-transition-base);
-}
-
-.appBandLink:hover {
-  border-color: var(--pp-sage);
-  color: #fff;
-}
-
 /* ── QUOTE ── */
 .quote {
   font-family: var(--pp-font-display);
@@ -398,13 +346,6 @@
   .promptStack {
     grid-template-columns: 1fr 1fr;
   }
-
-  .appBandInner {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
-    justify-items: center;
-  }
 }
 
 @media (max-width: 640px) {
@@ -414,10 +355,6 @@
 
   .section {
     padding: 64px 20px;
-  }
-
-  .appBand {
-    padding: 56px 20px;
   }
 
   .grid2,
