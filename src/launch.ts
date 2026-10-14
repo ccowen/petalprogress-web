@@ -38,6 +38,9 @@ export const buyLinks = {
 // The guided-journal sign-up flow in petalprogress-app (pay → number → reply YES).
 export const textsSignupUrl = "https://app.petalprogress.com/guided-journal";
 
+/** Where returning subscribers sign in to manage their texts. */
+export const textsSignInUrl = "https://app.petalprogress.com/guided-journal/signin";
+
 /** Details for the journal. Fill in once final. */
 export const journalDetails = {
   title: "The PetalProgress Journal",

@@ -30,7 +30,7 @@ export function HomePage() {
                 Answer each prompt by hand: circle, rate, or write. Keep what
                 you find and flip back through it whenever you like.
               </p>
-              <Link to="/journal" className={styles.btnPrimary}>
+              <Link to="/journal" className={styles.btnJournal}>
                 Look inside the journal
               </Link>
             </div>
@@ -46,8 +46,24 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* ── SAMPLE PROMPTS ── */}
+      <section className={`${styles.section} ${styles.sectionSky}`}>
+        <div className={styles.sectionInner}>
+          <div className={styles.promptSplit}>
+            <h2 className={`${styles.title} ${styles.promptSplitTitle}`}>
+              Simple to answer. <em>Open to anything.</em>
+            </h2>
+            <div className={styles.promptColumn}>
+              {appPrompts.map((p) => (
+                <PromptCard key={p.text} prompt={p} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── THREE DIRECTIONS ── */}
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionPlum}`}>
         <div className={styles.sectionInner}>
           <div className={styles.eyebrow}>Inside every prompt</div>
           <h2 className={styles.title}>
@@ -55,31 +71,11 @@ export function HomePage() {
           </h2>
           <div className={styles.grid3}>
             {Object.values(directions).map((d) => (
-              <div key={d.label} className={styles.card}>
-                <div className={styles.cardIcon}>{d.icon}</div>
+              <div key={d.label} className={`${styles.card} ${styles.directionCard}`}>
+                <div className={styles.directionIcon}>{d.icon}</div>
                 <div className={styles.cardKicker}>{d.name}</div>
                 <div className={styles.cardTitle}>{d.label}</div>
-                <p className={styles.cardText}>{d.desc}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SAMPLE PROMPTS ── */}
-      <section className={`${styles.section} ${styles.sectionWarm}`}>
-        <div className={styles.sectionNarrow} style={{ maxWidth: 860 }}>
-          <div className={styles.eyebrow}>Sample prompts</div>
-          <h2 className={styles.title}>
-            Simple to answer. <em>Open to anything.</em>
-          </h2>
-          <p className={styles.desc}>
-            Your answer can be a single word or anything at all. Engaging
-            with the question is the practice.
-          </p>
-          <div className={styles.promptPair}>
-            {appPrompts.map((p) => (
-              <PromptCard key={p.text} prompt={p} />
             ))}
           </div>
         </div>
@@ -92,10 +88,10 @@ export function HomePage() {
             Start your <em>guided journal.</em>
           </h2>
           <div className={styles.heroCtas} style={{ justifyContent: "center", marginTop: 28 }}>
-            <Link to="/journal" className={styles.btnOutline}>
+            <Link to="/journal" className={styles.btnJournal}>
               Look inside the journal
             </Link>
-            <TextsCta from="web-home" fallbackTo="/texts" outline />
+            <TextsCta from="web-home" fallbackTo="/texts" />
           </div>
         </div>
       </section>

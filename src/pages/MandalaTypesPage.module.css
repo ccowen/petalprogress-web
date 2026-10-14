@@ -10,8 +10,8 @@
   gap: 7px;
   padding: 4px 14px;
   border-radius: var(--pp-radius-pill);
-  background: rgba(143, 166, 140, 0.1);
-  border: 1px solid rgba(143, 166, 140, 0.25);
+  background: color-mix(in srgb, var(--pp-primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pp-primary) 25%, transparent);
   font-size: 11px;
   color: var(--pp-sage);
   letter-spacing: 0.1em;
@@ -353,40 +353,40 @@
 }
 
 .qToggleOptActive {
-  background: rgba(143, 166, 140, 0.45);
-  color: #c8d8c6;
+  background: color-mix(in srgb, var(--pp-primary) 45%, transparent);
+  color: color-mix(in srgb, var(--pp-primary) 35%, white);
 }
 
 .mToggleOptActive {
-  background: rgba(123, 155, 175, 0.45);
-  color: #b8ced9;
+  background: color-mix(in srgb, var(--pp-sky) 45%, transparent);
+  color: color-mix(in srgb, var(--pp-sky) 35%, white);
 }
 
 .readingRowSage .readIconWrap {
-  background: rgba(143, 166, 140, 0.35);
+  background: color-mix(in srgb, var(--pp-primary) 35%, transparent);
 }
 
 .readingRowSage .readingRowLbl {
-  background: rgba(143, 166, 140, 0.35);
-  color: #c8d8c6;
+  background: color-mix(in srgb, var(--pp-primary) 35%, transparent);
+  color: color-mix(in srgb, var(--pp-primary) 35%, white);
 }
 
 .readingRowBlue .readIconWrap {
-  background: rgba(123, 155, 175, 0.35);
+  background: color-mix(in srgb, var(--pp-sky) 35%, transparent);
 }
 
 .readingRowBlue .readingRowLbl {
-  background: rgba(123, 155, 175, 0.35);
-  color: #b8ced9;
+  background: color-mix(in srgb, var(--pp-sky) 35%, transparent);
+  color: color-mix(in srgb, var(--pp-sky) 35%, white);
 }
 
 .readingRowAmber .readIconWrap {
-  background: rgba(196, 136, 122, 0.35);
+  background: color-mix(in srgb, var(--pp-marigold) 35%, transparent);
 }
 
 .readingRowAmber .readingRowLbl {
-  background: rgba(196, 136, 122, 0.35);
-  color: #dbbdb4;
+  background: color-mix(in srgb, var(--pp-marigold) 35%, transparent);
+  color: color-mix(in srgb, var(--pp-marigold) 35%, white);
 }
 
 .rc {

@@ -6,10 +6,10 @@ import styles from "./BloomMandala.module.css";
    Sizing is left to the caller via className.
    ─────────────────────────────────────────────────── */
 const RINGS = [
-  { n: 8, r: 46, rx: 5, ry: 12, color: "rgba(143,166,140,0.9)" },
-  { n: 12, r: 74, rx: 5.5, ry: 13, color: "rgba(196,136,122,0.9)" },
-  { n: 16, r: 104, rx: 5.5, ry: 14, color: "rgba(196,90,90,0.85)" },
-  { n: 24, r: 134, rx: 6, ry: 16, color: "rgba(196,90,90,0.7)" },
+  { n: 8, r: 46, rx: 5, ry: 12, color: "color-mix(in srgb, var(--pp-primary) 90%, transparent)" },
+  { n: 12, r: 74, rx: 5.5, ry: 13, color: "color-mix(in srgb, var(--pp-marigold) 90%, transparent)" },
+  { n: 16, r: 104, rx: 5.5, ry: 14, color: "color-mix(in srgb, var(--pp-coral) 85%, transparent)" },
+  { n: 24, r: 134, rx: 6, ry: 16, color: "color-mix(in srgb, var(--pp-coral) 70%, transparent)" },
 ];
 
 export interface BloomMandalaProps {
@@ -41,7 +41,7 @@ export function BloomMandala({
         cx={cx}
         cy={cy}
         r={172}
-        fill="rgba(30,26,23,0.6)"
+        fill="color-mix(in srgb, var(--pp-dark) 60%, transparent)"
         stroke="rgba(255,255,255,0.06)"
         strokeWidth={1}
       />
@@ -71,7 +71,7 @@ export function BloomMandala({
               cy={y.toFixed(1)}
               rx={ring.rx}
               ry={ring.ry}
-              fill={ring.color}
+              style={{ fill: ring.color }}
               transform={`rotate(${deg.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`}
             />
           );
@@ -90,7 +90,7 @@ export function BloomMandala({
         cx={cx}
         cy={cy}
         r={20}
-        fill="rgba(30,26,23,0.8)"
+        fill="color-mix(in srgb, var(--pp-dark) 80%, transparent)"
         stroke="rgba(255,255,255,0.06)"
         strokeWidth={1}
       />

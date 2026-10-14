@@ -22,7 +22,7 @@ function buildRingPetals(
       ? color
       : dark
         ? "rgba(255,255,255,0.06)"
-        : "#EDE9E3";
+        : "var(--pp-warm-1)";
     const op = filled ? 1 : 0.55;
     return (
       <ellipse
@@ -76,7 +76,7 @@ function HeroMandala() {
         cx={cx}
         cy={cy}
         r={172}
-        fill="rgba(30,26,23,0.6)"
+        fill="color-mix(in srgb, var(--pp-dark) 60%, transparent)"
         stroke="rgba(255,255,255,0.06)"
         strokeWidth={1}
       />
@@ -91,13 +91,13 @@ function HeroMandala() {
         fill="none"
       />
       {/* Ring 4 (outermost petals) */}
-      {buildRingPetals(24, 134, 6, 16, "rgba(196,90,90,0.75)", 18, cx, cy, true)}
+      {buildRingPetals(24, 134, 6, 16, "color-mix(in srgb, var(--pp-coral) 75%, transparent)", 18, cx, cy, true)}
       {/* Ring 3 */}
-      {buildRingPetals(16, 104, 5.5, 14, "rgba(196,90,90,0.85)", 12, cx, cy, true)}
+      {buildRingPetals(16, 104, 5.5, 14, "color-mix(in srgb, var(--pp-coral) 85%, transparent)", 12, cx, cy, true)}
       {/* Ring 2 */}
-      {buildRingPetals(12, 74, 5.5, 13, "rgba(196,136,122,0.9)", 10, cx, cy, true)}
+      {buildRingPetals(12, 74, 5.5, 13, "color-mix(in srgb, var(--pp-marigold) 90%, transparent)", 10, cx, cy, true)}
       {/* Ring 1 (innermost) */}
-      {buildRingPetals(8, 46, 5, 12, "rgba(143,166,140,0.9)", undefined, cx, cy, true)}
+      {buildRingPetals(8, 46, 5, 12, "color-mix(in srgb, var(--pp-primary) 90%, transparent)", undefined, cx, cy, true)}
       {/* Week ticks */}
       {buildTicks(52, 152, 160, cx, cy)}
       {/* Center */}
@@ -113,7 +113,7 @@ function HeroMandala() {
         cx={cx}
         cy={cy}
         r={20}
-        fill="rgba(30,26,23,0.8)"
+        fill="color-mix(in srgb, var(--pp-dark) 80%, transparent)"
         stroke="rgba(255,255,255,0.06)"
         strokeWidth={1}
       />
@@ -126,7 +126,7 @@ function HeroMandala() {
         cy={cy}
         r={158}
         fill="none"
-        stroke="rgba(143,166,140,0.25)"
+        stroke="color-mix(in srgb, var(--pp-primary) 25%, transparent)"
         strokeWidth={2}
         strokeDasharray="628 1000"
         strokeLinecap="round"
@@ -162,7 +162,7 @@ function ShowcaseMandala({ color, size = 130 }: { color: string; size?: number }
           cy={y.toFixed(1)}
           rx={ring.rx.toFixed(2)}
           ry={ring.ry.toFixed(2)}
-          fill={filled ? color : "#EDE9E3"}
+          fill={filled ? color : "var(--pp-warm-1)"}
           opacity={filled ? 0.85 : 0.4}
           transform={`rotate(${(i * (360 / ring.n)).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`}
         />
@@ -176,23 +176,23 @@ function ShowcaseMandala({ color, size = 130 }: { color: string; size?: number }
         cx={cx}
         cy={cy}
         r={size / 2 - 1}
-        fill="rgba(248,246,243,0.6)"
-        stroke="#EDE9E3"
+        fill="color-mix(in srgb, var(--pp-bg) 60%, transparent)"
+        stroke="var(--pp-warm-1)"
         strokeWidth={0.5}
       />
       {petals}
-      <circle cx={cx} cy={cy} r={size * 0.1} fill="#FDFCFA" />
+      <circle cx={cx} cy={cy} r={size * 0.1} fill="var(--pp-surface)" />
     </svg>
   );
 }
 
 /* ── Showcase data ── */
 const showcaseData = [
-  { color: "#C45A5A", name: "Morning Meditation" },
-  { color: "#8FA68C", name: "Evening Walk" },
-  { color: "#7B9BAF", name: "Daily Reading" },
-  { color: "#C4887A", name: "Journaling" },
-  { color: "#9B8FA6", name: "Creative Practice" },
+  { color: "var(--pp-coral)", name: "Morning Meditation" },
+  { color: "var(--pp-primary)", name: "Evening Walk" },
+  { color: "var(--pp-sky)", name: "Daily Reading" },
+  { color: "var(--pp-marigold)", name: "Journaling" },
+  { color: "var(--pp-mauve)", name: "Creative Practice" },
 ];
 
 /* ══════════════════════════════════════════════════════

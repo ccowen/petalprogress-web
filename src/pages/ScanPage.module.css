@@ -47,7 +47,7 @@
   max-width: 170vw;
   background: radial-gradient(
     circle,
-    rgba(143, 166, 140, 0.11) 0%,
+    color-mix(in srgb, var(--pp-primary) 11%, transparent) 0%,
     transparent 65%
   );
   pointer-events: none;

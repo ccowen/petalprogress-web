@@ -26,7 +26,7 @@ function ringPetals(
         cy={y.toFixed(1)}
         rx={rx}
         ry={ry}
-        fill={filled ? color : "#EDE9E3"}
+        fill={filled ? color : "var(--pp-warm-1)"}
         opacity={filled ? 0.85 : 0.4}
         transform={`rotate(${(i * (360 / n)).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`}
       />
@@ -101,7 +101,7 @@ function SlicedMandala({ slices }: { slices: { color: string }[] }) {
             cy={py.toFixed(1)}
             rx={2.5}
             ry={7}
-            fill={filled ? slice.color : "#EDE9E3"}
+            fill={filled ? slice.color : "var(--pp-warm-1)"}
             opacity={filled ? 0.88 : 0.45}
             transform={`rotate(${rot.toFixed(1)} ${px.toFixed(1)} ${py.toFixed(1)})`}
           />
@@ -123,12 +123,12 @@ function SlicedMandala({ slices }: { slices: { color: string }[] }) {
         cx={cx}
         cy={cy}
         r={outerR + 2}
-        fill="rgba(248,246,243,0.6)"
-        stroke="#EDE9E3"
+        fill="color-mix(in srgb, var(--pp-bg) 60%, transparent)"
+        stroke="var(--pp-warm-1)"
         strokeWidth={0.5}
       />
       {sliceEls}
-      <circle cx={cx} cy={cy} r={10} fill="#FDFCFA" />
+      <circle cx={cx} cy={cy} r={10} fill="var(--pp-surface)" />
     </svg>
   );
 }
@@ -137,10 +137,10 @@ function FreeformLifeMandala() {
   return (
     <SlicedMandala
       slices={[
-        { color: "#8FA68C" },
-        { color: "#C45A5A" },
-        { color: "#7B9BAF" },
-        { color: "#C4887A" },
+        { color: "var(--pp-primary)" },
+        { color: "var(--pp-coral)" },
+        { color: "var(--pp-sky)" },
+        { color: "var(--pp-marigold)" },
       ]}
     />
   );
@@ -150,13 +150,13 @@ function FreeformDateMandala() {
   return (
     <SlicedMandala
       slices={[
-        { color: "#8FA68C" },
-        { color: "#A4A680" },
-        { color: "#C4887A" },
-        { color: "#C45A5A" },
-        { color: "#9B8FA6" },
-        { color: "#7B9BAF" },
-        { color: "#6F9AA0" },
+        { color: "var(--pp-primary)" },
+        { color: "var(--pp-olive)" },
+        { color: "var(--pp-marigold)" },
+        { color: "var(--pp-coral)" },
+        { color: "var(--pp-mauve)" },
+        { color: "var(--pp-sky)" },
+        { color: "var(--pp-teal)" },
       ]}
     />
   );
@@ -169,11 +169,11 @@ function YearlyMandala() {
   const cy = SIZE / 2;
   return (
     <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
-      <circle cx={cx} cy={cy} r={SIZE / 2 - 2} fill="rgba(248,246,243,0.6)" stroke="#EDE9E3" strokeWidth={0.5} />
-      {ringTicks(365, 76, 82, cx, cy, "#C4887A")}
-      {ringTicks(52, 60, 68, cx, cy, "#C4887A")}
-      {ringPetals(12, 38, 4, 14, "#C4887A", cx, cy, 0.92)}
-      <circle cx={cx} cy={cy} r={10} fill="#FDFCFA" />
+      <circle cx={cx} cy={cy} r={SIZE / 2 - 2} fill="color-mix(in srgb, var(--pp-bg) 60%, transparent)" stroke="var(--pp-warm-1)" strokeWidth={0.5} />
+      {ringTicks(365, 76, 82, cx, cy, "var(--pp-marigold)")}
+      {ringTicks(52, 60, 68, cx, cy, "var(--pp-marigold)")}
+      {ringPetals(12, 38, 4, 14, "var(--pp-marigold)", cx, cy, 0.92)}
+      <circle cx={cx} cy={cy} r={10} fill="var(--pp-surface)" />
     </svg>
   );
 }

@@ -27,17 +27,17 @@ export const directions: Record<
     label: "Inward",
     desc: "Prompts that turn toward your own inner weather: rest, feeling, and the quiet things you almost missed.",
   },
-  growth: {
-    icon: "🌱",
-    name: "Sprout",
-    label: "Growth",
-    desc: "Prompts about becoming: patience with yourself, trying new things, and what hard seasons taught you.",
-  },
   outward: {
     icon: "⛰",
     name: "Mountain",
     label: "Outward",
     desc: "Prompts that look outward: the people, places, and patterns in nature that hold your life together.",
+  },
+  growth: {
+    icon: "🌱",
+    name: "Sprout",
+    label: "Growth",
+    desc: "Prompts about becoming: patience with yourself, trying new things, and what hard seasons taught you.",
   },
 };
 
@@ -52,7 +52,6 @@ export const appPrompts: SamplePrompt[] = [
   },
   {
     direction: "inward",
-    format: "Multiple choice",
     text: "Which of these animal quirks fits you right about now? Or pick one you like.",
     options: [
       "a squirrel burying a decoy nut pile",

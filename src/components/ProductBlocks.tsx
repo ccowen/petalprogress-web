@@ -17,7 +17,7 @@ export function StatusPill({ status }: { status: Availability }) {
 export function BuyOptions() {
   return (
     <div className={styles.grid3}>
-      <div className={styles.card}>
+      <div className={`${styles.card} ${styles.objectCard}`}>
         <div className={styles.cardIcon}>◎</div>
         <div className={styles.cardTitle}>From us</div>
         <div className={styles.cardText}>
@@ -33,7 +33,7 @@ export function BuyOptions() {
           )
         )}
       </div>
-      <div className={styles.card}>
+      <div className={`${styles.card} ${styles.objectCard}`}>
         <div className={styles.cardIcon}>❋</div>
         <div className={styles.cardTitle}>Partner studios</div>
         <div className={styles.cardText}>
@@ -41,7 +41,7 @@ export function BuyOptions() {
           community shops, where you can hold it before you take it home.
         </div>
       </div>
-      <div className={styles.card}>
+      <div className={`${styles.card} ${styles.objectCard}`}>
         <div className={styles.cardIcon}>◈</div>
         <div className={styles.cardTitle}>Etsy</div>
         <div className={styles.cardText}>
@@ -77,7 +77,7 @@ export function TextsCta({
   fallbackTo?: string;
   outline?: boolean;
 }) {
-  const className = outline ? styles.btnOutline : styles.btnPrimary;
+  const className = outline ? styles.btnTextsOutline : styles.btnTexts;
   if (!textsSignupUrl) {
     if (fallbackTo) {
       return (

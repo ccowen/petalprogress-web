@@ -1,71 +1,14 @@
-.book {
-  position: relative;
-  width: 280px;
-  height: 380px;
-  transform: rotate(-3deg);
+.cover {
+  display: block;
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 28px;
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
 }
 
-.spine {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 18px;
-  background: #6f8a6c;
-  border-radius: 4px 0 0 4px;
-}
-
-.cover {
-  position: absolute;
-  left: 14px;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(160deg, #8FA68C 0%, #72896f 100%);
-  border-radius: 2px 10px 10px 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 32px 24px;
-  text-align: center;
-  color: #fff;
-}
-
-.coverTitle {
-  font-family: var(--pp-font-display);
-  font-size: 26px;
-  line-height: 1.15;
-  margin-top: 26px;
-}
-
-.coverSub {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  margin-top: 8px;
-}
-
-.icons {
-  margin-top: 22px;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
 @media (max-width: 640px) {
-  .book {
-    width: 230px;
-    height: 312px;
-  }
-
-  .cover svg {
-    width: 120px;
-    height: 120px;
-  }
-
-  .coverTitle {
-    font-size: 22px;
+  .cover {
+    width: 300px;
   }
 }

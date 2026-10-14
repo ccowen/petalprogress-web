@@ -1,7 +1,5 @@
 import { Link } from "react-router";
 import { launch } from "../launch";
-import { samplePrompts } from "../data/samplePrompts";
-import { PromptCard } from "../components/PromptCard";
 import { StatusPill, TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
@@ -28,15 +26,15 @@ export function TextsPage() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className={`${styles.section} ${styles.sectionSurface}`}>
-        <div className={styles.sectionInner}>
+      <section className={`${styles.section} ${styles.sectionSky}`}>
+        <div className={`${styles.sectionInner} ${styles.centerHead}`}>
           <StatusPill status={launch.texts} />
           <div className={styles.eyebrow}>How it works</div>
           <h2 className={styles.title}>
             Small enough to <em>fit any day.</em>
           </h2>
           <div className={styles.grid3}>
-            <div className={styles.card}>
+            <div className={`${styles.card} ${styles.stepCard}`}>
               <div className={styles.stepNum}>01</div>
               <div className={styles.cardTitle}>Sign up</div>
               <p className={styles.cardText}>
@@ -44,7 +42,7 @@ export function TextsPage() {
                 YES to the text we send. Cancel any time by replying STOP.
               </p>
             </div>
-            <div className={styles.card}>
+            <div className={`${styles.card} ${styles.stepCard}`}>
               <div className={styles.stepNum}>02</div>
               <div className={styles.cardTitle}>Get a prompt</div>
               <p className={styles.cardText}>
@@ -52,7 +50,7 @@ export function TextsPage() {
                 few seconds to answer.
               </p>
             </div>
-            <div className={styles.card}>
+            <div className={`${styles.card} ${styles.stepCard}`}>
               <div className={styles.stepNum}>03</div>
               <div className={styles.cardTitle}>Reply, and release</div>
               <p className={styles.cardText}>
@@ -66,32 +64,20 @@ export function TextsPage() {
         </div>
       </section>
 
-      {/* ── SAMPLE PROMPT ── */}
-      <section className={`${styles.section} ${styles.sectionWarm}`}>
-        <div className={styles.sectionNarrow}>
-          <div className={styles.eyebrow}>Sample prompt</div>
-          <h2 className={styles.title}>
-            A prompt <em>like this.</em>
-          </h2>
-          <div style={{ maxWidth: 420, margin: "36px auto 0" }}>
-            <PromptCard prompt={samplePrompts[1]} />
-          </div>
-        </div>
-      </section>
-
       {/* ── PAIRS WITH THE JOURNAL ── */}
       <section className={styles.section}>
         <div className={styles.sectionNarrow}>
-          <div className={styles.eyebrow}>Want to keep your answers?</div>
+          <div className={styles.eyebrow}>Also in print</div>
           <h2 className={styles.title}>
-            That's what <em>the journal</em> is for.
+            The same prompts, <em>in the journal.</em>
           </h2>
           <p className={styles.desc}>
-            The journal holds the same prompts on paper, so you can keep a
-            record in your own handwriting and look back whenever you like.
+            The journal holds the same prompts on paper: answer by hand, move
+            tiles to reveal your mandala, and keep your answers in your own
+            handwriting.
           </p>
           <div style={{ marginTop: 28 }}>
-            <Link to="/journal" className={styles.btnOutline}>
+            <Link to="/journal" className={styles.btnJournalOutline}>
               Look inside the journal
             </Link>
           </div>

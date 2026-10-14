@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
+import { textsSignInUrl } from "../launch";
 import { Footer } from "./Footer";
 import styles from "./MarketingLayout.module.css";
 
@@ -38,6 +39,11 @@ export function MarketingLayout() {
             </Link>
           ))}
         </div>
+        <div className={styles.navRight}>
+          <a href={textsSignInUrl} className={styles.navSignIn}>
+            Sign in
+          </a>
+        </div>
         <button
           className={styles.hamburger}
           onClick={() => setMenuOpen((v) => !v)}
@@ -59,6 +65,10 @@ export function MarketingLayout() {
               {l.label}
             </Link>
           ))}
+          <div className={styles.mobileDivider} />
+          <a href={textsSignInUrl} className={styles.mobileLink}>
+            Sign in
+          </a>
         </div>
       )}
 
