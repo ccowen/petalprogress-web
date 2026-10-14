@@ -66,12 +66,11 @@ export function BloomMandala({
             <ellipse
               key={`${ri}-${i}`}
               className={styles.petal}
-              style={{ animationDelay: `${d.toFixed(2)}s` }}
+              style={{ animationDelay: `${d.toFixed(2)}s`, fill: ring.color }}
               cx={x.toFixed(1)}
               cy={y.toFixed(1)}
               rx={ring.rx}
               ry={ring.ry}
-              style={{ fill: ring.color }}
               transform={`rotate(${deg.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`}
             />
           );
