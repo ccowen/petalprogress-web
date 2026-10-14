@@ -56,38 +56,42 @@
   max-width: 560px;
 }
 
-/* Butterfly from the book, on the left of the hero (placeholder art). */
-.heroButterfly {
+/* The hero on the home page: content framed by a ring of butterflies, after
+   the cover. The ring is hidden on narrower screens. */
+.heroFrame {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.butterflyRing {
+  display: none;
+}
+
+.ringButterfly {
   position: absolute;
-  left: 7%;
-  top: 50%;
-  width: clamp(200px, 20vw, 300px);
+  left: var(--x);
+  top: var(--y);
+  width: 88px;
   height: auto;
-  transform: translateY(-50%) rotate(-10deg);
-  filter: drop-shadow(0 18px 28px color-mix(in srgb, var(--pp-dark) 40%, transparent));
-  animation: butterflyDrift 7s ease-in-out infinite;
-  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(var(--r));
+  filter: drop-shadow(0 10px 16px color-mix(in srgb, var(--pp-dark) 40%, transparent));
 }
 
-@keyframes butterflyDrift {
-  0%,
-  100% {
-    transform: translateY(-50%) rotate(-10deg);
+@media (min-width: 1100px) {
+  .heroFramedSection {
+    padding: 96px 52px;
   }
-  50% {
-    transform: translateY(calc(-50% - 10px)) rotate(-6deg);
-  }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .heroButterfly {
-    animation: none;
+  .heroFrame {
+    padding: 100px 150px;
   }
-}
 
-@media (max-width: 1100px) {
-  .heroButterfly {
-    display: none;
+  .butterflyRing {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
   }
 }
 

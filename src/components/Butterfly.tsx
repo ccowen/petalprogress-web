@@ -20,10 +20,17 @@ function Wings() {
   );
 }
 
-export function Butterfly({ className }: { className?: string }) {
+export function Butterfly({
+  className,
+  style,
+}: {
+  className?: string;
+  style?: React.CSSProperties;
+}) {
   return (
     <svg
       className={className}
+      style={style}
       viewBox="0 0 200 160"
       aria-hidden="true"
       focusable="false"
@@ -41,5 +48,51 @@ export function Butterfly({ className }: { className?: string }) {
         style={{ stroke: "var(--pp-dark)" }}
       />
     </svg>
+  );
+}
+
+/* Twelve butterflies around the edge of the hero, all facing the center,
+   after the ring on the book cover. Placeholder art, like Butterfly. */
+const RING = [
+  // top row, facing down
+  { x: "16%", y: "5%", r: 180 },
+  { x: "39%", y: "5%", r: 180 },
+  { x: "61%", y: "5%", r: 180 },
+  { x: "84%", y: "5%", r: 180 },
+  // bottom row, facing up
+  { x: "16%", y: "95%", r: 0 },
+  { x: "39%", y: "95%", r: 0 },
+  { x: "61%", y: "95%", r: 0 },
+  { x: "84%", y: "95%", r: 0 },
+  // sides, facing in
+  { x: "4%", y: "34%", r: 90 },
+  { x: "4%", y: "66%", r: 90 },
+  { x: "96%", y: "34%", r: -90 },
+  { x: "96%", y: "66%", r: -90 },
+];
+
+export function ButterflyRing({
+  className,
+  itemClassName,
+}: {
+  className?: string;
+  itemClassName?: string;
+}) {
+  return (
+    <div className={className} aria-hidden="true">
+      {RING.map((b, i) => (
+        <Butterfly
+          key={i}
+          className={itemClassName}
+          style={
+            {
+              "--x": b.x,
+              "--y": b.y,
+              "--r": `${b.r}deg`,
+            } as React.CSSProperties
+          }
+        />
+      ))}
+    </div>
   );
 }

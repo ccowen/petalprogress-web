@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { journalDetails } from "../launch";
 import { appPrompts, directions } from "../data/samplePrompts";
 import { PromptCard } from "../components/PromptCard";
-import { Butterfly } from "../components/Butterfly";
+import { ButterflyRing } from "../components/Butterfly";
 import { TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
@@ -14,24 +14,29 @@ export function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className={styles.hero}>
-        <Butterfly className={styles.heroButterfly} />
-        <div className={styles.heroWide}>
-          <h1 className={styles.heroTitle}>
-            A guided <em>journal.</em>
-          </h1>
-          <p className={styles.heroSub}>
-            {journalDetails.promptCount} prompts, each crafted for open
-            thought, looking inward, outward, and toward growth.
-          </p>
-          <div className={styles.heroSplit}>
-            <div className={styles.heroCard}>
-              <Link to="/journal" className={styles.btnJournal}>
-                Look inside the journal
-              </Link>
-            </div>
-            <div className={styles.heroCard}>
-              <TextsCta from="web-home" fallbackTo="/texts" />
+      <section className={`${styles.hero} ${styles.heroFramedSection}`}>
+        <div className={styles.heroFrame}>
+          <ButterflyRing
+            className={styles.butterflyRing}
+            itemClassName={styles.ringButterfly}
+          />
+          <div className={styles.heroWide}>
+            <h1 className={styles.heroTitle}>
+              A guided <em>journal.</em>
+            </h1>
+            <p className={styles.heroSub}>
+              {journalDetails.promptCount} prompts, each crafted for open
+              thought, looking inward, outward, and toward growth.
+            </p>
+            <div className={styles.heroSplit}>
+              <div className={styles.heroCard}>
+                <Link to="/journal" className={styles.btnJournal}>
+                  Look inside the journal
+                </Link>
+              </div>
+              <div className={styles.heroCard}>
+                <TextsCta from="web-home" fallbackTo="/texts" />
+              </div>
             </div>
           </div>
         </div>
