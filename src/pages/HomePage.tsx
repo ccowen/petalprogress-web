@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { journalDetails } from "../launch";
 import { appPrompts, directions } from "../data/samplePrompts";
 import { PromptCard } from "../components/PromptCard";
+import { Butterfly } from "../components/Butterfly";
 import { TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
@@ -14,32 +15,22 @@ export function HomePage() {
     <>
       {/* ── HERO ── */}
       <section className={styles.hero}>
+        <Butterfly className={styles.heroButterfly} />
         <div className={styles.heroWide}>
           <h1 className={styles.heroTitle}>
             A guided <em>journal.</em>
           </h1>
           <p className={styles.heroSub}>
             {journalDetails.promptCount} prompts, each crafted for open
-            thought, looking inward, outward, and toward growth. Answer them
-            in the journal, or one text at a time.
+            thought, looking inward, outward, and toward growth.
           </p>
           <div className={styles.heroSplit}>
             <div className={styles.heroCard}>
-              <div className={styles.heroCardKicker}>Journal</div>
-              <p className={styles.heroCardText}>
-                Answer each prompt by hand: circle, rate, or write. Keep what
-                you find and flip back through it whenever you like.
-              </p>
               <Link to="/journal" className={styles.btnJournal}>
                 Look inside the journal
               </Link>
             </div>
             <div className={styles.heroCard}>
-              <div className={styles.heroCardKicker}>Texts</div>
-              <p className={styles.heroCardText}>
-                Prompts arrive two to six times a week. Reply with a word, a
-                number, or a choice, and let it go.
-              </p>
               <TextsCta from="web-home" fallbackTo="/texts" />
             </div>
           </div>
