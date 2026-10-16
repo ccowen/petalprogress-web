@@ -60,7 +60,7 @@ src/
     HomePage.tsx            # product pages share ProductPage.module.css
     JournalPage.tsx
     DailyPage.tsx
-    ScanPage.tsx            # standalone QR hub, own .module.css
+    LinkHubPage.tsx            # standalone QR hub, own .module.css
     OnlinePage.tsx          # standalone, reached from /link-hub
     AppPage.tsx             # former homepage (app story), own .module.css
     PricingPage.tsx

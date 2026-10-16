@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 import { BloomMandala } from "../components/BloomMandala";
 import { HUB_LINKS, SOCIALS } from "../config/links";
-import styles from "./ScanPage.module.css";
+import styles from "./LinkHubPage.module.css";
 
 /* ══════════════════════════════════════════════════════
-   ScanPage — the hub every printed QR code points at.
+   LinkHubPage — the hub every printed QR code points at.
    Standalone (no site nav): this page *is* the menu.
    ══════════════════════════════════════════════════════ */
-export function ScanPage() {
+export function LinkHubPage() {
   const socials = SOCIALS.filter((s) => s.url);
 
   return (

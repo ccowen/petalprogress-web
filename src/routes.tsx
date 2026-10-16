@@ -8,7 +8,7 @@ import { PhilosophyPage } from "./pages/PhilosophyPage";
 import { MandalaTypesPage } from "./pages/MandalaTypesPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
-import { ScanPage } from "./pages/ScanPage";
+import { LinkHubPage } from "./pages/LinkHubPage";
 import { OnlinePage } from "./pages/OnlinePage";
 
 export const router = createBrowserRouter([
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
   // Deliberately outside MarketingLayout: /link-hub is its own menu, and
   // /online is a focused page — site nav would only invite people to
   // wander off.
-  { path: "link-hub", element: <ScanPage /> },
+  { path: "link-hub", element: <LinkHubPage /> },
   // Old hub URL, kept so any QR codes already printed with it still work
   { path: "scan", element: <Navigate to="/link-hub" replace /> },
   { path: "online", element: <OnlinePage /> },
