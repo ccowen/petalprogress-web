@@ -9,8 +9,8 @@
   gap: 7px;
   padding: 4px 14px;
   border-radius: var(--pp-radius-pill);
-  background: rgba(143, 166, 140, 0.1);
-  border: 1px solid rgba(143, 166, 140, 0.25);
+  background: color-mix(in srgb, var(--pp-primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pp-primary) 25%, transparent);
   font-size: 11px;
   color: var(--pp-sage);
   letter-spacing: 0.1em;

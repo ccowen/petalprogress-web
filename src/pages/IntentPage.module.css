@@ -98,7 +98,7 @@
 
 .optionSelected {
   border-color: var(--pp-sage);
-  box-shadow: 0 4px 16px rgba(143, 166, 140, 0.18);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--pp-primary) 18%, transparent);
   transform: translateY(-1px);
 }
 
@@ -247,11 +247,11 @@
 
 .btnConfirmAmber {
   background: var(--pp-amber);
-  box-shadow: 0 4px 16px rgba(196, 136, 122, 0.3);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--pp-marigold) 30%, transparent);
 }
 
 .btnConfirmAmber:hover {
-  background: #b87060;
+  background: color-mix(in srgb, var(--pp-marigold) 85%, black);
 }
 
 /* ── Responsive ── */

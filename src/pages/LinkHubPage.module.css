@@ -1,0 +1,297 @@
+/* ══════════════════════════════════════════════════════
+   LinkHubPage — link hub for printed QR codes.
+   Mobile-first and single-column at every width: this
+   is a phone-camera destination, so the phone layout is
+   the design, not a fallback.
+   ══════════════════════════════════════════════════════ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── PAGE ── */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--pp-dark);
+  font-family: var(--pp-font-body);
+  padding: var(--pp-space-10) var(--pp-space-5) var(--pp-space-10);
+}
+
+/* Grain overlay — same texture as the marketing hero */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Warm glow behind the mandala */
+.page::after {
+  content: '';
+  position: absolute;
+  top: -34%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 760px;
+  height: 760px;
+  max-width: 170vw;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--pp-primary) 11%, transparent) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  animation: fadeUp 0.7s ease both;
+}
+
+/* ── HEADER ── */
+.head {
+  text-align: center;
+  margin-bottom: var(--pp-space-8);
+}
+
+.art {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--pp-space-5);
+}
+
+.mandala {
+  width: 116px;
+}
+
+.wordmark {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pp-sage);
+  margin-bottom: var(--pp-space-3);
+}
+
+.tagline {
+  font-family: var(--pp-font-display);
+  font-size: clamp(28px, 8vw, 36px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0;
+}
+
+.taglineAccent {
+  font-style: italic;
+  color: var(--pp-amber);
+}
+
+/* ── LINK LIST ── */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-3);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pp-space-4);
+  /* Comfortable thumb target — this page is tapped, not clicked. */
+  min-height: 62px;
+  padding: var(--pp-space-4) var(--pp-space-5);
+  border-radius: var(--pp-radius-card);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition:
+    background var(--pp-transition-base),
+    border-color var(--pp-transition-base),
+    transform var(--pp-transition-fast);
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.link:active {
+  transform: scale(0.985);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--pp-sage);
+  outline-offset: 3px;
+}
+
+.linkText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.linkLabel {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.linkNote {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.linkArrow {
+  flex-shrink: 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.35);
+  transition:
+    transform var(--pp-transition-base),
+    color var(--pp-transition-base);
+}
+
+.link:hover .linkArrow {
+  transform: translateX(3px);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── FEATURED LINK ── */
+.linkFeatured {
+  background: var(--pp-sage);
+  border-color: transparent;
+  box-shadow: var(--pp-shadow-sage);
+}
+
+.linkFeatured:hover {
+  background: var(--pp-sage-hover);
+  border-color: transparent;
+}
+
+.linkFeatured .linkLabel {
+  color: #fff;
+  font-weight: 600;
+}
+
+.linkFeatured .linkNote {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.linkFeatured .linkArrow {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.linkFeatured:hover .linkArrow {
+  color: #fff;
+}
+
+/* ── SOCIALS ── */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--pp-space-3);
+  margin-top: var(--pp-space-8);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--pp-radius-pill);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 16px;
+  text-decoration: none;
+  transition:
+    background var(--pp-transition-base),
+    transform var(--pp-transition-fast);
+}
+
+.social:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-2px);
+}
+
+.social:focus-visible {
+  outline: 2px solid var(--pp-sage);
+  outline-offset: 3px;
+}
+
+/* ── FOOTER ── */
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pp-space-2);
+  margin-top: var(--pp-space-8);
+}
+
+.footLink {
+  font-size: 12px;
+  color: var(--pp-text-muted);
+  text-decoration: none;
+  transition: color var(--pp-transition-base);
+}
+
+.footLink:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footLink:focus-visible {
+  outline: 2px solid var(--pp-sage);
+  outline-offset: 2px;
+}
+
+.footDot {
+  color: var(--pp-text-muted);
+  font-size: 12px;
+}
+
+/* ── LARGER SCREENS ── */
+@media (min-width: 640px) {
+  .mandala {
+    width: 132px;
+  }
+
+  .linkLabel {
+    font-size: 15.5px;
+  }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    animation: none;
+  }
+
+  .link:active {
+    transform: none;
+  }
+
+  .social:hover {
+    transform: none;
+  }
+
+  .link:hover .linkArrow {
+    transform: none;
+  }
+}

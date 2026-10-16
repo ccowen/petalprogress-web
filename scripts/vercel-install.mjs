@@ -19,7 +19,7 @@ import {
 } from "node:fs";
 
 const PROD_VERSIONS = {
-  "@ccowen/petalprogress-ui": "^0.1.0",
+  "@ccowen/petalprogress-ui": "^0.2.0",
 };
 
 console.log("[vercel-install] starting");
