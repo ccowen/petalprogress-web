@@ -1,7 +1,7 @@
 /* ══════════════════════════════════════════════════════
    ⚑ THE ONE BLOCK TO EDIT ⚑
 
-   /scan is the stable URL printed on physical products.
+   /link-hub is the stable URL printed on physical products.
    Everything a scanner can reach is defined here — edit
    this file to change where products send people, with
    no reprinting of QR codes.
@@ -27,7 +27,7 @@ export interface HubLink {
   featured?: boolean;
 }
 
-/* The main link rows on /scan. Returning users get a
+/* The main link rows on /link-hub. Returning users get a
    lighter "Sign in" line beneath these rather than a row
    of their own — an app row here read as a duplicate of
    the "try" row. */

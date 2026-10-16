@@ -12,10 +12,13 @@ import { ScanPage } from "./pages/ScanPage";
 import { OnlinePage } from "./pages/OnlinePage";
 
 export const router = createBrowserRouter([
-  // /scan is printed on physical products. Deliberately outside
-  // MarketingLayout: /scan is its own menu, and /online is a focused
-  // page — site nav would only invite people to wander off.
-  { path: "scan", element: <ScanPage /> },
+  // /link-hub is the QR-code destination for physical products.
+  // Deliberately outside MarketingLayout: /link-hub is its own menu, and
+  // /online is a focused page — site nav would only invite people to
+  // wander off.
+  { path: "link-hub", element: <ScanPage /> },
+  // Old hub URL, kept so any QR codes already printed with it still work
+  { path: "scan", element: <Navigate to="/link-hub" replace /> },
   { path: "online", element: <OnlinePage /> },
   {
     element: <MarketingLayout />,

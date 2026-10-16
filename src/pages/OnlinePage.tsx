@@ -13,7 +13,7 @@ const STEPS = [
 
 /* ══════════════════════════════════════════════════════
    OnlinePage — what PetalProgress is on the web.
-   Reached from the /scan hub.
+   Reached from the /link-hub page.
 
    Two framing rules, both easy to break by accident:
 
