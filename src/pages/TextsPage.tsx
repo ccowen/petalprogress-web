@@ -1,16 +1,38 @@
+import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { launch } from "../launch";
 import { StatusPill, TextsCta } from "../components/ProductBlocks";
+import TextThread from "../components/TextThread";
 import styles from "./ProductPage.module.css";
+
+/** A cloud-shaped note beside the example texts, under them on narrow screens. */
+function Cloud({
+  tone = "marigold",
+  children,
+}: {
+  tone?: "marigold" | "blush";
+  children: ReactNode;
+}) {
+  const cls = [styles.privacyBubble, tone === "blush" && styles.cloudBlush]
+    .filter(Boolean)
+    .join(" ");
+  return (
+    <div className={cls}>
+      <svg className={styles.cloudShape} viewBox="0 0 258 172" aria-hidden="true">
+        <path d="M62 150C27 150 10 123 27 102C4 82 26 44 58 50C64 17 110 6 130 33C150 8 200 18 205 52C240 46 256 88 230 106C250 130 228 156 192 150C172 166 132 166 122 152C106 166 78 166 62 150Z" />
+      </svg>
+      <p className={styles.cloudText}>{children}</p>
+    </div>
+  );
+}
 
 export function TextsPage() {
   return (
     <>
       <section className={styles.hero}>
         <div className={styles.heroCentered}>
-          <div className={styles.heroEyebrow}>❋ The guided journal, by text</div>
           <h1 className={styles.heroTitle}>
-            One text at a time. <em>Then let it go.</em>
+            A guided journal, <em>one text at a time.</em>
           </h1>
           <p className={styles.heroSub}>
             You move through the whole guided journal in small pieces, two
@@ -25,14 +47,33 @@ export function TextsPage() {
         </div>
       </section>
 
+      {/* ── WHAT A TEXT LOOKS LIKE ── */}
+      <section className={`${styles.section} ${styles.sectionSurface}`}>
+        <div className={`${styles.sectionInner} ${styles.centerHead}`}>
+          <h2 className={styles.title}>
+            What it <em>looks like.</em>
+          </h2>
+          <div className={styles.threadStage}>
+            <TextThread />
+            <div className={styles.cloudStack}>
+              <Cloud>
+                <strong>Your responses are private.</strong> They're not linked
+                to your information.
+              </Cloud>
+              <Cloud tone="blush">
+                <strong>This mandala design is a placeholder.</strong>{" "}
+                Wouldn't want to spoil the reveal :)
+              </Cloud>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── HOW IT WORKS ── */}
       <section className={`${styles.section} ${styles.sectionSky}`}>
         <div className={`${styles.sectionInner} ${styles.centerHead}`}>
           <StatusPill status={launch.texts} />
           <div className={styles.eyebrow}>How it works</div>
-          <h2 className={styles.title}>
-            Small enough to <em>fit any day.</em>
-          </h2>
           <div className={styles.grid3}>
             <div className={`${styles.card} ${styles.stepCard}`}>
               <div className={styles.stepNum}>01</div>

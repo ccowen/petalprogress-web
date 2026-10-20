@@ -783,3 +783,81 @@
     padding: 32px 22px;
   }
 }
+
+/* The example texts, with a privacy note floating beside them like a bubble
+   from the thread. Under the texts on narrower screens. */
+.threadStage {
+  position: relative;
+  max-width: 704px;
+  margin: 0 auto;
+}
+
+.privacyBubble {
+  position: relative;
+  width: 258px;
+  height: 172px;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloudShape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--pp-marigold);
+  filter: drop-shadow(0 8px 14px rgba(30, 26, 23, 0.16));
+}
+
+.cloudText {
+  position: relative;
+  width: 168px;
+  padding-top: 18px;
+  color: var(--pp-dark);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (min-width: 1180px) {
+  .cloudStack {
+    position: absolute;
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .privacyBubble {
+    margin: 0;
+    transform: rotate(3deg);
+  }
+
+  .privacyBubble + .privacyBubble {
+    transform: rotate(-2deg);
+  }
+}
+
+/* A soft shadow on the "ground" beneath the cloud, so it reads as hovering. */
+@media (min-width: 1180px) {
+  .privacyBubble::after {
+    content: '';
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    bottom: -30px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(30, 26, 23, 0.22);
+    filter: blur(9px);
+  }
+}
+
+/* The second cloud: very light pink, from the cover palette. */
+.cloudBlush .cloudShape {
+  fill: var(--pp-blush);
+}
