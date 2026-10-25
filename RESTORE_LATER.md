@@ -262,7 +262,18 @@ These are set in `src/launch.ts`, not here:
 
 ---
 
-## 9. Checklist for "ready to launch"
+## 9. Philosophy page habit content
+
+**Currently commented out** in `src/pages/PhilosophyPage.tsx` (look for
+`Habit subtitle hidden pre-launch` and `Habit belief cards hidden pre-launch`):
+the "Name your habit and color in your PetalProgress…" line under the heading,
+and the three cards (Presence over performance, Focus on returning, Milestones,
+not streaks). Uncomment both when habit tracking launches. Their styles are
+still in `PhilosophyPage.module.css`.
+
+---
+
+## 10. Checklist for "ready to launch"
 
 - [ ] Supabase project provisioned, `waitlist` table created
 - [ ] Auth routes restored (section 1)
@@ -272,4 +283,5 @@ These are set in `src/launch.ts`, not here:
 - [ ] Hero CTA points to `/signup` instead of `#`
 - [ ] Contact page restored and form wired up (section 5)
 - [ ] Social media buttons restored with real URLs (section 6)
+- [ ] Philosophy habit subtitle and cards restored (section 9)
 - [ ] Delete this file

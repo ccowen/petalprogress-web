@@ -7,15 +7,18 @@ export function PhilosophyPage() {
       <div className={styles.hero}>
         <div className={styles.eyebrow}>❋ Philosophy</div>
         <h1 className={styles.title}>
-          Be in the <em>present moment.</em>
+          A focus on the <em>present moment.</em>
         </h1>
+        {/* Habit subtitle hidden pre-launch — see RESTORE_LATER.md
         <p className={styles.sub}>
           Name your habit and color in your PetalProgress. Repeat with a new
           mandala as you mark your milestones.
         </p>
+        */}
       </div>
 
       <div className={styles.body}>
+        {/* Habit belief cards hidden pre-launch — see RESTORE_LATER.md
         <div className={styles.beliefs}>
           <div className={styles.belief}>
             <div className={styles.beliefIcon}>◎</div>
@@ -45,33 +48,10 @@ export function PhilosophyPage() {
             </div>
           </div>
         </div>
+        */}
 
         <div className={styles.prose}>
-          <h2 className={styles.proseTitle}>
-            Like mandalas of <em>sand.</em>
-          </h2>
-          <p className={styles.proseText}>
-            Tibetan monks spend days, sometimes weeks, building intricate
-            mandalas from colored sand, one grain at a time. When the mandala
-            is finished, they sweep it away.
-          </p>
-          <p className={styles.proseText}>
-            The practice was never about the object. It was about the
-            attention. The coming back. The hours of presence. The mandala
-            was always the doing of it, not the thing.
-          </p>
-          <p className={styles.proseText}>
-            A PetalProgress mandala works the same way. Keep it, print it,
-            frame it, give it away, let it go, it's yours to do with as you
-            like. But the mandala was never meant to be a log you hold onto.
-            It was the shape of your attention, while you were paying it.
-          </p>
-        </div>
-
-        <div className={styles.prose}>
-          <h2 className={styles.proseTitle}>
-            A map of <em>return.</em>
-          </h2>
+          <h2 className={styles.proseTitle}>A map of return.</h2>
           <p className={styles.proseText}>
             A mandala is, in almost every tradition that uses them, a map of
             return. A circle that starts at the center and spirals out, or
@@ -87,6 +67,26 @@ export function PhilosophyPage() {
             We built PetalProgress to make that rhythm visible. Not to grade
             it. Not to preserve it. Just to hold it, for as long as you want
             to look.
+          </p>
+        </div>
+
+        <div className={styles.prose}>
+          <h2 className={styles.proseTitle}>Like mandalas of sand.</h2>
+          <p className={styles.proseText}>
+            Tibetan monks spend days, sometimes weeks, building intricate
+            mandalas from colored sand, one grain at a time. When the mandala
+            is finished, they sweep it away.
+          </p>
+          <p className={styles.proseText}>
+            The practice was never about the object. It was about the
+            attention. The coming back. The hours of presence. The mandala
+            was always the doing of it, not the thing.
+          </p>
+          <p className={styles.proseText}>
+            A PetalProgress mandala works the same way. Keep it, print it,
+            frame it, give it away, let it go, it's yours to do with as you
+            like. But the mandala was never meant to be a log you hold onto.
+            It was the shape of your attention, while you were paying it.
           </p>
         </div>
 
@@ -109,9 +109,19 @@ export function PhilosophyPage() {
           </p>
         </div>
 
+        {/* Closing line, replaced by the About box:
         <p className={styles.closingQuote}>
           Not a record of where you've been. <em>A practice</em> of being here.
         </p>
+        */}
+
+        <section className={styles.about}>
+          <h2 className={styles.aboutTitle}>About the creator</h2>
+          <p className={styles.aboutText}>
+            [Placeholder: a few sentences about who made PetalProgress and
+            why.]
+          </p>
+        </section>
       </div>
     </>
   );
