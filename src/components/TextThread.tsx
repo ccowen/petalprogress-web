@@ -1,6 +1,6 @@
 import { revealGifAlt } from "@ccowen/petalprogress-ui";
-import day4 from "@ccowen/petalprogress-ui/assets/reveal/day-4-outward.gif";
-import day75 from "@ccowen/petalprogress-ui/assets/reveal/day-75-inward.gif";
+import tiles14 from "@ccowen/petalprogress-ui/assets/reveal/14-tiles.gif";
+import tiles88 from "@ccowen/petalprogress-ui/assets/reveal/88-tiles.gif";
 import styles from "./TextThread.module.css";
 
 /** Two real prompts and replies, each in its own phone-sized thread. */
@@ -16,7 +16,7 @@ export default function TextThread() {
         </div>
         <div className={styles.bubbleMe}>maybe...</div>
         <div className={styles.bubble}>Nice!</div>
-        <img className={styles.gif} src={day4} alt={revealGifAlt.day4Outward} />
+        <img className={styles.gif} src={tiles14} alt={revealGifAlt.tiles14} />
       </div>
       <div className={styles.thread} role="group" aria-label="Example text thread: Friday">
         <div className={styles.stamp}>Friday 7:12 PM</div>
@@ -30,7 +30,7 @@ export default function TextThread() {
         </div>
         <div className={styles.bubbleMe}>DEF SQUIRREL</div>
         <div className={styles.bubble}>Love that.</div>
-        <img className={styles.gif} src={day75} alt={revealGifAlt.day75Inward} />
+        <img className={styles.gif} src={tiles88} alt={revealGifAlt.tiles88} />
       </div>
     </div>
   );
