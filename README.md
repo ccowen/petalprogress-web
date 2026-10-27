@@ -6,16 +6,32 @@ Marketing website for PetalProgress. Built with Vite + React + TypeScript.
 
 | Route | Page |
 |-------|------|
-| `/` | Homepage — hero, how it works, showcase, reading the mandala, pricing, teams |
-| `/pricing` | Pricing — billing toggle, plan cards, comparison table, shop, FAQ |
-| `/teams` | Teams — audience tabs, permissions, print section, teams pricing |
-| `/contact` | Contact — form with reason cards |
-| `/login` | Login — auth card with SSO + email/password |
-| `/signup` | Signup — auth card with SSO + email/password |
-| `/signup/intent` | Intent selection — individual, referred, or admin |
-| `/onboarding` | Onboarding — 5-step wizard with mandala preview |
+| `/` | Homepage: the journal and daily texts ("one set of prompts, two ways"), try-a-prompt, where to buy, app teaser |
+| `/journal` | The prompt journal: why a book, three directions, sample prompts, where to buy |
+| `/daily` | Daily texts: how it works, try-a-prompt, sign-up or waitlist |
+| `/link-hub` | QR-code link hub for every printed product. It sits outside the site layout, and its links are set in `src/config/links.ts`. Keep this URL stable. The old `/scan` URL redirects here. |
+| `/online` | PetalProgress on the web: the app as an alternative to paper trackers. Reached from `/link-hub` |
+| `/philosophy` | Philosophy: sand mandalas, and what we keep vs. let go |
+| `/app` | The mandala habit-tracking app (coming later): how it works, showcase, reading the mandala |
+| `/mandala-types` | Reading each mandala type (part of the app story) |
 | `/privacy` | Privacy policy (placeholder) |
 | `/terms` | Terms of service (placeholder) |
+
+Hidden until the app launches (redirect to `/`): `/pricing`, `/teams`, `/contact`,
+`/login`, `/signup`, `/signup/intent`, `/onboarding`. `/shop` redirects to
+`/journal#buy`. See `RESTORE_LATER.md`.
+
+## What's live: `src/launch.ts`
+
+Each product can go live on its own. Flip the switches in `src/launch.ts`:
+
+- `launch.journal` / `launch.texts` / `launch.app`: `"live"`, `"waitlist"`, or `"coming"`. This controls the status pills and button labels.
+- `buyLinks.checkout` / `buyLinks.etsy`: when a link is empty, the page shows "coming soon" in its place.
+- `textsSignupUrl`: the waitlist or opt-in link for the texts. When it's empty, the page shows "opening soon".
+- `journalDetails`: the title, subtitle, and price shown on the site.
+
+Sample prompts shown on the site live in `src/data/samplePrompts.ts`. They are
+**placeholders**. Replace them with prompts approved for public use.
 
 ## Setup
 
@@ -41,7 +57,12 @@ src/
     Tabs.tsx                # tab switcher
     StepIndicator.tsx       # dot progress indicator
   pages/
-    HomePage.tsx            # + .module.css (each page has its own CSS module)
+    HomePage.tsx            # product pages share ProductPage.module.css
+    JournalPage.tsx
+    DailyPage.tsx
+    LinkHubPage.tsx            # standalone QR hub, own .module.css
+    OnlinePage.tsx          # standalone, reached from /link-hub
+    AppPage.tsx             # former homepage (app story), own .module.css
     PricingPage.tsx
     TeamsPage.tsx
     ContactPage.tsx

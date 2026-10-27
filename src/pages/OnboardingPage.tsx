@@ -25,12 +25,12 @@ const STEPS = [
 ];
 
 const COLORS = [
-  "#8FA68C",
-  "#7B9BAF",
-  "#C4887A",
-  "#C45A5A",
-  "#9B8FA6",
-  "#2C2825",
+  "var(--pp-primary)",
+  "var(--pp-sky)",
+  "var(--pp-marigold)",
+  "var(--pp-coral)",
+  "var(--pp-mauve)",
+  "var(--pp-text)",
 ];
 
 function MandalaRevealSvg({ color }: { color: string }) {
@@ -50,7 +50,7 @@ function MandalaRevealSvg({ color }: { color: string }) {
         cy={y.toFixed(1)}
         rx="3"
         ry="10"
-        fill={filled ? color : "rgba(44,40,37,0.07)"}
+        fill={filled ? color : "color-mix(in srgb, var(--pp-text) 7%, transparent)"}
         opacity={filled ? 0.85 : 1}
         transform={`rotate(${deg.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`}
       />
@@ -60,7 +60,7 @@ function MandalaRevealSvg({ color }: { color: string }) {
   return (
     <svg width="200" height="200" viewBox="0 0 200 200">
       {petals}
-      <circle cx="100" cy="100" r="14" fill="rgba(248,246,243,0.97)" />
+      <circle cx="100" cy="100" r="14" fill="color-mix(in srgb, var(--pp-bg) 97%, transparent)" />
     </svg>
   );
 }

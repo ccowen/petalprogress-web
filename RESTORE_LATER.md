@@ -239,7 +239,41 @@ proper icons at that point.
 
 ---
 
-## 7. Checklist for "ready to launch"
+## 7. Shop page (folded into /journal)
+
+**File still on disk:** `src/pages/ShopPage.tsx` + `ShopPage.module.css`.
+`/shop` currently redirects to `/journal#buy`. When there's more to sell than the
+journal (prints, posters), swap the redirect in `src/routes.tsx` back to
+`<ShopPage />` and add `{ label: "Shop", to: "/shop", page: "/shop" }` to the nav.
+
+---
+
+## 8. Journal and daily texts launch switches
+
+These are set in `src/launch.ts`, not here:
+- Fill in `buyLinks.checkout` (Stripe Payment Link / Shopify) and `buyLinks.etsy`.
+- Set `textsSignupUrl` to a waitlist form now. Use the same Supabase `waitlist`
+  table as section 4, with `source: "texts"`.
+- When Twilio A2P 10DLC is approved, set `launch.texts = "live"` and point
+  `textsSignupUrl` at the double opt-in flow.
+- Replace the placeholder prompts in `src/data/samplePrompts.ts`.
+- When the app launches, set `launch.app = "live"`. Consider moving `/app`
+  content back onto the homepage, or linking the hero to it.
+
+---
+
+## 9. Philosophy page habit content
+
+**Currently commented out** in `src/pages/PhilosophyPage.tsx` (look for
+`Habit subtitle hidden pre-launch` and `Habit belief cards hidden pre-launch`):
+the "Name your habit and color in your PetalProgress…" line under the heading,
+and the three cards (Presence over performance, Focus on returning, Milestones,
+not streaks). Uncomment both when habit tracking launches. Their styles are
+still in `PhilosophyPage.module.css`.
+
+---
+
+## 10. Checklist for "ready to launch"
 
 - [ ] Supabase project provisioned, `waitlist` table created
 - [ ] Auth routes restored (section 1)
@@ -249,4 +283,5 @@ proper icons at that point.
 - [ ] Hero CTA points to `/signup` instead of `#`
 - [ ] Contact page restored and form wired up (section 5)
 - [ ] Social media buttons restored with real URLs (section 6)
+- [ ] Philosophy habit subtitle and cards restored (section 9)
 - [ ] Delete this file

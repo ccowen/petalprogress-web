@@ -1,0 +1,14 @@
+.cover {
+  display: block;
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 28px;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 640px) {
+  .cover {
+    width: 300px;
+  }
+}

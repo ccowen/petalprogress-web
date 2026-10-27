@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
+import { textsSignInUrl } from "../launch";
 import { Footer } from "./Footer";
 import styles from "./MarketingLayout.module.css";
 
@@ -7,17 +8,18 @@ export function MarketingLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu and scroll to top on navigation
+  // Close mobile menu and scroll to top (or to #hash) on navigation
   useEffect(() => {
     setMenuOpen(false);
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    const target = location.hash && document.getElementById(location.hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [location.pathname, location.hash]);
 
   const links = [
-    { label: "Home", to: "/", page: "/" },
+    { label: "Journal", to: "/journal", page: "/journal" },
+    { label: "Texts", to: "/texts", page: "/texts" },
     { label: "Philosophy", to: "/philosophy", page: "/philosophy" },
-    { label: "Mandala Types", to: "/mandala-types", page: "/mandala-types" },
-    { label: "Shop", to: "/shop", page: "/shop" },
   ];
 
   return (
@@ -36,6 +38,11 @@ export function MarketingLayout() {
               {l.label}
             </Link>
           ))}
+        </div>
+        <div className={styles.navRight}>
+          <a href={textsSignInUrl} className={styles.navSignIn}>
+            Sign in
+          </a>
         </div>
         <button
           className={styles.hamburger}
@@ -58,6 +65,10 @@ export function MarketingLayout() {
               {l.label}
             </Link>
           ))}
+          <div className={styles.mobileDivider} />
+          <a href={textsSignInUrl} className={styles.mobileLink}>
+            Sign in
+          </a>
         </div>
       )}
 

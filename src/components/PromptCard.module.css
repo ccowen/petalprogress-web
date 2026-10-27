@@ -1,0 +1,90 @@
+.card {
+  position: relative;
+  padding: 26px;
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-warm-1);
+  border-radius: 6px;
+  box-shadow: var(--pp-shadow-card);
+  text-align: left;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pp-text-muted);
+  margin-bottom: 14px;
+}
+
+.dir {
+  color: var(--pp-sage);
+}
+
+/* Every word of the prompt itself (lead, question, choices, closing)
+   shares one size and font, the way it reads in a text or on the page. */
+.lead,
+.text,
+.closing,
+.option,
+.scaleHint {
+  font-family: var(--pp-font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--pp-text);
+}
+
+.lead {
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-bottom: 14px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.scaleRow {
+  display: flex;
+  gap: 8px;
+}
+
+.option {
+  display: block;
+  text-align: left;
+  background: none;
+  border: 1px solid var(--pp-warm-1);
+  border-radius: var(--pp-radius-sm);
+  padding: 8px 12px;
+}
+
+/* Choices read as a plain list, like the printed page and the texts,
+   so nothing looks like a button to press. */
+.options .option {
+  border: none;
+  padding: 0 0 0 16px;
+  position: relative;
+}
+
+.options .option::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--pp-text-muted);
+}
+
+.scaleRow .option {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.scaleHint {
+  margin-top: 8px;
+}
