@@ -17,9 +17,9 @@ export function MarketingLayout() {
   }, [location.pathname, location.hash]);
 
   const links = [
-    { label: "Journal", to: "/journal", page: "/journal" },
     { label: "Texts", to: "/texts", page: "/texts" },
     { label: "Philosophy", to: "/philosophy", page: "/philosophy" },
+    { label: "Journal", to: "/journal", page: "/journal" },
   ];
 
   return (

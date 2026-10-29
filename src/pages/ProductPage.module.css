@@ -118,6 +118,10 @@
 }
 
 @media (max-width: 800px) {
+  .heroSplit {
+    grid-template-columns: 1fr;
+  }
+
   .heroCard {
     padding: 8px 0;
   }
@@ -260,6 +264,16 @@
 
 .btnTexts:hover {
   background: var(--pp-primary-hover);
+}
+
+/* Quieter button for something not available yet, in the theme's warm neutral. */
+.btnNeutral {
+  background: var(--pp-warm-2);
+  color: var(--pp-text);
+}
+
+.btnNeutral:hover {
+  background: var(--pp-warm-1);
 }
 
 .btnJournalOutline,
@@ -598,17 +612,7 @@
   }
 
   .grid3,
-  /* Two prompts side by side, in a narrow section. */
-.promptPair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 860px;
-  margin: 40px auto 0;
-  align-items: start;
-}
-
-.promptStack {
+  .promptStack {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -626,17 +630,7 @@
   .promptPair,
   .grid2,
   .grid3,
-  /* Two prompts side by side, in a narrow section. */
-.promptPair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 860px;
-  margin: 40px auto 0;
-  align-items: start;
-}
-
-.promptStack {
+  .promptStack {
     grid-template-columns: 1fr;
   }
 

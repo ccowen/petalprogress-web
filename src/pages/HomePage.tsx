@@ -7,8 +7,7 @@ import { TextsCta } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
 /*
- * The journal and the texts get equal weight here on purpose: we don't yet
- * know which will be more popular, so neither is featured over the other.
+ * Texts come first: they're available now, and the journal is coming soon.
  */
 export function HomePage() {
   return (
@@ -30,12 +29,12 @@ export function HomePage() {
             </p>
             <div className={styles.heroSplit}>
               <div className={styles.heroCard}>
-                <Link to="/journal" className={styles.btnJournal}>
-                  Look inside the journal
-                </Link>
+                <TextsCta from="web-home" fallbackTo="/texts" />
               </div>
               <div className={styles.heroCard}>
-                <TextsCta from="web-home" fallbackTo="/texts" />
+                <Link to="/journal" className={`${styles.btnJournal} ${styles.btnNeutral}`}>
+                  Journal coming soon
+                </Link>
               </div>
             </div>
           </div>
@@ -84,10 +83,10 @@ export function HomePage() {
             Start your <em>guided journal.</em>
           </h2>
           <div className={styles.heroCtas} style={{ justifyContent: "center", marginTop: 28 }}>
-            <Link to="/journal" className={styles.btnJournal}>
-              Look inside the journal
-            </Link>
             <TextsCta from="web-home" fallbackTo="/texts" />
+            <Link to="/journal" className={`${styles.btnJournal} ${styles.btnNeutral}`}>
+              Journal coming soon
+            </Link>
           </div>
         </div>
       </section>
