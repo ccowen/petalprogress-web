@@ -57,5 +57,6 @@
   height: auto;
   aspect-ratio: 480 / 528;
   margin-bottom: 8px;
-  border-radius: 18px 18px 18px 4px;
+  /* No rounding: the artwork runs to its own corners, so any rounding clips it. */
+  border-radius: 0;
 }

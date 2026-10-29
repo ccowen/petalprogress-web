@@ -15,7 +15,8 @@ export default function TextThread() {
             "All responses welcome, including yes no maybe unsure"}
         </div>
         <div className={styles.bubbleMe}>maybe...</div>
-        <div className={styles.bubble}>Nice!</div>
+        <div className={styles.bubble}>Thanks for your thought. Now you can see another tile.</div>
+        <div className={styles.bubble}>Sample design. Wouldn't want to spoil the reveal :)</div>
         <img className={styles.gif} src={tiles14} alt={revealGifAlt.tiles14} />
       </div>
       <div className={styles.thread} role="group" aria-label="Example text thread: Friday">
@@ -29,7 +30,8 @@ export default function TextThread() {
             "- unsure"}
         </div>
         <div className={styles.bubbleMe}>DEF SQUIRREL</div>
-        <div className={styles.bubble}>Love that.</div>
+        <div className={styles.bubble}>Thanks for your thought. Here's your progress image.</div>
+        <div className={styles.bubble}>Sample design. Wouldn't want to spoil the reveal :)</div>
         <img className={styles.gif} src={tiles88} alt={revealGifAlt.tiles88} />
       </div>
     </div>

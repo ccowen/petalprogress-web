@@ -273,7 +273,17 @@ still in `PhilosophyPage.module.css`.
 
 ---
 
-## 10. Checklist for "ready to launch"
+## 10. Texts page "Also in print" section
+
+**Currently commented out** at the bottom of `src/pages/TextsPage.tsx` (look for
+`Also-in-print section hidden`): the "The same prompts, in the journal." block
+with the "Look inside the journal" button. Uncomment it when the journal is in
+print. The `Link` import at the top of the file is commented out with it, so
+restore that too.
+
+---
+
+## 11. Checklist for "ready to launch"
 
 - [ ] Supabase project provisioned, `waitlist` table created
 - [ ] Auth routes restored (section 1)
@@ -284,4 +294,5 @@ still in `PhilosophyPage.module.css`.
 - [ ] Contact page restored and form wired up (section 5)
 - [ ] Social media buttons restored with real URLs (section 6)
 - [ ] Philosophy habit subtitle and cards restored (section 9)
+- [ ] Texts page "Also in print" section restored (section 10)
 - [ ] Delete this file

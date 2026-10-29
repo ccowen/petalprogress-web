@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Link } from "react-router";
+// import { Link } from "react-router"; // restore with the Also-in-print section
 import { launch } from "../launch";
 import { StatusPill, TextsCta } from "../components/ProductBlocks";
 import TextThread from "../components/TextThread";
@@ -36,10 +36,7 @@ export function TextsPage() {
           </h1>
           <p className={styles.heroSub}>
             You move through the whole guided journal in small pieces, two
-            to six prompts a week, on days we pick to keep it a small
-            surprise. Each prompt is crafted for open thought, and your answer
-            can be simple or anything. Engaging with the question is the
-            practice.
+            to six prompts a week
           </p>
           <div className={styles.heroCtas}>
             <TextsCta from="web-texts" />
@@ -59,10 +56,6 @@ export function TextsPage() {
               <Cloud>
                 <strong>Your responses are private.</strong> They're not linked
                 to your information.
-              </Cloud>
-              <Cloud tone="blush">
-                <strong>This mandala design is a placeholder.</strong>{" "}
-                Wouldn't want to spoil the reveal :)
               </Cloud>
             </div>
           </div>
@@ -96,16 +89,14 @@ export function TextsPage() {
               <div className={styles.cardTitle}>Reply, and release</div>
               <p className={styles.cardText}>
                 Send your answer back, and every answer reveals more of your
-                mandala. Like a sand mandala, the words aren't there to be
-                reread: replies are never saved to your account or linked to
-                your number.
+                mandala.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── PAIRS WITH THE JOURNAL ── */}
+      {/* Also-in-print section hidden until the journal is in print — see RESTORE_LATER.md
       <section className={styles.section}>
         <div className={styles.sectionNarrow}>
           <div className={styles.eyebrow}>Also in print</div>
@@ -124,6 +115,7 @@ export function TextsPage() {
           </div>
         </div>
       </section>
+      */}
     </>
   );
 }

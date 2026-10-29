@@ -13,14 +13,17 @@ export function PromptCard({ prompt }: { prompt: SamplePrompt }) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.meta}>
-        <span className={styles.dir}>
-          {dir.icon} {dir.label}
-        </span>
-        {prompt.format && <span className={styles.format}>{prompt.format}</span>}
-      </div>
-      {prompt.lead && <p className={styles.lead}>{prompt.lead}</p>}
-      <p className={styles.text}>{prompt.text}</p>
+      {prompt.format && (
+        <div className={styles.meta}>
+          <span className={styles.format}>{prompt.format}</span>
+        </div>
+      )}
+      {/* The icon opens the first line, the way it arrives in a text. */}
+      {prompt.lead && <p className={styles.lead}>{dir.icon} {prompt.lead}</p>}
+      <p className={styles.text}>
+        {!prompt.lead && <>{dir.icon} </>}
+        {prompt.text}
+      </p>
       {prompt.closing ? (
         <p className={styles.closing}>{prompt.closing}</p>
       ) : (

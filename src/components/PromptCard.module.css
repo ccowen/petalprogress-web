@@ -10,17 +10,13 @@
 
 .meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
   font-size: 12.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--pp-text-muted);
   margin-bottom: 14px;
-}
-
-.dir {
-  color: var(--pp-sage);
 }
 
 /* Every word of the prompt itself (lead, question, choices, closing)
