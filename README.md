@@ -14,8 +14,8 @@ Marketing website for PetalProgress. Built with Vite + React + TypeScript.
 | `/signup` | Signup — auth card with SSO + email/password |
 | `/signup/intent` | Intent selection — individual, referred, or admin |
 | `/onboarding` | Onboarding — 5-step wizard with mandala preview |
-| `/privacy` | Privacy policy (placeholder) |
-| `/terms` | Terms of service (placeholder) |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
 ## Setup
 
