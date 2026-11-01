@@ -35,11 +35,20 @@ export const buyLinks = {
  * RESTORE_LATER.md). Once "live", point it at the real opt-in flow.
  * Leave empty to show "opening soon" copy with no button.
  */
+/**
+ * Where petalprogress-app lives. In `npm run dev` this is the local app
+ * (its default port, 5173), so the sign-up links work against it; set
+ * VITE_APP_URL (e.g. in .env.local) to point somewhere else.
+ */
+const APP_URL: string =
+  import.meta.env.VITE_APP_URL ??
+  (import.meta.env.DEV ? "http://localhost:5173" : "https://app.petalprogress.com");
+
 // The guided-journal sign-up flow in petalprogress-app (pay → number → reply YES).
-export const textsSignupUrl = "https://app.petalprogress.com/guided-journal";
+export const textsSignupUrl = `${APP_URL}/guided-journal`;
 
 /** Where returning subscribers sign in to manage their texts. */
-export const textsSignInUrl = "https://app.petalprogress.com/guided-journal/signin";
+export const textsSignInUrl = `${APP_URL}/guided-journal/signin`;
 
 /** Details for the journal. Fill in once final. */
 export const journalDetails = {
