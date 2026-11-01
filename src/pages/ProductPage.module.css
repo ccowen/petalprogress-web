@@ -266,13 +266,12 @@
   background: var(--pp-primary-hover);
 }
 
-/* The sign-up button with its price note beside it (under it when narrow). */
+/* The sign-up button with its price note always under it. */
 .ctaGroup {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 10px;
 }
 
 .ctaNote,
