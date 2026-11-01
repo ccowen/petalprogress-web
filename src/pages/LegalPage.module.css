@@ -67,6 +67,49 @@
   text-decoration: underline;
 }
 
+/* ── Policy text ── */
+.body {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--pp-text-soft);
+}
+
+.body h2 {
+  font-family: var(--pp-font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--pp-text);
+  margin: 36px 0 10px;
+}
+
+.body p {
+  margin-bottom: 14px;
+}
+
+.body ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.body li + li {
+  margin-top: 8px;
+}
+
+.body strong {
+  color: var(--pp-text);
+  font-weight: 500;
+}
+
+.body a {
+  color: var(--pp-sage);
+}
+
+.small {
+  font-size: 12px;
+  color: var(--pp-text-muted);
+  margin-top: 36px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .page {

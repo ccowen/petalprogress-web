@@ -12,14 +12,14 @@ Marketing website for PetalProgress. Built with Vite + React + TypeScript.
 | `/link-hub` | QR-code link hub for every printed product. It sits outside the site layout, and its links are set in `src/config/links.ts`. Keep this URL stable. The old `/scan` URL redirects here. |
 | `/online` | PetalProgress on the web: the app as an alternative to paper trackers. Reached from `/link-hub` |
 | `/philosophy` | Philosophy: sand mandalas, and what we keep vs. let go |
-| `/app` | The mandala habit-tracking app (coming later): how it works, showcase, reading the mandala |
+| `/next`, `/app` | Hidden: both redirect to `/mandala-types` (see `RESTORE_LATER.md`) |
 | `/mandala-types` | Reading each mandala type (part of the app story) |
-| `/privacy` | Privacy policy (placeholder) |
-| `/terms` | Terms of service (placeholder) |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
 Hidden until the app launches (redirect to `/`): `/pricing`, `/teams`, `/contact`,
 `/login`, `/signup`, `/signup/intent`, `/onboarding`. `/shop` redirects to
-`/journal#buy`. See `RESTORE_LATER.md`.
+`/journal`. See `RESTORE_LATER.md`.
 
 ## What's live: `src/launch.ts`
 
