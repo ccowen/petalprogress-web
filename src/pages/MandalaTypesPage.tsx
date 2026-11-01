@@ -280,7 +280,7 @@ export function MandalaTypesPage() {
           <div className={styles.hero}>
             <div className={styles.eyebrow}>◈ Mandala types</div>
             <h1 className={styles.title}>
-              Your mandala can be shaped in two ways.
+              Your mandala can be shaped in other ways.
             </h1>
             <p className={styles.sub}>
               Every PetalProgress mandala is built the same way. You show up in the present moment,
