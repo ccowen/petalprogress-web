@@ -16,7 +16,7 @@
 .navLogo {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 14px;
   font-family: var(--pp-font-display);
   font-size: 34px;
   color: var(--pp-surface);
