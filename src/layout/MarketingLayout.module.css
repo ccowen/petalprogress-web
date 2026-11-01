@@ -26,6 +26,12 @@
   flex-shrink: 0;
 }
 
+.navLogoIcon {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+
 .navLogo:hover {
   opacity: 0.8;
 }

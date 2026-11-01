@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
+import lotus from "@ccowen/petalprogress-ui/assets/favicon/lotus.png";
 import { textsSignInUrl } from "../launch";
 import { Footer } from "./Footer";
 import styles from "./MarketingLayout.module.css";
@@ -26,7 +27,7 @@ export function MarketingLayout() {
     <>
       <nav className={styles.nav}>
         <Link to="/" className={styles.navLogo}>
-          <span>𖢻</span> PetalProgress
+          <img className={styles.navLogoIcon} src={lotus} alt="" /> PetalProgress
         </Link>
         <div className={styles.navLinks}>
           {links.map((l) => (
