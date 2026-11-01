@@ -99,7 +99,7 @@ export function TextsCta({
         Sign up for texts
       </a>
       <span className={onLight ? styles.ctaNoteLight : styles.ctaNote}>
-        $3/month, cancel anytime
+        <strong className={styles.ctaPrice}>$3/month</strong>, cancel anytime
       </span>
     </div>
   );

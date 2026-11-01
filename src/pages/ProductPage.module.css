@@ -288,6 +288,19 @@
   color: var(--pp-text-soft);
 }
 
+/* The price stands out from the rest of the note. */
+.ctaPrice {
+  font-family: var(--pp-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--pp-peach);
+}
+
+.ctaNoteLight .ctaPrice {
+  color: var(--pp-primary);
+}
+
 /* Quieter button for something not available yet, in the theme's warm neutral. */
 .btnNeutral {
   background: var(--pp-warm-2);
