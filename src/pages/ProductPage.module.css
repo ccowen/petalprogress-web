@@ -109,7 +109,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* buttons line up across the cards; the price note hangs below */
   text-align: center;
 }
 
