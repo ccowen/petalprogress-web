@@ -18,6 +18,11 @@ export function JournalPage() {
               circle a choice, rate a feeling, or write it out. Move tiles
               to reveal your mandala as you continue through the journal.
             </p>
+            <div className={styles.heroCtas}>
+              <span className={`${styles.pill} ${styles.pillSoon}`} style={{ margin: 0 }}>
+                Coming soon
+              </span>
+            </div>
           </div>
           <div className={styles.heroVisual}>
             <BookCover />
