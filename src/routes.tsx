@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
       { path: "app", element: <Navigate to="/next" replace /> },
       { path: "mandala-types", element: <MandalaTypesPage /> },
       // Shop folded into /journal while the journal is the only product
-      { path: "shop", element: <Navigate to="/journal#buy" replace /> },
+      { path: "shop", element: <Navigate to="/journal" replace /> },
       { path: "pricing", element: <Navigate to="/" replace /> },
       { path: "teams", element: <Navigate to="/" replace /> },
       { path: "login", element: <Navigate to="/" replace /> },

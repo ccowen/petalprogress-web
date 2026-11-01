@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { journalDetails } from "../launch";
 import { BookCover } from "../components/BookCover";
-import { BuyOptions } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
 export function JournalPage() {
@@ -19,12 +18,6 @@ export function JournalPage() {
               circle a choice, rate a feeling, or write it out. Move tiles
               to reveal your mandala as you continue through the journal.
             </p>
-            <div className={styles.heroCtas}>
-              <a href="#buy" className={styles.btnJournal}>
-                Get the journal
-                {journalDetails.price ? ` · ${journalDetails.price}` : ""}
-              </a>
-            </div>
           </div>
           <div className={styles.heroVisual}>
             <BookCover />
@@ -48,17 +41,6 @@ export function JournalPage() {
               Read our philosophy →
             </Link>
           </p>
-        </div>
-      </section>
-
-      {/* ── BUY ── */}
-      <section className={styles.section} id="buy">
-        <div className={styles.sectionInner}>
-          <div className={styles.eyebrow}>Where to find it</div>
-          <h2 className={styles.title}>
-            Get the <em>journal.</em>
-          </h2>
-          <BuyOptions />
         </div>
       </section>
     </>
