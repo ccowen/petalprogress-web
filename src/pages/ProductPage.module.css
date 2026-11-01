@@ -893,3 +893,48 @@
 .cloudBlush .cloudShape {
   fill: var(--pp-blush);
 }
+
+/* ── USER QUOTES ── */
+.quoteGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 44px auto 0;
+}
+
+.quoteCard {
+  margin: 0;
+  gap: 18px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.quoteText {
+  font-family: var(--pp-font-display);
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--pp-text);
+}
+
+.quoteName {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--pp-text-soft);
+}
+
+/* An empty entry in userQuotes.ts, so the spot is obvious while it's unfilled. */
+.quotePlaceholder {
+  background: transparent;
+  border: 1.5px dashed color-mix(in srgb, var(--pp-sky) 55%, var(--pp-dark));
+}
+
+.quotePlaceholder .quoteText,
+.quotePlaceholder .quoteName {
+  color: var(--pp-text-soft);
+}
+
+@media (max-width: 800px) {
+  .quoteGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 // import { Link } from "react-router"; // restore with the Also-in-print section
 import { launch } from "../launch";
+import { userQuotes } from "../data/userQuotes";
 import { StatusPill, TextsCta } from "../components/ProductBlocks";
 import TextThread from "../components/TextThread";
 import styles from "./ProductPage.module.css";
@@ -63,36 +64,25 @@ export function TextsPage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
+      {/* ── WHAT PEOPLE SAY ── */}
       <section className={`${styles.section} ${styles.sectionSky}`}>
         <div className={`${styles.sectionInner} ${styles.centerHead}`}>
           <StatusPill status={launch.texts} />
-          <div className={styles.eyebrow}>How it works</div>
-          <div className={styles.grid3}>
-            <div className={`${styles.card} ${styles.stepCard}`}>
-              <div className={styles.stepNum}>01</div>
-              <div className={styles.cardTitle}>Sign up</div>
-              <p className={styles.cardText}>
-                Choose how many prompts a week and a time of day, then reply
-                YES to the text we send. Cancel any time by replying STOP.
-              </p>
-            </div>
-            <div className={`${styles.card} ${styles.stepCard}`}>
-              <div className={styles.stepNum}>02</div>
-              <div className={styles.cardTitle}>Get a prompt</div>
-              <p className={styles.cardText}>
-                Each one looks inward, outward, or toward growth. Most take a
-                few seconds to answer.
-              </p>
-            </div>
-            <div className={`${styles.card} ${styles.stepCard}`}>
-              <div className={styles.stepNum}>03</div>
-              <div className={styles.cardTitle}>Reply, and release</div>
-              <p className={styles.cardText}>
-                Send your answer back, and every answer reveals more of your
-                mandala.
-              </p>
-            </div>
+          <div className={styles.eyebrow}>What people say</div>
+          <div className={styles.quoteGrid}>
+            {userQuotes.map((q, i) => (
+              <figure
+                key={i}
+                className={`${styles.card} ${styles.quoteCard} ${q.text ? "" : styles.quotePlaceholder}`}
+              >
+                <blockquote className={styles.quoteText}>
+                  {q.text || "A quote from someone using the texts goes here."}
+                </blockquote>
+                <figcaption className={styles.quoteName}>
+                  {q.name || "First name, where they're from"}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
