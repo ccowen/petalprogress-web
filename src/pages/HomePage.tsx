@@ -70,7 +70,7 @@ export function HomePage() {
             Start your <em>guided journal.</em>
           </h2>
           <div className={styles.heroCtas} style={{ justifyContent: "center", marginTop: 28 }}>
-            <TextsCta from="web-home" fallbackTo="/texts" />
+            <TextsCta from="web-home" fallbackTo="/texts" onLight />
             <Link to="/journal" className={`${styles.btnJournal} ${styles.btnNeutral}`}>
               Journal coming soon
             </Link>

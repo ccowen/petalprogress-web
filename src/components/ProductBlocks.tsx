@@ -72,10 +72,13 @@ export function TextsCta({
   from,
   fallbackTo,
   outline = false,
+  onLight = false,
 }: {
   from?: string;
   fallbackTo?: string;
   outline?: boolean;
+  /** The button sits on a light section, so the price note takes dark text. */
+  onLight?: boolean;
 }) {
   const className = outline ? styles.btnTextsOutline : styles.btnTexts;
   if (!textsSignupUrl) {
@@ -91,8 +94,13 @@ export function TextsCta({
   }
   const href = from ? `${textsSignupUrl}?from=${encodeURIComponent(from)}` : textsSignupUrl;
   return (
-    <a href={href} className={className}>
-      Sign up for texts
-    </a>
+    <div className={styles.ctaGroup}>
+      <a href={href} className={className}>
+        Sign up for texts
+      </a>
+      <span className={onLight ? styles.ctaNoteLight : styles.ctaNote}>
+        $3/month, cancel anytime
+      </span>
+    </div>
   );
 }

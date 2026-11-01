@@ -266,6 +266,28 @@
   background: var(--pp-primary-hover);
 }
 
+/* The sign-up button with its price note beside it (under it when narrow). */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.ctaNote,
+.ctaNoteLight {
+  font-size: 14px;
+}
+
+.ctaNote {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ctaNoteLight {
+  color: var(--pp-text-soft);
+}
+
 /* Quieter button for something not available yet, in the theme's warm neutral. */
 .btnNeutral {
   background: var(--pp-warm-2);
