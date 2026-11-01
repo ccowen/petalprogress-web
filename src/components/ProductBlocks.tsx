@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { launch, buyLinks, textsSignupUrl, type Availability } from "../launch";
+import { userQuotes } from "../data/userQuotes";
 import styles from "../pages/ProductPage.module.css";
 
 export function StatusPill({ status }: { status: Availability }) {
@@ -102,5 +103,45 @@ export function TextsCta({
         <strong className={styles.ctaPrice}>$3/month</strong>, cancel anytime
       </span>
     </div>
+  );
+}
+
+/**
+ * "What people say": the quotes from data/userQuotes.ts. Empty entries show a
+ * placeholder. `tone` is the section background, so it can sit next to another
+ * sky-blue section without matching it.
+ */
+export function UserQuotes({
+  tone = "sky",
+  status,
+}: {
+  tone?: "sky" | "surface";
+  /** Shows the availability pill above the quotes, as the texts page does. */
+  status?: Availability;
+}) {
+  return (
+    <section
+      className={`${styles.section} ${tone === "sky" ? styles.sectionSky : styles.sectionSurface}`}
+    >
+      <div className={`${styles.sectionInner} ${styles.centerHead}`}>
+        {status && <StatusPill status={status} />}
+        <div className={styles.eyebrow}>What people say</div>
+        <div className={styles.quoteGrid}>
+          {userQuotes.map((q, i) => (
+            <figure
+              key={i}
+              className={`${styles.card} ${styles.quoteCard} ${q.text ? "" : styles.quotePlaceholder}`}
+            >
+              <blockquote className={styles.quoteText}>
+                {q.text || "A quote from someone using the texts goes here."}
+              </blockquote>
+              <figcaption className={styles.quoteName}>
+                {q.name || "First name, where they're from"}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

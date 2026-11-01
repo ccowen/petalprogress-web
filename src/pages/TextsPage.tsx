@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 // import { Link } from "react-router"; // restore with the Also-in-print section
 import { launch } from "../launch";
-import { userQuotes } from "../data/userQuotes";
-import { StatusPill, TextsCta } from "../components/ProductBlocks";
+import { TextsCta, UserQuotes } from "../components/ProductBlocks";
 import TextThread from "../components/TextThread";
 import styles from "./ProductPage.module.css";
 
@@ -65,27 +64,7 @@ export function TextsPage() {
       </section>
 
       {/* ── WHAT PEOPLE SAY ── */}
-      <section className={`${styles.section} ${styles.sectionSky}`}>
-        <div className={`${styles.sectionInner} ${styles.centerHead}`}>
-          <StatusPill status={launch.texts} />
-          <div className={styles.eyebrow}>What people say</div>
-          <div className={styles.quoteGrid}>
-            {userQuotes.map((q, i) => (
-              <figure
-                key={i}
-                className={`${styles.card} ${styles.quoteCard} ${q.text ? "" : styles.quotePlaceholder}`}
-              >
-                <blockquote className={styles.quoteText}>
-                  {q.text || "A quote from someone using the texts goes here."}
-                </blockquote>
-                <figcaption className={styles.quoteName}>
-                  {q.name || "First name, where they're from"}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+      <UserQuotes status={launch.texts} />
 
       {/* Also-in-print section hidden until the journal is in print — see RESTORE_LATER.md
       <section className={styles.section}>

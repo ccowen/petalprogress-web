@@ -3,7 +3,7 @@ import { journalDetails } from "../launch";
 import { appPrompts } from "../data/samplePrompts";
 import { PromptCard } from "../components/PromptCard";
 import { ButterflyRing } from "../components/Butterfly";
-import { TextsCta } from "../components/ProductBlocks";
+import { TextsCta, UserQuotes } from "../components/ProductBlocks";
 import styles from "./ProductPage.module.css";
 
 /*
@@ -62,6 +62,9 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── WHAT PEOPLE SAY ── */}
+      <UserQuotes tone="surface" />
 
       {/* ── START ── */}
       <section className={styles.section}>
