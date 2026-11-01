@@ -653,6 +653,10 @@
   margin-bottom: 0;
 }
 
+.promptSplitDesc {
+  margin-top: 20px;
+}
+
 .promptColumn {
   display: flex;
   flex-direction: column;

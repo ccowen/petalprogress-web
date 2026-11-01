@@ -45,9 +45,15 @@ export function HomePage() {
       <section className={`${styles.section} ${styles.sectionSky}`}>
         <div className={styles.sectionInner}>
           <div className={styles.promptSplit}>
-            <h2 className={`${styles.title} ${styles.promptSplitTitle}`}>
-              Simple to answer. <em>Open to anything.</em>
-            </h2>
+            <div>
+              <h2 className={`${styles.title} ${styles.promptSplitTitle}`}>
+                Simple to answer. <em>Open to anything.</em>
+              </h2>
+              <p className={`${styles.desc} ${styles.promptSplitDesc}`}>
+                Maybe you reply with <em>yes</em>, <em>maybe</em>, <em>3</em>,
+                or <em>squirrel</em>.
+              </p>
+            </div>
             <div className={styles.promptColumn}>
               {appPrompts.map((p) => (
                 <PromptCard key={p.text} prompt={p} />
