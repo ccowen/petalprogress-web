@@ -86,6 +86,18 @@ export function TextsPage() {
         </div>
       </section>
       */}
+
+      {/* ── SIGN UP ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionNarrow}>
+          <h2 className={styles.title}>
+            Start your <em>guided journal.</em>
+          </h2>
+          <div className={styles.heroCtas} style={{ justifyContent: "center", marginTop: 28 }}>
+            <TextsCta from="web-texts-bottom" onLight />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
