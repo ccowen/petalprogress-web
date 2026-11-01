@@ -54,8 +54,9 @@ export function TextsPage() {
             <TextThread />
             <div className={styles.cloudStack}>
               <Cloud>
-                <strong>Your responses are private.</strong> They're not linked
-                to your information.
+                <strong>Engaging with the question is the practice.</strong>{" "}
+                Maybe you reply with <em>yes</em>, <em>maybe</em>, <em>3</em>,
+                or <em>squirrel</em>.
               </Cloud>
             </div>
           </div>
