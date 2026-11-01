@@ -72,7 +72,7 @@
   position: absolute;
   left: var(--x);
   top: var(--y);
-  width: 88px;
+  width: 120px;
   height: auto;
   transform: translate(-50%, -50%) rotate(var(--r));
   filter: drop-shadow(0 10px 16px color-mix(in srgb, var(--pp-dark) 40%, transparent));
