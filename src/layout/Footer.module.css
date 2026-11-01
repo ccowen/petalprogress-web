@@ -25,8 +25,16 @@
   font-size: 20px;
   color: color-mix(in srgb, var(--pp-surface) 92%, transparent);
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 10px;
+}
+
+.logoIcon {
+  display: block;
+  height: 22px;
+  width: auto;
 }
 
 .logo:hover {

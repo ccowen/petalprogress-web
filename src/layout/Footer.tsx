@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import lotus from "@ccowen/petalprogress-ui/assets/favicon/lotus.png";
 import styles from "./Footer.module.css";
 
 const sitemap = [
@@ -26,7 +27,7 @@ export function Footer() {
         <div className={styles.top}>
           <div>
             <a href="/" className={styles.logo}>
-              𖢻 PetalProgress
+              <img className={styles.logoIcon} src={lotus} alt="" /> PetalProgress
             </a>
             <div className={styles.tagline}>
               A guided journal, on paper and by text, and soon, habits that
