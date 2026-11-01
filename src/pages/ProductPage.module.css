@@ -291,7 +291,7 @@
 /* The price stands out from the rest of the note. */
 .ctaPrice {
   font-family: var(--pp-font-display);
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1;
   color: var(--pp-peach);
