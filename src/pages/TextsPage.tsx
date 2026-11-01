@@ -32,7 +32,8 @@ export function TextsPage() {
       <section className={styles.hero}>
         <div className={styles.heroCentered}>
           <h1 className={styles.heroTitle}>
-            A guided journal, <em>one text at a time.</em>
+            A guided journal,<br />
+            <em>one text at a time.</em>
           </h1>
           <p className={styles.heroSub}>
             You move through the whole guided journal in small pieces, two
