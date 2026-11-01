@@ -9,7 +9,6 @@ export function JournalPage() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div>
-            <div className={styles.heroEyebrow}>❋ {journalDetails.subtitle}</div>
             <h1 className={styles.heroTitle}>
               A book of <em>guided prompts.</em>
             </h1>
