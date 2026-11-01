@@ -283,7 +283,19 @@ restore that too.
 
 ---
 
-## 11. Checklist for "ready to launch"
+## 11. "What's next" page
+
+**Hidden.** `src/pages/NextPage.tsx` and `NextPage.module.css` are still on
+disk but no longer imported. In `src/routes.tsx`, `/next` and `/app` redirect
+to `/mandala-types`, and the footer's "Coming soon" column lists only Mandala
+types. To bring it back: re-add `import { NextPage } from "./pages/NextPage";`,
+change the `next` route to `{ path: "next", element: <NextPage /> }`, point
+`app` at `/next` again, and add `{ label: "What's next", to: "/next" }` to the
+footer.
+
+---
+
+## 12. Checklist for "ready to launch"
 
 - [ ] Supabase project provisioned, `waitlist` table created
 - [ ] Auth routes restored (section 1)
@@ -295,4 +307,5 @@ restore that too.
 - [ ] Social media buttons restored with real URLs (section 6)
 - [ ] Philosophy habit subtitle and cards restored (section 9)
 - [ ] Texts page "Also in print" section restored (section 10)
+- [ ] "What's next" page restored, if wanted (section 11)
 - [ ] Delete this file

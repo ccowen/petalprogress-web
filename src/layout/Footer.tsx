@@ -14,7 +14,6 @@ const sitemap = [
   {
     heading: "Coming soon",
     links: [
-      { label: "What's next", to: "/next" },
       { label: "Mandala types", to: "/mandala-types" },
     ],
   },

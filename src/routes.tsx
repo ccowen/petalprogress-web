@@ -3,7 +3,6 @@ import { MarketingLayout } from "./layout/MarketingLayout";
 import { HomePage } from "./pages/HomePage";
 import { JournalPage } from "./pages/JournalPage";
 import { TextsPage } from "./pages/TextsPage";
-import { NextPage } from "./pages/NextPage";
 import { PhilosophyPage } from "./pages/PhilosophyPage";
 import { MandalaTypesPage } from "./pages/MandalaTypesPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
@@ -28,9 +27,9 @@ export const router = createBrowserRouter([
       { path: "texts", element: <TextsPage /> },
       { path: "daily", element: <Navigate to="/texts" replace /> },
       { path: "philosophy", element: <PhilosophyPage /> },
-      // Future plans (the original homepage), linked from the footer only
-      { path: "next", element: <NextPage /> },
-      { path: "app", element: <Navigate to="/next" replace /> },
+      // The "What's next" page is hidden (RESTORE_LATER.md section 11); mandala types covers it for now
+      { path: "next", element: <Navigate to="/mandala-types" replace /> },
+      { path: "app", element: <Navigate to="/mandala-types" replace /> },
       { path: "mandala-types", element: <MandalaTypesPage /> },
       // Shop folded into /journal while the journal is the only product
       { path: "shop", element: <Navigate to="/journal" replace /> },
