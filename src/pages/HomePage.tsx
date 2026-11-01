@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { journalDetails } from "../launch";
-import { appPrompts, directions } from "../data/samplePrompts";
+import { appPrompts } from "../data/samplePrompts";
 import { PromptCard } from "../components/PromptCard";
 import { ButterflyRing } from "../components/Butterfly";
 import { TextsCta } from "../components/ProductBlocks";
@@ -59,25 +59,6 @@ export function HomePage() {
                 <PromptCard key={p.text} prompt={p} />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── THREE DIRECTIONS ── */}
-      <section className={`${styles.section} ${styles.sectionPlum}`}>
-        <div className={styles.sectionInner}>
-          <div className={styles.eyebrow}>Inside every prompt</div>
-          <h2 className={styles.title}>
-            Three directions to <em>look.</em>
-          </h2>
-          <div className={styles.grid3}>
-            {Object.values(directions).map((d) => (
-              <div key={d.label} className={`${styles.card} ${styles.directionCard}`}>
-                <div className={styles.directionIcon}>{d.icon}</div>
-                <div className={styles.cardKicker}>{d.name}</div>
-                <div className={styles.cardTitle}>{d.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
