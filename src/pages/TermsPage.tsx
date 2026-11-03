@@ -124,9 +124,9 @@ export function TermsPage() {
           won't be billed for a month with no prompts.
         </p>
 
-        <h2>Responding to messages</h2>
+        <h2>Responding to texts</h2>
         <p>
-          PetalProgress messages are reflective prompts, and your replies are
+          PetalProgress texts are reflective prompts, and your replies are
           used to track your practice and create your progress mandala.
           Replies are processed automatically and are not monitored by a
           person in real time.
@@ -144,7 +144,7 @@ export function TermsPage() {
           <a href="/privacy">Privacy Policy</a>.
         </p>
         <p>
-          Never read or reply to messages while driving or in any situation
+          Never read or reply to texts while driving or in any situation
           where it isn't safe to do so.
         </p>
 
