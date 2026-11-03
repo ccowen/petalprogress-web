@@ -6,7 +6,7 @@ export function TermsPage() {
       <div className={styles.eyebrow}>Legal</div>
       <h1 className={styles.title}>Terms of Service</h1>
       <p className={styles.meta}>
-        Last updated: October 30, 2026
+        Last updated: November 3, 2026
       </p>
 
       <div className={styles.body}>
@@ -124,10 +124,28 @@ export function TermsPage() {
           won't be billed for a month with no prompts.
         </p>
 
-        <h2>Your answers</h2>
+        <h2>Responding to messages</h2>
         <p>
-          Your replies are private. How we store and use them is explained in
-          our <a href="/privacy">Privacy Policy</a>.
+          PetalProgress messages are reflective prompts, and your replies are
+          used to track your practice and create your progress mandala.
+          Replies are processed automatically and are not monitored by a
+          person in real time.
+        </p>
+        <p>
+          PetalProgress is not a medical, mental health, or crisis service. If
+          you're in crisis or thinking about harming yourself, call or text{" "}
+          <strong>988</strong> in the US, or call <strong>911</strong> in an
+          emergency.
+        </p>
+        <p>
+          Your replies are private. Please don't include sensitive information
+          in them, such as passwords, financial details, or health records.
+          Replies are stored and handled as described in our{" "}
+          <a href="/privacy">Privacy Policy</a>.
+        </p>
+        <p>
+          Never read or reply to messages while driving or in any situation
+          where it isn't safe to do so.
         </p>
 
         <h2>Changes to these terms</h2>
