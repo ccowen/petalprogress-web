@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import lotus from "@ccowen/petalprogress-ui/assets/favicon/lotus.png";
+import lotus from "@ccowen/petalprogress-ui/assets/logo/lotus-header.png";
 import styles from "./Footer.module.css";
 
 const sitemap = [

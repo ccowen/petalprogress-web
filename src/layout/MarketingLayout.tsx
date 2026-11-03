@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
-import lotus from "@ccowen/petalprogress-ui/assets/favicon/lotus.png";
+import lotus from "@ccowen/petalprogress-ui/assets/logo/lotus-header.png";
 import { textsSignInUrl } from "../launch";
 import { Footer } from "./Footer";
 import styles from "./MarketingLayout.module.css";
