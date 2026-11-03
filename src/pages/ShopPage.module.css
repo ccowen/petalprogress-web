@@ -18,8 +18,8 @@
   gap: 7px;
   padding: 4px 14px;
   border-radius: var(--pp-radius-pill);
-  background: rgba(196, 136, 122, 0.12);
-  border: 1px solid rgba(196, 136, 122, 0.3);
+  background: color-mix(in srgb, var(--pp-marigold) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pp-marigold) 30%, transparent);
   font-size: 11px;
   color: var(--pp-amber);
   letter-spacing: 0.1em;

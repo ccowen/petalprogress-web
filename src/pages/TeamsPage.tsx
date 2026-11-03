@@ -20,7 +20,7 @@ function generateMandala(color: string, sz: number): string {
       h += `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${ring.rx.toFixed(2)}" ry="${ring.ry.toFixed(2)}" fill="${isFilled ? color : "rgba(255,255,255,0.08)"}" opacity="${isFilled ? 0.8 : 0.3}" transform="rotate(${(i * (360 / ring.n)).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;
     }
   });
-  h += `<circle cx="${cx}" cy="${cy}" r="${sz * 0.09}" fill="rgba(253,252,250,0.15)"/>`;
+  h += `<circle cx="${cx}" cy="${cy}" r="${sz * 0.09}" fill="color-mix(in srgb, var(--pp-surface) 15%, transparent)"/>`;
   return h;
 }
 
@@ -73,19 +73,19 @@ const audiences: AudienceData[] = [
     points: [
       {
         icon: "\uD83D\uDCCB",
-        iconBg: "rgba(196,136,122,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-marigold) 10%, transparent)",
         title: "Assign habits per client",
         desc: "Each client gets a habit tailored to their program. You control whether they can adjust it or not.",
       },
       {
         icon: "\u25D1",
-        iconBg: "rgba(143,166,140,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-primary) 10%, transparent)",
         title: "Check in before sessions",
         desc: "Pull up a client\u2019s mandala before their appointment. You can see their week at a glance \u2014 no asking required.",
       },
       {
         icon: "\u2726",
-        iconBg: "rgba(123,155,175,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-sky) 10%, transparent)",
         title: "Celebrate with a print",
         desc: "At the end of a program, generate a printed mandala. A tangible record of what they built.",
       },
@@ -116,19 +116,19 @@ const audiences: AudienceData[] = [
     points: [
       {
         icon: "\u25CE",
-        iconBg: "rgba(123,155,175,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-sky) 10%, transparent)",
         title: "Gifted access model",
         desc: "Include Petal+ as a membership benefit. Members set their own habits \u2014 you give them the tool.",
       },
       {
         icon: "\u25B3",
-        iconBg: "rgba(196,136,122,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-marigold) 10%, transparent)",
         title: "Spot drop-off before it happens",
         desc: "The \u201Cat risk\u201D view flags members who haven\u2019t checked in. A timely message can save a cancellation.",
       },
       {
         icon: "\u274B",
-        iconBg: "rgba(143,166,140,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-primary) 10%, transparent)",
         title: "Year-end mandala prints",
         desc: "Members who frame their mandala become your best marketing. People share beautiful things.",
       },
@@ -159,19 +159,19 @@ const audiences: AudienceData[] = [
     points: [
       {
         icon: "\u25C7",
-        iconBg: "rgba(143,166,140,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-primary) 10%, transparent)",
         title: "Control per client",
         desc: "Some clients need structure. Others need ownership. Set permissions individually \u2014 who can edit their habit, their goal, their mandala.",
       },
       {
         icon: "\u25D1",
-        iconBg: "rgba(196,90,90,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-coral) 10%, transparent)",
         title: "Progress without pressure",
         desc: "The mandala is inherently positive \u2014 it shows what was done, not what was missed. A better frame for habit change conversations.",
       },
       {
         icon: "\uD83C\uDF00",
-        iconBg: "rgba(196,136,122,.1)",
+        iconBg: "color-mix(in srgb, var(--pp-marigold) 10%, transparent)",
         title: "Personal habits alongside assigned ones",
         desc: "Clients can add their own habits to the same mandala. The habit you assigned is a thread in their larger practice.",
       },
@@ -294,15 +294,15 @@ export function TeamsPage() {
               <div className={styles.apTopbar}>
                 <div
                   className={styles.apDot}
-                  style={{ background: "#C45A5A", opacity: 0.7 }}
+                  style={{ background: "var(--pp-coral)", opacity: 0.7 }}
                 />
                 <div
                   className={styles.apDot}
-                  style={{ background: "#C4887A", opacity: 0.5 }}
+                  style={{ background: "var(--pp-marigold)", opacity: 0.5 }}
                 />
                 <div
                   className={styles.apDot}
-                  style={{ background: "#8FA68C", opacity: 0.5 }}
+                  style={{ background: "var(--pp-primary)", opacity: 0.5 }}
                 />
                 <div className={styles.apTitle}>Bloom Wellness Studio</div>
                 <div className={styles.apBadge}>Teams</div>
@@ -329,7 +329,7 @@ export function TeamsPage() {
                 <div className={styles.apStat}>
                   <div
                     className={styles.apStatN}
-                    style={{ color: "#C45A5A" }}
+                    style={{ color: "var(--pp-coral)" }}
                   >
                     3
                   </div>
@@ -339,7 +339,7 @@ export function TeamsPage() {
               <div className={styles.apMember}>
                 <div
                   className={styles.apAv}
-                  style={{ background: "#C45A5A" }}
+                  style={{ background: "var(--pp-coral)" }}
                 >
                   SK
                 </div>
@@ -348,7 +348,7 @@ export function TeamsPage() {
                   <div className={styles.apProgBar}>
                     <div
                       className={styles.apProgFill}
-                      style={{ width: "80%", background: "#8FA68C" }}
+                      style={{ width: "80%", background: "var(--pp-primary)" }}
                     />
                   </div>
                   <div className={styles.apProgPct}>
@@ -359,7 +359,7 @@ export function TeamsPage() {
               <div className={styles.apMember}>
                 <div
                   className={styles.apAv}
-                  style={{ background: "#8FA68C" }}
+                  style={{ background: "var(--pp-primary)" }}
                 >
                   MR
                 </div>
@@ -368,7 +368,7 @@ export function TeamsPage() {
                   <div className={styles.apProgBar}>
                     <div
                       className={styles.apProgFill}
-                      style={{ width: "95%", background: "#8FA68C" }}
+                      style={{ width: "95%", background: "var(--pp-primary)" }}
                     />
                   </div>
                   <div className={styles.apProgPct}>
@@ -379,7 +379,7 @@ export function TeamsPage() {
               <div className={styles.apMember} style={{ opacity: 0.6 }}>
                 <div
                   className={styles.apAv}
-                  style={{ background: "#C45A5A" }}
+                  style={{ background: "var(--pp-coral)" }}
                 >
                   AP
                 </div>
@@ -398,7 +398,7 @@ export function TeamsPage() {
                   </div>
                   <div
                     className={styles.apProgPct}
-                    style={{ color: "#C45A5A" }}
+                    style={{ color: "var(--pp-coral)" }}
                   >
                     7 days &middot; no check-in
                   </div>
@@ -619,13 +619,13 @@ export function TeamsPage() {
           <div className={styles.printVisual}>
             <div className={styles.printStack}>
               <div className={`${styles.printPaper} ${styles.pp1}`}>
-                <MandalaSvg color="rgba(196,90,90,0.6)" size={160} />
+                <MandalaSvg color="color-mix(in srgb, var(--pp-coral) 60%, transparent)" size={160} />
               </div>
               <div className={`${styles.printPaper} ${styles.pp2}`}>
-                <MandalaSvg color="rgba(143,166,140,0.6)" size={160} />
+                <MandalaSvg color="color-mix(in srgb, var(--pp-primary) 60%, transparent)" size={160} />
               </div>
               <div className={`${styles.printPaper} ${styles.pp3}`}>
-                <MandalaSvg color="rgba(196,136,122,0.7)" size={160} />
+                <MandalaSvg color="color-mix(in srgb, var(--pp-marigold) 70%, transparent)" size={160} />
               </div>
             </div>
           </div>
@@ -673,7 +673,7 @@ export function TeamsPage() {
               <div className={styles.mjStep}>
                 <div
                   className={styles.mjIconWrap}
-                  style={{ background: "rgba(196,136,122,.1)" }}
+                  style={{ background: "color-mix(in srgb, var(--pp-marigold) 10%, transparent)" }}
                 >
                   &#x1F4E7;
                 </div>
@@ -696,7 +696,7 @@ export function TeamsPage() {
               <div className={styles.mjStep}>
                 <div
                   className={styles.mjIconWrap}
-                  style={{ background: "rgba(143,166,140,.1)" }}
+                  style={{ background: "color-mix(in srgb, var(--pp-primary) 10%, transparent)" }}
                 >
                   &#x1F338;
                 </div>
@@ -719,7 +719,7 @@ export function TeamsPage() {
               <div className={styles.mjStep}>
                 <div
                   className={styles.mjIconWrap}
-                  style={{ background: "rgba(143,166,140,.1)" }}
+                  style={{ background: "color-mix(in srgb, var(--pp-primary) 10%, transparent)" }}
                 >
                   &#x2795;
                 </div>
@@ -742,7 +742,7 @@ export function TeamsPage() {
               <div className={styles.mjStep}>
                 <div
                   className={styles.mjIconWrap}
-                  style={{ background: "rgba(123,155,175,.1)" }}
+                  style={{ background: "color-mix(in srgb, var(--pp-sky) 10%, transparent)" }}
                 >
                   &#x2726;
                 </div>

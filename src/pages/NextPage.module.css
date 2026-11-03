@@ -16,13 +16,16 @@
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 52px 80px;
+  padding: 110px 52px 90px;
   position: relative;
   overflow: hidden;
-  background: var(--pp-dark);
+  background: linear-gradient(
+    160deg,
+    var(--pp-dark) 0%,
+    color-mix(in srgb, var(--pp-primary) 12%, var(--pp-dark)) 100%
+  );
 }
 
 /* Grain overlay */
@@ -44,7 +47,7 @@
   right: -10%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(143, 166, 140, 0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--pp-primary) 8%, transparent) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -77,15 +80,15 @@
 
 .heroTitle em {
   font-style: italic;
-  color: rgba(143, 166, 140, 0.9);
+  color: color-mix(in srgb, var(--pp-primary) 90%, transparent);
 }
 
 .heroSub {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.8;
   margin-bottom: 36px;
-  max-width: 440px;
+  max-width: 480px;
   font-weight: 300;
 }
 
@@ -105,7 +108,7 @@
   transition: all 0.22s;
   letter-spacing: 0.04em;
   font-weight: 500;
-  box-shadow: 0 8px 32px rgba(143, 166, 140, 0.35);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--pp-primary) 35%, transparent);
   border: none;
   cursor: pointer;
 }
@@ -113,13 +116,13 @@
 .btnPrimaryHero:hover {
   background: var(--pp-sage-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(143, 166, 140, 0.45);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--pp-primary) 45%, transparent);
 }
 
 .btnGhostHero {
   padding: 14px 24px;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
   text-decoration: none;
   transition: all 0.2s;
   letter-spacing: 0.03em;
@@ -157,7 +160,7 @@
 .heroQuote {
   margin-top: 48px;
   padding: 18px 22px;
-  border-left: 2px solid rgba(143, 166, 140, 0.4);
+  border-left: 2px solid color-mix(in srgb, var(--pp-primary) 40%, transparent);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 0 10px 10px 0;
 }
@@ -197,7 +200,7 @@
 .mandalaGlow {
   position: absolute;
   inset: -40px;
-  background: radial-gradient(circle, rgba(196, 90, 90, 0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--pp-coral) 12%, transparent) 0%, transparent 65%);
   border-radius: 50%;
 }
 
@@ -245,7 +248,7 @@
 }
 
 .sectionEyebrow {
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--pp-text-muted);
@@ -254,7 +257,7 @@
 
 .sectionTitle {
   font-family: var(--pp-font-display);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
@@ -266,7 +269,7 @@
 }
 
 .sectionDesc {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--pp-text-soft);
   line-height: 1.8;
   max-width: 600px;
@@ -274,48 +277,64 @@
 
 /* ── HOW IT WORKS ── */
 .howItWorks {
-  background: var(--pp-surface);
+  background: color-mix(in srgb, var(--pp-sky) 24%, var(--pp-surface));
+  text-align: center;
 }
 
+.howItWorks .sectionTitle em {
+  color: color-mix(in srgb, var(--pp-sky) 55%, var(--pp-dark));
+}
+
+.howItWorks .sectionDesc {
+  margin: 0 auto;
+  color: var(--pp-text);
+}
+
+/* Steps: a numbered peach circle with its caption below, as on Texts. */
 .hiwGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--pp-warm-1);
-  border-radius: var(--pp-radius-card);
-  overflow: hidden;
+  gap: 20px;
   margin-top: 52px;
 }
 
 .hiwCard {
-  background: var(--pp-surface);
-  padding: 36px 32px;
-  transition: background 0.2s;
-}
-
-.hiwCard:hover {
-  background: var(--pp-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hiwNum {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--pp-font-display);
-  font-size: 56px;
-  font-weight: 300;
-  color: var(--pp-warm-2);
+  font-size: 44px;
   line-height: 1;
-  margin-bottom: 14px;
+  color: color-mix(in srgb, var(--pp-primary) 80%, var(--pp-dark));
+  background: linear-gradient(
+    135deg,
+    var(--pp-peach) 0%,
+    var(--pp-peach) 70%,
+    color-mix(in srgb, var(--pp-primary) 16%, var(--pp-peach)) 100%
+  );
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--pp-dark) 18%, transparent);
+  margin-bottom: 22px;
 }
 
 .hiwTitle {
   font-family: var(--pp-font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
   margin-bottom: 10px;
 }
 
 .hiwDesc {
-  font-size: 13.5px;
-  color: var(--pp-text-soft);
+  font-size: 16px;
+  color: var(--pp-text);
   line-height: 1.75;
 }
 
@@ -331,7 +350,7 @@
 
 /* ── SHOWCASE GALLERY ── */
 .showcase {
-  background: var(--pp-bg);
+  background: color-mix(in srgb, var(--pp-periwinkle) 9%, var(--pp-bg));
   overflow: hidden;
 }
 
@@ -360,7 +379,7 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: rgba(253, 252, 250, 0.6);
+  background: color-mix(in srgb, var(--pp-surface) 60%, transparent);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), 0 14px 40px rgba(0, 0, 0, 0.07);
@@ -385,14 +404,18 @@
 
 .showcaseLbl {
   font-family: var(--pp-font-display);
-  font-size: 13px;
+  font-size: 16px;
   font-style: italic;
   color: var(--pp-text-soft);
 }
 
 /* ── READING THE MANDALA ── */
 .reading {
-  background: var(--pp-dark);
+  background: linear-gradient(
+    200deg,
+    var(--pp-dark) 0%,
+    color-mix(in srgb, var(--pp-primary) 28%, var(--pp-dark)) 100%
+  );
   padding: 100px 52px;
   color: white;
 }
@@ -402,15 +425,15 @@
 }
 
 .reading .sectionTitle em {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--pp-peach);
 }
 
 .reading .sectionDesc {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .reading .sectionEyebrow {
-  color: rgba(255, 255, 255, 0.3);
+  color: color-mix(in srgb, var(--pp-peach) 75%, transparent);
 }
 
 .readingLayout {
@@ -433,7 +456,7 @@
   border-radius: var(--pp-radius-pill);
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.03em;
   transition: all 0.2s;
@@ -511,8 +534,8 @@
 }
 
 .qToggleOptActive {
-  background: rgba(143, 166, 140, 0.45);
-  color: #c8d8c6;
+  background: color-mix(in srgb, var(--pp-primary) 45%, transparent);
+  color: color-mix(in srgb, var(--pp-primary) 35%, white);
 }
 
 .monthlyLblWrap {
@@ -548,36 +571,36 @@
 }
 
 .mToggleOptActive {
-  background: rgba(123, 155, 175, 0.45);
-  color: #b8ced9;
+  background: color-mix(in srgb, var(--pp-sky) 45%, transparent);
+  color: color-mix(in srgb, var(--pp-sky) 35%, white);
 }
 
 /* Row color variants */
 .readingRowSage .readIconWrap {
-  background: rgba(143, 166, 140, 0.35);
+  background: color-mix(in srgb, var(--pp-primary) 35%, transparent);
 }
 
 .readingRowSage .readingRowLbl {
-  background: rgba(143, 166, 140, 0.35);
-  color: #c8d8c6;
+  background: color-mix(in srgb, var(--pp-primary) 35%, transparent);
+  color: color-mix(in srgb, var(--pp-primary) 35%, white);
 }
 
 .readingRowBlue .readIconWrap {
-  background: rgba(123, 155, 175, 0.35);
+  background: color-mix(in srgb, var(--pp-sky) 35%, transparent);
 }
 
 .readingRowBlue .readingRowLbl {
-  background: rgba(123, 155, 175, 0.35);
-  color: #b8ced9;
+  background: color-mix(in srgb, var(--pp-sky) 35%, transparent);
+  color: color-mix(in srgb, var(--pp-sky) 35%, white);
 }
 
 .readingRowAmber .readIconWrap {
-  background: rgba(196, 136, 122, 0.35);
+  background: color-mix(in srgb, var(--pp-marigold) 35%, transparent);
 }
 
 .readingRowAmber .readingRowLbl {
-  background: rgba(196, 136, 122, 0.35);
-  color: #dbbdb4;
+  background: color-mix(in srgb, var(--pp-marigold) 35%, transparent);
+  color: color-mix(in srgb, var(--pp-marigold) 35%, white);
 }
 
 /* Reading card cells — each spans 2 of 6 cols */
@@ -640,7 +663,7 @@
 }
 
 .comingSoonBgWarm {
-  background: var(--pp-warm-1);
+  background: color-mix(in srgb, var(--pp-sky) 24%, var(--pp-surface));
 }
 
 .comingSoonInner {
@@ -655,9 +678,9 @@
   gap: 7px;
   padding: 4px 14px;
   border-radius: var(--pp-radius-pill);
-  background: rgba(196, 136, 122, 0.12);
-  border: 1px solid rgba(196, 136, 122, 0.3);
-  font-size: 11px;
+  background: color-mix(in srgb, var(--pp-marigold) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pp-marigold) 30%, transparent);
+  font-size: 13px;
   color: var(--pp-amber);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -670,12 +693,12 @@
   color: white;
   font-weight: 500;
   padding: 5px 16px;
-  box-shadow: 0 4px 14px rgba(196, 136, 122, 0.3);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--pp-marigold) 30%, transparent);
 }
 
 .comingSoonTitle {
   font-family: var(--pp-font-display);
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 14px;
@@ -688,8 +711,8 @@
 }
 
 .comingSoonDesc {
-  font-size: 14.5px;
-  color: var(--pp-text-soft);
+  font-size: 17px;
+  color: var(--pp-text);
   line-height: 1.8;
   max-width: 520px;
   margin: 0 auto 28px;
@@ -704,9 +727,9 @@
 }
 
 .comingSoonChip {
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: var(--pp-radius-pill);
-  font-size: 12px;
+  font-size: 14px;
   background: var(--pp-surface);
   border: 1px solid var(--pp-warm-2);
   color: var(--pp-text-soft);
@@ -751,7 +774,7 @@
 .priceFeatured {
   background: var(--pp-dark) !important;
   border-color: var(--pp-dark) !important;
-  box-shadow: 0 16px 48px rgba(30, 26, 23, 0.18);
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--pp-dark) 18%, transparent);
   position: relative;
 }
 
@@ -850,7 +873,7 @@
   justify-content: center;
   font-size: 10px;
   margin-top: 1px;
-  background: rgba(143, 166, 140, 0.2);
+  background: color-mix(in srgb, var(--pp-primary) 20%, transparent);
   color: var(--pp-sage);
 }
 
@@ -889,7 +912,7 @@
   padding: 1px 7px;
   border-radius: var(--pp-radius-pill);
   font-size: 10.5px;
-  background: rgba(143, 166, 140, 0.15);
+  background: color-mix(in srgb, var(--pp-primary) 15%, transparent);
   color: var(--pp-sage);
 }
 
@@ -927,7 +950,7 @@
   text-decoration: none;
   background: var(--pp-sage);
   color: white;
-  box-shadow: 0 4px 16px rgba(143, 166, 140, 0.35);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--pp-primary) 35%, transparent);
   transition: all 0.22s;
   letter-spacing: 0.03em;
   border: none;
@@ -937,7 +960,7 @@
 .btnPricePaid:hover {
   background: var(--pp-sage-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(143, 166, 140, 0.45);
+  box-shadow: 0 6px 22px color-mix(in srgb, var(--pp-primary) 45%, transparent);
 }
 
 .pricingSeeMore {
@@ -985,17 +1008,17 @@
 }
 
 .abTrainer {
-  background: rgba(143, 166, 140, 0.2);
+  background: color-mix(in srgb, var(--pp-primary) 20%, transparent);
   color: var(--pp-sage);
 }
 
 .abGym {
-  background: rgba(123, 155, 175, 0.2);
+  background: color-mix(in srgb, var(--pp-sky) 20%, transparent);
   color: var(--pp-blue);
 }
 
 .abWellness {
-  background: rgba(196, 136, 122, 0.2);
+  background: color-mix(in srgb, var(--pp-marigold) 20%, transparent);
   color: var(--pp-amber);
 }
 
@@ -1094,7 +1117,7 @@
   padding: 2px 8px;
   border-radius: var(--pp-radius-pill);
   font-size: 9.5px;
-  background: rgba(143, 166, 140, 0.2);
+  background: color-mix(in srgb, var(--pp-primary) 20%, transparent);
   color: var(--pp-sage);
   letter-spacing: 0.08em;
   text-transform: uppercase;

@@ -1,4 +1,24 @@
+import { Link } from "react-router";
+import lotus from "@ccowen/petalprogress-ui/assets/logo/lotus-header.png";
 import styles from "./Footer.module.css";
+
+const sitemap = [
+  {
+    heading: "Explore",
+    links: [
+      { label: "Home", to: "/" },
+      { label: "Journal", to: "/journal" },
+      { label: "Texts", to: "/texts" },
+      { label: "Philosophy", to: "/philosophy" },
+    ],
+  },
+  {
+    heading: "Coming soon",
+    links: [
+      { label: "Mandala types", to: "/mandala-types" },
+    ],
+  },
+];
 
 export function Footer() {
   return (
@@ -7,13 +27,25 @@ export function Footer() {
         <div className={styles.top}>
           <div>
             <a href="/" className={styles.logo}>
-              𖢻 PetalProgress
+              <img className={styles.logoIcon} src={lotus} alt="" /> PetalProgress
             </a>
             <div className={styles.tagline}>
-              A habit tracker that turns your daily practice into a living
-              mandala.
+              A guided journal, on paper and by text, and soon, habits that
+              bloom into a living mandala.
             </div>
           </div>
+          <nav className={styles.sitemap} aria-label="Sitemap">
+            {sitemap.map((col) => (
+              <div key={col.heading} className={styles.sitemapCol}>
+                <div className={styles.sitemapHeading}>{col.heading}</div>
+                {col.links.map((l) => (
+                  <Link key={l.to} to={l.to} className={styles.sitemapLink}>
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </nav>
           {/* Social media buttons hidden pre-launch — see RESTORE_LATER.md
           <div className={styles.socialRow}>
             <a href="#" className={styles.socialBtn} title="Instagram">

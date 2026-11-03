@@ -119,7 +119,7 @@
 
 .framingSelected {
   border-color: var(--pp-sage);
-  background: rgba(143, 166, 140, 0.05);
+  background: color-mix(in srgb, var(--pp-primary) 5%, transparent);
 }
 
 .framingTitle {
@@ -207,7 +207,7 @@
 
 .freqSelected {
   border-color: var(--pp-sage);
-  background: rgba(143, 166, 140, 0.06);
+  background: color-mix(in srgb, var(--pp-primary) 6%, transparent);
   color: var(--pp-text);
   font-weight: 500;
 }

@@ -6,7 +6,7 @@ import styles from "./PricingPage.module.css";
 
 function MiniMandalaDownload() {
   const cx = 40, cy = 40;
-  const color = "#C45A5A";
+  const color = "var(--pp-coral)";
   const petals: React.ReactElement[] = [];
 
   // outer ring: 8 petals
@@ -48,7 +48,7 @@ function MiniMandalaDownload() {
   }
   // center
   petals.push(
-    <circle key="center" cx={cx} cy={cy} r="8" fill="rgba(30,26,23,0.8)" />
+    <circle key="center" cx={cx} cy={cy} r="8" fill="color-mix(in srgb, var(--pp-dark) 80%, transparent)" />
   );
 
   return (
@@ -60,7 +60,7 @@ function MiniMandalaDownload() {
 
 function MiniMandalaPrint() {
   const cx = 36, cy = 48;
-  const color = "#C4887A";
+  const color = "var(--pp-marigold)";
   const petals: React.ReactElement[] = [];
 
   // paper background
@@ -87,7 +87,7 @@ function MiniMandalaPrint() {
     );
   }
   petals.push(
-    <circle key="center" cx={cx} cy={cy} r="7" fill="rgba(253,252,250,0.15)" />
+    <circle key="center" cx={cx} cy={cy} r="7" fill="color-mix(in srgb, var(--pp-surface) 15%, transparent)" />
   );
 
   return (
@@ -99,7 +99,7 @@ function MiniMandalaPrint() {
 
 function MiniMandalaButton() {
   const cx = 40, cy = 40;
-  const color = "#8FA68C";
+  const color = "var(--pp-primary)";
   const petals: React.ReactElement[] = [];
 
   // button background
@@ -145,7 +145,7 @@ function MiniMandalaButton() {
     );
   }
   petals.push(
-    <circle key="center" cx={cx} cy={cy} r="8" fill="rgba(30,26,23,0.8)" />
+    <circle key="center" cx={cx} cy={cy} r="8" fill="color-mix(in srgb, var(--pp-dark) 80%, transparent)" />
   );
 
   return (
@@ -157,7 +157,7 @@ function MiniMandalaButton() {
 
 function MiniMandalaMagnet() {
   const cx = 44, cy = 35;
-  const color = "#7B9BAF";
+  const color = "var(--pp-sky)";
   const petals: React.ReactElement[] = [];
 
   // magnet background
@@ -183,7 +183,7 @@ function MiniMandalaMagnet() {
     );
   }
   petals.push(
-    <circle key="center" cx={cx} cy={cy} r="5" fill="rgba(30,26,23,0.6)" />
+    <circle key="center" cx={cx} cy={cy} r="5" fill="color-mix(in srgb, var(--pp-dark) 60%, transparent)" />
   );
 
   return (

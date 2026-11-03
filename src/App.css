@@ -12,7 +12,7 @@ body {
   font-family: var(--pp-font-body);
   background: var(--pp-bg);
   color: var(--pp-text);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
