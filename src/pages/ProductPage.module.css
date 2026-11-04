@@ -847,45 +847,85 @@
   text-align: center;
 }
 
-/* "What it looks like": stacked on narrow screens (heading, example text,
-   cloud). On wide screens, two columns: the heading and cloud on the left,
-   the Prompt 14 / 88 toggle and example text on the right. */
+/* "What it looks like".
+   Narrow screens: stacked (heading, toggle, example text, cloud), centred.
+   900px+: two columns, the heading and toggle vertically centred on the
+   left, the example text on the right, the cloud under the toggle.
+   1180px+: the cloud moves to float just off the text's right edge. */
+/* Prefixed with .lookLayout so these win over the toggle's own styles. */
+.lookLayout .lookToggle {
+  display: flex;
+  width: fit-content;
+  margin: 8px auto 0;
+}
+
+.lookLayout .lookThread {
+  margin: 24px auto 0;
+}
+
 @media (min-width: 900px) {
   .lookLayout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: 1fr auto auto auto 1fr;
     grid-template-areas:
+      ".      thread"
       "title  thread"
+      "toggle thread"
       "cloud  thread"
       ".      thread";
-    column-gap: 72px;
+    column-gap: 64px;
     max-width: 860px;
-    align-items: start;
   }
 
   .centerHead .lookTitle {
     grid-area: title;
     text-align: left;
-    margin-top: 56px; /* level with the top of the example text, under the toggle */
   }
 
-  .lookThread {
+  .lookLayout .lookToggle {
+    grid-area: toggle;
+    margin: 4px 0 0;
+  }
+
+  .lookLayout .lookThread {
     grid-area: thread;
-  }
-
-  .lookThread > * {
-    margin-top: 0;
+    margin: 0;
   }
 
   .cloudStack {
     grid-area: cloud;
-    margin-top: 28px;
+    margin-top: 40px;
   }
 
   .privacyBubble {
     margin: 0;
     transform: rotate(3deg);
+  }
+}
+
+@media (min-width: 1180px) {
+  .lookLayout {
+    grid-template-columns: auto 340px 258px;
+    justify-content: center; /* keep the three together, not spread across the page */
+    grid-template-rows: 1fr auto auto 1fr;
+    grid-template-areas:
+      ".      thread  cloud"
+      "title  thread  cloud"
+      "toggle thread  cloud"
+      ".      thread  cloud";
+    column-gap: 0; /* spacing set per item, so the cloud can sit close */
+    max-width: 1100px;
+  }
+
+  .centerHead .lookTitle,
+  .lookLayout .lookToggle {
+    margin-right: 72px;
+  }
+
+  .cloudStack {
+    align-self: center;
+    margin: 0 0 0 12px; /* floats just off the text's right edge */
   }
 }
 

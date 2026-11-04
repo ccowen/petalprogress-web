@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { revealGifAlt } from "@ccowen/petalprogress-ui";
 import tiles14 from "@ccowen/petalprogress-ui/assets/reveal/14-tiles.gif";
 import tiles88 from "@ccowen/petalprogress-ui/assets/reveal/88-tiles.gif";
 import styles from "./TextThread.module.css";
 
 /* Two real prompts and replies. Only one shows at a time: both at once is a
-   lot to take in, so a toggle switches between them. */
+   lot to take in, so a toggle switches between them. The toggle and the
+   thread are separate pieces so the page can place them apart. */
 const threads = [
   {
     label: "Prompt 14",
@@ -36,33 +36,53 @@ const threads = [
   },
 ];
 
-export default function TextThread() {
-  const [active, setActive] = useState(0);
-  const t = threads[active];
-
+/** The Prompt 14 / Prompt 88 switch. */
+export function PromptToggle({
+  active,
+  onChange,
+  className,
+}: {
+  active: number;
+  onChange: (index: number) => void;
+  className?: string;
+}) {
   return (
-    <div className={styles.threads}>
-      <div className={styles.toggle} role="group" aria-label="Choose an example text">
-        {threads.map((th, i) => (
-          <button
-            key={th.label}
-            type="button"
-            className={styles.toggleBtn}
-            aria-pressed={i === active}
-            onClick={() => setActive(i)}
-          >
-            {th.label}
-          </button>
-        ))}
-      </div>
-      <div key={active} className={styles.thread} role="group" aria-label={`Example text thread: ${t.label}`}>
-        <div className={styles.stamp}>{t.stamp}</div>
-        <div className={styles.bubble}>{t.prompt}</div>
-        <div className={styles.bubbleMe}>{t.reply}</div>
-        <div className={styles.bubble}>{t.thanks}</div>
-        <div className={styles.bubble}>Sample design. Wouldn't want to spoil the reveal :)</div>
-        <img className={styles.gif} src={t.gif} alt={t.alt} />
-      </div>
+    <div
+      className={className ? `${styles.toggle} ${className}` : styles.toggle}
+      role="group"
+      aria-label="Choose an example text"
+    >
+      {threads.map((th, i) => (
+        <button
+          key={th.label}
+          type="button"
+          className={styles.toggleBtn}
+          aria-pressed={i === active}
+          onClick={() => onChange(i)}
+        >
+          {th.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** One example text thread: the prompt, a reply, and the reveal gif. */
+export function ExampleText({ index, className }: { index: number; className?: string }) {
+  const t = threads[index];
+  return (
+    <div
+      key={index}
+      className={className ? `${styles.thread} ${className}` : styles.thread}
+      role="group"
+      aria-label={`Example text thread: ${t.label}`}
+    >
+      <div className={styles.stamp}>{t.stamp}</div>
+      <div className={styles.bubble}>{t.prompt}</div>
+      <div className={styles.bubbleMe}>{t.reply}</div>
+      <div className={styles.bubble}>{t.thanks}</div>
+      <div className={styles.bubble}>Sample design. Wouldn't want to spoil the reveal :)</div>
+      <img className={styles.gif} src={t.gif} alt={t.alt} />
     </div>
   );
 }

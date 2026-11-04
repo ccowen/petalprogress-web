@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 // import { Link } from "react-router"; // restore with the Also-in-print section
 import { launch } from "../launch";
 import { TextsCta, UserQuotes } from "../components/ProductBlocks";
-import TextThread from "../components/TextThread";
+import { ExampleText, PromptToggle } from "../components/TextThread";
 import styles from "./ProductPage.module.css";
 
 /** A cloud-shaped note beside the example texts, under them on narrow screens. */
@@ -27,6 +27,7 @@ function Cloud({
 }
 
 export function TextsPage() {
+  const [prompt, setPrompt] = useState(0);
   return (
     <>
       <section className={styles.hero}>
@@ -47,14 +48,14 @@ export function TextsPage() {
 
       {/* ── WHAT A TEXT LOOKS LIKE ── */}
       <section className={`${styles.section} ${styles.sectionSurface}`}>
-        {/* Wide screens: the heading and cloud on the left, the example text on the right. */}
+        {/* Wide screens: the heading and toggle on the left, vertically centred;
+            the example text beside them, with the cloud floating off its right edge. */}
         <div className={`${styles.sectionInner} ${styles.centerHead} ${styles.lookLayout}`}>
           <h2 className={`${styles.title} ${styles.lookTitle}`}>
             What it <em>looks like.</em>
           </h2>
-          <div className={styles.lookThread}>
-            <TextThread />
-          </div>
+          <PromptToggle active={prompt} onChange={setPrompt} className={styles.lookToggle} />
+          <ExampleText index={prompt} className={styles.lookThread} />
           <div className={styles.cloudStack}>
             <Cloud>
               <strong>Engaging with the question is the practice.</strong>{" "}
