@@ -47,19 +47,20 @@ export function TextsPage() {
 
       {/* ── WHAT A TEXT LOOKS LIKE ── */}
       <section className={`${styles.section} ${styles.sectionSurface}`}>
-        <div className={`${styles.sectionInner} ${styles.centerHead}`}>
-          <h2 className={styles.title}>
+        {/* Wide screens: the heading and cloud on the left, the example text on the right. */}
+        <div className={`${styles.sectionInner} ${styles.centerHead} ${styles.lookLayout}`}>
+          <h2 className={`${styles.title} ${styles.lookTitle}`}>
             What it <em>looks like.</em>
           </h2>
-          <div className={styles.threadStage}>
+          <div className={styles.lookThread}>
             <TextThread />
-            <div className={styles.cloudStack}>
-              <Cloud>
-                <strong>Engaging with the question is the practice.</strong>{" "}
-                Maybe you reply with <em>yes</em>, <em>maybe</em>, <em>3</em>,
-                or <em>squirrel</em>.
-              </Cloud>
-            </div>
+          </div>
+          <div className={styles.cloudStack}>
+            <Cloud>
+              <strong>Engaging with the question is the practice.</strong>{" "}
+              Maybe you reply with <em>yes</em>, <em>maybe</em>, <em>3</em>,
+              or <em>squirrel</em>.
+            </Cloud>
           </div>
         </div>
       </section>

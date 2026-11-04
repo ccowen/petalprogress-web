@@ -818,12 +818,6 @@
 
 /* The example texts, with a privacy note floating beside them like a bubble
    from the thread. Under the texts on narrower screens. */
-.threadStage {
-  position: relative;
-  max-width: 704px;
-  margin: 0 auto;
-}
-
 .privacyBubble {
   position: relative;
   width: 258px;
@@ -853,29 +847,50 @@
   text-align: center;
 }
 
-@media (min-width: 1180px) {
+/* "What it looks like": stacked on narrow screens (heading, example text,
+   cloud). On wide screens, two columns: the heading and cloud on the left,
+   the Prompt 14 / 88 toggle and example text on the right. */
+@media (min-width: 900px) {
+  .lookLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "title  thread"
+      "cloud  thread"
+      ".      thread";
+    column-gap: 72px;
+    max-width: 860px;
+    align-items: start;
+  }
+
+  .centerHead .lookTitle {
+    grid-area: title;
+    text-align: left;
+    margin-top: 56px; /* level with the top of the example text, under the toggle */
+  }
+
+  .lookThread {
+    grid-area: thread;
+  }
+
+  .lookThread > * {
+    margin-top: 0;
+  }
+
   .cloudStack {
-    position: absolute;
-    left: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+    grid-area: cloud;
+    margin-top: 28px;
   }
 
   .privacyBubble {
     margin: 0;
     transform: rotate(3deg);
   }
-
-  .privacyBubble + .privacyBubble {
-    transform: rotate(-2deg);
-  }
 }
 
 /* A soft shadow on the "ground" beneath the cloud, so it reads as hovering. */
-@media (min-width: 1180px) {
+@media (min-width: 900px) {
   .privacyBubble::after {
     content: '';
     position: absolute;

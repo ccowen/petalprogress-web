@@ -1,17 +1,66 @@
 .threads {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 340px));
-  justify-content: center;
-  gap: 24px;
-  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 340px;
   margin: 40px auto 0;
   text-align: left;
 }
 
+/* Prompt 14 / Prompt 88: a two-option segmented toggle. */
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 999px;
+  background: var(--pp-warm-1, #EDE9E3);
+}
+
+.toggleBtn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--pp-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pp-text-soft);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.toggleBtn:hover {
+  color: var(--pp-text);
+}
+
+.toggleBtn[aria-pressed="true"] {
+  /* Neutral, not the primary rose: rose is for calls to action, and this is optional. */
+  background: var(--pp-surface, #FDFCFA);
+  color: var(--pp-text, #2C2825);
+  box-shadow: 0 1px 3px rgba(30, 26, 23, 0.12), 0 1px 1px rgba(30, 26, 23, 0.06);
+}
+
+.toggleBtn:focus-visible {
+  outline: 2px solid var(--pp-text-soft, #6B6460);
+  outline-offset: 2px;
+}
+
 .thread {
+  width: 100%;
   background: var(--pp-bg);
   border-radius: 20px;
   padding: 18px;
+  animation: threadIn 0.2s ease;
+}
+
+@keyframes threadIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thread { animation: none; }
 }
 
 .stamp {
@@ -41,13 +90,6 @@
   color: #fff;
   border-radius: 18px 18px 4px 18px;
   margin-left: auto;
-}
-
-@media (max-width: 720px) {
-  .threads {
-    grid-template-columns: minmax(0, 340px);
-    margin-top: 40px;
-  }
 }
 
 /* The gif sent back after a reply, an incoming media bubble. */
