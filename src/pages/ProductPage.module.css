@@ -818,12 +818,6 @@
 
 /* The example texts, with a privacy note floating beside them like a bubble
    from the thread. Under the texts on narrower screens. */
-.threadStage {
-  position: relative;
-  max-width: 704px;
-  margin: 0 auto;
-}
-
 .privacyBubble {
   position: relative;
   width: 258px;
@@ -853,29 +847,91 @@
   text-align: center;
 }
 
-@media (min-width: 1180px) {
+/* "What it looks like".
+   Narrow screens: stacked (heading, toggle, example text, cloud), centred.
+   900px+: two columns, the heading and toggle vertically centred on the
+   left, the example text on the right, the cloud under the toggle.
+   1180px+: the cloud moves to float just off the text's right edge. */
+/* Prefixed with .lookLayout so these win over the toggle's own styles. */
+.lookLayout .lookToggle {
+  display: flex;
+  width: fit-content;
+  margin: 8px auto 0;
+}
+
+.lookLayout .lookThread {
+  margin: 24px auto 0;
+}
+
+@media (min-width: 900px) {
+  .lookLayout {
+    display: grid;
+    grid-template-columns: auto minmax(0, 340px);
+    justify-content: center; /* columns sit close together; the spare room goes outside */
+    grid-template-rows: 1fr auto auto auto 1fr;
+    grid-template-areas:
+      ".      thread"
+      "title  thread"
+      "toggle thread"
+      "cloud  thread"
+      ".      thread";
+    column-gap: 56px;
+    max-width: 860px;
+  }
+
+  .centerHead .lookTitle {
+    grid-area: title;
+    text-align: left;
+  }
+
+  .lookLayout .lookToggle {
+    grid-area: toggle;
+    margin: 4px 0 0;
+  }
+
+  .lookLayout .lookThread {
+    grid-area: thread;
+    margin: 0;
+  }
+
   .cloudStack {
-    position: absolute;
-    left: calc(100% + 8px);
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+    grid-area: cloud;
+    margin-top: 40px;
   }
 
   .privacyBubble {
     margin: 0;
     transform: rotate(3deg);
   }
+}
 
-  .privacyBubble + .privacyBubble {
-    transform: rotate(-2deg);
+@media (min-width: 1180px) {
+  .lookLayout {
+    grid-template-columns: auto 340px 258px;
+    justify-content: center; /* keep the three together, not spread across the page */
+    grid-template-rows: 1fr auto auto 1fr;
+    grid-template-areas:
+      ".      thread  cloud"
+      "title  thread  cloud"
+      "toggle thread  cloud"
+      ".      thread  cloud";
+    column-gap: 0; /* spacing set per item, so the cloud can sit close */
+    max-width: 1100px;
+  }
+
+  .centerHead .lookTitle,
+  .lookLayout .lookToggle {
+    margin-right: 72px;
+  }
+
+  .cloudStack {
+    align-self: center;
+    margin: 0 0 0 12px; /* floats just off the text's right edge */
   }
 }
 
 /* A soft shadow on the "ground" beneath the cloud, so it reads as hovering. */
-@media (min-width: 1180px) {
+@media (min-width: 900px) {
   .privacyBubble::after {
     content: '';
     position: absolute;
