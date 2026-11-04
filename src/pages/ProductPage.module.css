@@ -866,7 +866,8 @@
 @media (min-width: 900px) {
   .lookLayout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+    grid-template-columns: auto minmax(0, 340px);
+    justify-content: center; /* columns sit close together; the spare room goes outside */
     grid-template-rows: 1fr auto auto auto 1fr;
     grid-template-areas:
       ".      thread"
@@ -874,7 +875,7 @@
       "toggle thread"
       "cloud  thread"
       ".      thread";
-    column-gap: 64px;
+    column-gap: 56px;
     max-width: 860px;
   }
 
