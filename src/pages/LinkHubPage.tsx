@@ -1,7 +1,21 @@
 import { Link } from "react-router";
-import { BloomMandala } from "../components/BloomMandala";
+import lotus from "@ccowen/petalprogress-ui/assets/logo/lotus-header.png";
+import type { CSSProperties } from "react";
+import { Butterfly } from "../components/Butterfly";
 import { HUB_LINKS, SOCIALS } from "../config/links";
 import styles from "./LinkHubPage.module.css";
+
+/* Four butterflies in a loose arc over the top of the content column, all flying
+   upward at different angles (r: 0 is straight up, negative leans left,
+   positive leans right). x/y place the center as a % of the column, w is
+   the width in px. mx is an optional x for phones, where the column fills
+   the screen, to pull edge butterflies in so they are not cut off. */
+const FLOCK = [
+  { x: 68, y: -8, w: 67, r: -30 },
+  { x: 99, mx: 92, y: 16, w: 58, r: 22 },
+  { x: 0, mx: 9, y: 16, w: 68, r: 32 },
+  { x: 32, y: -5, w: 57, r: -8 },
+];
 
 /* ══════════════════════════════════════════════════════
    LinkHubPage — the hub every printed QR code points at.
@@ -13,14 +27,28 @@ export function LinkHubPage() {
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <div className={styles.flock} aria-hidden="true">
+          {FLOCK.map((b, i) => (
+            <Butterfly
+              key={i}
+              className={styles.butterfly}
+              style={
+                {
+                  "--x": `${b.x}%`,
+                  "--mx": `${b.mx ?? b.x}%`,
+                  "--y": `${b.y}%`,
+                  "--w": `${b.w}px`,
+                  "--r": `${b.r}deg`,
+                } as CSSProperties
+              }
+            />
+          ))}
+        </div>
         <header className={styles.head}>
           <div className={styles.art}>
-            <BloomMandala className={styles.mandala} stagger={0.008} />
+            <img className={styles.logo} src={lotus} alt="" />
           </div>
-          <span className={styles.wordmark}>𖢻 PetalProgress</span>
-          <h1 className={styles.tagline}>
-            Everything, <em className={styles.taglineAccent}>in one place.</em>
-          </h1>
+          <h1 className={styles.wordmark}>PetalProgress</h1>
         </header>
 
         <nav className={styles.links} aria-label="PetalProgress links">

@@ -27,46 +27,16 @@ export interface HubLink {
   featured?: boolean;
 }
 
-/* The main link rows on /link-hub. Returning users get a
-   lighter "Sign in" line beneath these rather than a row
-   of their own — an app row here read as a duplicate of
-   the "try" row. */
+/* The link rows on /link-hub. Kept to two on purpose. */
 export const HUB_LINKS: HubLink[] = [
   {
-    label: "The guided journal",
-    note: "Prompts to answer by hand, and keep",
-    href: "/journal",
-    internal: true,
+    label: "Sign up for the guided journal by text",
+    href: `${APP_URL}/guided-journal?from=link-hub`,
     featured: true,
   },
   {
-    label: "The guided journal by text",
-    note: "The same prompts, a few times a week. Answer, and let go",
-    href: "/texts",
-    internal: true,
-  },
-  {
-    label: "PetalProgress on the web",
-    note: "Start a mandala, or open one you've kept",
-    href: "/online",
-    internal: true,
-  },
-  {
-    label: "Shop trackers & refills",
-    note: "Whiteboards, notepads, reorders",
-    href: SHOP_URL,
-  },
-  {
-    label: "How it works",
-    note: "The thinking behind the petals",
-    href: "/philosophy",
-    internal: true,
-  },
-  {
-    label: "Explore mandala types",
-    note: "Every practice has its own shape",
-    href: "/mandala-types",
-    internal: true,
+    label: "Learn about PetalProgress",
+    href: "https://www.petalprogress.com",
   },
 ];
 

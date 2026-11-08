@@ -37,8 +37,8 @@ export function TextsPage() {
             <em>one text at a time.</em>
           </h1>
           <p className={styles.heroSub}>
-            You move through the whole guided journal in small pieces, two
-            to six prompts a week
+            You move through the guided journal in small pieces, two to six
+            prompts a week
           </p>
           <div className={styles.heroCtas}>
             <TextsCta from="web-texts" />
