@@ -6,7 +6,7 @@ export function PrivacyPage() {
       <div className={styles.eyebrow}>Legal</div>
       <h1 className={styles.title}>Privacy Policy</h1>
       <p className={styles.meta}>
-        Last updated: October 30, 2026
+        Last updated: November 8, 2026
       </p>
 
       <div className={styles.body}>
@@ -25,6 +25,13 @@ export function PrivacyPage() {
           <li>
             <strong>Your signature</strong> (the name you pick at sign-up, like
             gentle_heron_42), shown on your mandala images.
+          </li>
+          <li>
+            <strong>Your progress images</strong>: after you reply, we text you
+            an image of the PetalProgress mandala. Everyone gets the same
+            mandala design. The order its tiles are revealed is different for
+            each person, and your signature appears on it. We keep each image
+            for a few days so it can be delivered, then delete it.
           </li>
           <li>
             <strong>Your choices</strong>: how many prompts a week, the time of
@@ -55,6 +62,11 @@ export function PrivacyPage() {
             If we ever shared any replies, they would never include your name,
             number or other personal information.
           </li>
+          <li>
+            Replies are handled automatically. We don't respond to what you
+            say. You'll only get a short confirmation that your reply was
+            received, plus other standard replies, such as to STOP and HELP.
+          </li>
         </ul>
 
         <h2>Who else handles your information</h2>
@@ -65,7 +77,9 @@ export function PrivacyPage() {
         <ul>
           <li>
             <strong>Twilio</strong> delivers our texts. It keeps a record of
-            messages, as any texting service does.
+            messages. That includes the standard
+            PetalProgress mandala images we send as part of the journal. Twilio
+            keeps its own copies under its own retention schedule.
           </li>
           <li>
             <strong>Stripe</strong> handles payments and your billing details.
@@ -74,8 +88,11 @@ export function PrivacyPage() {
             <strong>Supabase</strong> stores your account and your replies.
           </li>
           <li>
-            <strong>Amazon Web Services</strong> runs the service that sends
-            and receives texts.
+            <strong>Amazon Web Services</strong> runs the services behind
+            PetalProgress: signing you up, sending and receiving texts, keeping
+            your subscription status up to date, and making your progress
+            images. It keeps technical logs of how they run, which hold a
+            limited amount of information and are deleted after 30 days.
           </li>
         </ul>
         <p>
