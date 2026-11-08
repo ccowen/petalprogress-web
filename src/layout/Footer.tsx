@@ -33,6 +33,10 @@ export function Footer() {
               A guided journal, on paper and by text, and soon, habits that
               bloom into a living mandala.
             </div>
+            <div className={styles.contact}>
+              Questions? Contact{" "}
+              <a href="mailto:hello@petalprogress.com">hello@petalprogress.com</a>
+            </div>
           </div>
           <nav className={styles.sitemap} aria-label="Sitemap">
             {sitemap.map((col) => (
@@ -70,7 +74,6 @@ export function Footer() {
           <div className={styles.links}>
             <a href="/privacy" target="_blank" rel="noopener">Privacy</a>
             <a href="/terms" target="_blank" rel="noopener">Terms</a>
-            <a href="mailto:hello@petalprogress.com">Contact</a>
           </div>
         </div>
       </div>
