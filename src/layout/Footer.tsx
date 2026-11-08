@@ -70,6 +70,7 @@ export function Footer() {
           <div className={styles.links}>
             <a href="/privacy" target="_blank" rel="noopener">Privacy</a>
             <a href="/terms" target="_blank" rel="noopener">Terms</a>
+            <a href="mailto:hello@petalprogress.com">Contact</a>
           </div>
         </div>
       </div>
