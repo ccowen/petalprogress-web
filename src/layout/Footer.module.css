@@ -48,6 +48,24 @@
   max-width: 300px;
 }
 
+.contact {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--pp-surface) 72%, transparent);
+}
+
+.contact a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.16s;
+}
+
+.contact a:hover {
+  color: color-mix(in srgb, var(--pp-surface) 92%, transparent);
+}
+
 .sitemap {
   display: flex;
   gap: 64px;
