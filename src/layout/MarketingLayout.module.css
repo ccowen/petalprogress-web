@@ -1,10 +1,14 @@
+:root {
+  --pp-nav-ink: color-mix(in srgb, var(--pp-primary) 22%, var(--pp-dark));
+}
+
 .nav {
   position: sticky;
   top: 0;
   z-index: 100;
   height: 80px;
-  background: var(--pp-sky);
-  border-bottom: 1px solid color-mix(in srgb, var(--pp-surface) 12%, transparent);
+  background: #9fa9cc;
+  border-bottom: 1px solid color-mix(in srgb, var(--pp-nav-ink) 12%, transparent);
   box-shadow: 0 4px 18px color-mix(in srgb, var(--pp-dark) 14%, transparent);
   display: flex;
   align-items: center;
@@ -19,7 +23,7 @@
   gap: 14px;
   font-family: var(--pp-font-display);
   font-size: 34px;
-  color: color-mix(in srgb, var(--pp-peach) 50%, white);
+  color: var(--pp-nav-ink);
   text-decoration: none;
   letter-spacing: 0.01em;
   margin-right: 32px;
@@ -29,7 +33,15 @@
 .navLogoIcon {
   display: block;
   height: 30px;
-  width: auto;
+  aspect-ratio: 560 / 380;
+  /* Recolor the shared peach PNG: its shape is the mask, the nav ink is the fill. */
+  background: var(--pp-nav-ink);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 .navLogo:hover {
@@ -49,25 +61,25 @@
   border-radius: var(--pp-radius-pill);
   font-size: 16px;
   font-weight: 600;
-  color: var(--pp-surface);
+  color: var(--pp-nav-ink);
   text-decoration: none;
   transition: all 0.15s;
   white-space: nowrap;
 }
 
 .navLink:hover {
-  background: color-mix(in srgb, var(--pp-surface) 12%, transparent);
-  color: var(--pp-surface);
+  background: color-mix(in srgb, var(--pp-nav-ink) 12%, transparent);
+  color: var(--pp-nav-ink);
 }
 
 .navLinkActive {
-  color: var(--pp-surface);
+  color: var(--pp-nav-ink);
   font-weight: 700;
-  background: color-mix(in srgb, var(--pp-surface) 14%, transparent);
+  background: color-mix(in srgb, white 35%, transparent);
 }
 
 .navLinkActive:hover {
-  background: color-mix(in srgb, var(--pp-surface) 14%, transparent);
+  background: color-mix(in srgb, white 35%, transparent);
 }
 
 /* A thin peach line under the current page. */
@@ -94,14 +106,14 @@
   border-radius: var(--pp-radius-pill);
   font-size: 16px;
   font-weight: 600;
-  color: var(--pp-surface);
+  color: var(--pp-nav-ink);
   text-decoration: none;
   transition: all 0.15s;
 }
 
 .navSignIn:hover {
-  background: color-mix(in srgb, var(--pp-surface) 12%, transparent);
-  color: var(--pp-surface);
+  background: color-mix(in srgb, var(--pp-nav-ink) 12%, transparent);
+  color: var(--pp-nav-ink);
 }
 
 .navCta {
@@ -138,7 +150,7 @@
   display: block;
   width: 20px;
   height: 2px;
-  background: var(--pp-surface);
+  background: var(--pp-nav-ink);
   border-radius: 1px;
   position: relative;
   transition: background 0.2s;
@@ -151,7 +163,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--pp-surface);
+  background: var(--pp-nav-ink);
   border-radius: 1px;
   transition: transform 0.2s;
 }
@@ -204,8 +216,8 @@
     display: flex;
     flex-direction: column;
     padding: 8px 16px 20px;
-    background: var(--pp-sky);
-    border-bottom: 1px solid color-mix(in srgb, var(--pp-surface) 12%, transparent);
+    background: #9fa9cc;
+    border-bottom: 1px solid color-mix(in srgb, var(--pp-nav-ink) 12%, transparent);
     position: sticky;
     top: 72px;
     z-index: 99;
@@ -214,24 +226,24 @@
   .mobileLink {
     padding: 12px 14px;
     font-size: 16px;
-    color: var(--pp-surface);
+    color: var(--pp-nav-ink);
     text-decoration: none;
     border-radius: var(--pp-radius-sm);
     transition: background 0.15s;
   }
 
   .mobileLink:hover {
-    background: color-mix(in srgb, var(--pp-surface) 12%, transparent);
+    background: color-mix(in srgb, var(--pp-nav-ink) 12%, transparent);
   }
 
   .mobileLinkActive {
-    color: var(--pp-surface);
+    color: var(--pp-nav-ink);
     font-weight: 500;
   }
 
   .mobileDivider {
     height: 1px;
-    background: color-mix(in srgb, var(--pp-surface) 12%, transparent);
+    background: color-mix(in srgb, var(--pp-nav-ink) 12%, transparent);
     margin: 8px 0;
   }
 

@@ -4,6 +4,7 @@ import { launch } from "../launch";
 import { TextsCta, UserQuotes } from "../components/ProductBlocks";
 import { ExampleText, PromptToggle } from "../components/TextThread";
 import styles from "./ProductPage.module.css";
+import { MandalaProgression } from "../components/MandalaProgression";
 
 /** A cloud-shaped note beside the example texts, under them on narrow screens. */
 function Cloud({
@@ -64,6 +65,29 @@ export function TextsPage() {
             </Cloud>
           </div>
         </div>
+      </section>
+
+      {/* ── MANDALA MONDAYS ── */}
+      <section className={styles.section}>
+        <div className={`${styles.sectionInner} ${styles.mondayHead}`}>
+          <div className={styles.mondayText}>
+            <h2 className={styles.title}>
+              Your mandala, <em>every Monday.</em>
+            </h2>
+            <p className={styles.desc}>
+              You receive your mandala every Monday, revealing your progress.
+            </p>
+            <div className={styles.mondayCloud}>
+              <svg className={styles.mondayCloudShape} viewBox="8 20 184 106" aria-hidden="true">
+                <path d="M46 116A30 30 0 0 1 30 62A36 36 0 0 1 92 38A32 32 0 0 1 148 46A34 34 0 0 1 166 116Q106 124 46 116Z" />
+              </svg>
+              <p className={styles.mondayCloudText}>
+                Sample design. Wouldn&rsquo;t want to spoil the reveal :)
+              </p>
+            </div>
+          </div>
+        </div>
+        <MandalaProgression />
       </section>
 
       {/* ── WHAT PEOPLE SAY ── */}
