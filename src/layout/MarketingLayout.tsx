@@ -27,7 +27,11 @@ export function MarketingLayout() {
     <>
       <nav className={styles.nav}>
         <Link to="/" className={styles.navLogo}>
-          <img className={styles.navLogoIcon} src={lotus} alt="" /> PetalProgress
+          <span
+            className={styles.navLogoIcon}
+            style={{ maskImage: `url(${lotus})`, WebkitMaskImage: `url(${lotus})` }}
+            aria-hidden="true"
+          /> PetalProgress
         </Link>
         <div className={styles.navLinks}>
           {links.map((l) => (

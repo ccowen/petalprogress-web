@@ -41,11 +41,13 @@ export const directions: Record<
   },
 };
 
-/* Real prompts, the same two the app's /guided-journal sign-up shows
-   (petalprogress-app TextsSignupPage). Keep them in step with the app. */
+/* Real prompts 14 and 88, the two the app's /guided-journal sign-up refers to
+   (petalprogress-app TextsSignupPage). Their categories are the real ones:
+   prompt 14 is outward, prompt 88 is inward. The icon marks the category on
+   the card; the texts themselves no longer start with an emoji. */
 export const appPrompts: SamplePrompt[] = [
   {
-    direction: "growth",
+    direction: "outward",
     lead: "Please consider this. Your yes could lose intention if you default to saying yes.",
     text: "Did you personally, deeply value saying yes to something recently?",
     closing: "All responses welcome, including yes no maybe unsure",
