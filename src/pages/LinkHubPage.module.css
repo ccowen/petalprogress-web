@@ -284,11 +284,14 @@
   font-size: 12px;
 }
 
-/* ── PHONES ── the column fills the screen, so butterflies on its edges
-   would be cut off; use the pulled-in x. */
+/* ── PHONES ── the column fills the screen, so a % of it puts the outer
+   butterflies too close to the mandala on narrow phones and off the edge
+   on others. Instead, center each one halfway between the mandala's edge
+   (75px from center, half its 150px width) and the screen edge (50vw from
+   center), so the gap on both sides stays even at every phone width. */
 @media (max-width: 639px) {
-  .butterfly {
-    left: var(--mx);
+  .edge {
+    left: calc(50% + var(--side) * (75px + 50vw) / 2);
   }
 }
 
