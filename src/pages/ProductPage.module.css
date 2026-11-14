@@ -173,6 +173,66 @@
   font-weight: 300;
 }
 
+/* /texts hero: text about two thirds, the sample mandala about one third. */
+.heroSplitText {
+  /* A centered group rather than something stretched to the page edges:
+     text 480 : mandala 300, with a small gap. */
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 480fr 300fr;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.heroTextCol .heroSub {
+  max-width: 520px;
+}
+.heroTextCol .ctaGroup {
+  align-items: flex-start;
+}
+/* The line break after "pieces," only where the line fits on one line; narrower screens wrap naturally. */
+.heroSubBreak {
+  display: none;
+}
+@media (min-width: 900px) {
+  .heroSubBreak {
+    display: inline;
+  }
+}
+.heroTextCol .heroSub {
+  text-wrap: balance;
+}
+.heroMandala {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1;
+  justify-self: center;
+}
+@media (max-width: 800px) {
+  .heroSplitText {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .heroTextCol .heroSub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .heroTextCol .heroCtas {
+    justify-content: center;
+  }
+  .heroTextCol .ctaGroup {
+    align-items: center;
+  }
+  .heroMandala {
+    max-width: 220px;
+  }
+}
+
 .heroCentered .heroSub {
   margin-left: auto;
   margin-right: auto;
@@ -1021,6 +1081,19 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* The GIF sits over the still and fades in once loaded. */
+.progressionFrame img.progressionGif {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.progressionFrame img.progressionGif[data-ready] {
+  opacity: 1;
 }
 
 /* A tall, soft halo behind the one that's playing; it fades in as the GIF starts and out as it stops. */
