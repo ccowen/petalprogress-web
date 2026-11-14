@@ -5,6 +5,7 @@ import { TextsCta, UserQuotes } from "../components/ProductBlocks";
 import { ExampleText, PromptToggle } from "../components/TextThread";
 import styles from "./ProductPage.module.css";
 import { MandalaProgression } from "../components/MandalaProgression";
+import sampleMandala from "../assets/reveal-hq/gratitude-v1-sample-88-tiles-hq.gif";
 
 /** A cloud-shaped note beside the example texts, under them on narrow screens. */
 function Cloud({
@@ -32,18 +33,25 @@ export function TextsPage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.heroCentered}>
-          <h1 className={styles.heroTitle}>
-            A guided journal,<br />
-            <em>one text at a time.</em>
-          </h1>
-          <p className={styles.heroSub}>
-            You move through the guided journal in small pieces, two to six
-            prompts a week
-          </p>
-          <div className={styles.heroCtas}>
-            <TextsCta from="web-texts" />
+        {/* Text on the left (two thirds), the sample mandala on the right (one third).
+            Stacks on narrow screens. */}
+        <div className={styles.heroSplitText}>
+          <div className={styles.heroTextCol}>
+            <h1 className={styles.heroTitle}>
+              A guided journal,<br />
+              <em>one text at a time.</em>
+            </h1>
+            <p className={styles.heroSub}>
+              You move through the guided journal in small pieces,{" "}
+              <br className={styles.heroSubBreak} />
+              two to six prompts a week
+            </p>
+            <div className={styles.heroCtas}>
+              <TextsCta from="web-texts" />
+            </div>
           </div>
+          {/* A sample design (88 of 147 tiles), transparent outside the mandala. */}
+          <img className={styles.heroMandala} src={sampleMandala} alt="" />
         </div>
       </section>
 

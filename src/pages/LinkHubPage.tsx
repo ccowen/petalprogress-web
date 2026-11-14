@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import lotus from "@ccowen/petalprogress-ui/assets/logo/lotus-header.png";
+import sampleMandala from "../assets/reveal-hq/gratitude-v1-sample-88-tiles-hq.gif";
 import type { CSSProperties } from "react";
 import { Butterfly } from "../components/Butterfly";
 import { HUB_LINKS, SOCIALS } from "../config/links";
@@ -12,8 +13,8 @@ import styles from "./LinkHubPage.module.css";
    the screen, to pull edge butterflies in so they are not cut off. */
 const FLOCK = [
   { x: 68, y: -8, w: 67, r: -30 },
-  { x: 99, mx: 92, y: 16, w: 58, r: 22 },
-  { x: 0, mx: 9, y: 16, w: 68, r: 32 },
+  { x: 88, mx: 83, y: 16, w: 58, r: 22 },
+  { x: 12, mx: 17, y: 16, w: 68, r: 32 },
   { x: 32, y: -5, w: 57, r: -8 },
 ];
 
@@ -46,9 +47,13 @@ export function LinkHubPage() {
         </div>
         <header className={styles.head}>
           <div className={styles.art}>
-            <img className={styles.logo} src={lotus} alt="" />
+            {/* A sample design (88 of 147 tiles), transparent outside the mandala. */}
+            <img className={styles.mandala} src={sampleMandala} alt="" />
           </div>
-          <h1 className={styles.wordmark}>PetalProgress</h1>
+          <h1 className={styles.wordmark}>
+            <img className={styles.logo} src={lotus} alt="" />
+            PetalProgress
+          </h1>
         </header>
 
         <nav className={styles.links} aria-label="PetalProgress links">
