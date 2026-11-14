@@ -9,12 +9,13 @@ import styles from "./LinkHubPage.module.css";
 /* Four butterflies in a loose arc over the top of the content column, all flying
    upward at different angles (r: 0 is straight up, negative leans left,
    positive leans right). x/y place the center as a % of the column, w is
-   the width in px. mx is an optional x for phones, where the column fills
-   the screen, to pull edge butterflies in so they are not cut off. */
+   the width in px. side marks the two outer butterflies (-1 left, 1 right):
+   on phones, where the column fills the screen, they are placed by the
+   mandala and the screen edge instead of by x (see the CSS). */
 const FLOCK = [
   { x: 68, y: -8, w: 67, r: -30 },
-  { x: 88, mx: 83, y: 16, w: 58, r: 22 },
-  { x: 12, mx: 17, y: 16, w: 68, r: 32 },
+  { x: 88, side: 1, y: 16, w: 58, r: 22 },
+  { x: 12, side: -1, y: 16, w: 68, r: 32 },
   { x: 32, y: -5, w: 57, r: -8 },
 ];
 
@@ -32,11 +33,11 @@ export function LinkHubPage() {
           {FLOCK.map((b, i) => (
             <Butterfly
               key={i}
-              className={styles.butterfly}
+              className={`${styles.butterfly} ${b.side ? styles.edge : ""}`}
               style={
                 {
                   "--x": `${b.x}%`,
-                  "--mx": `${b.mx ?? b.x}%`,
+                  "--side": b.side ?? 0,
                   "--y": `${b.y}%`,
                   "--w": `${b.w}px`,
                   "--r": `${b.r}deg`,
