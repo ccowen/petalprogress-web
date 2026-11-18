@@ -22,7 +22,7 @@ const threads: {
   note?: string;
 }[] = [
   {
-    label: "Prompt 14",
+    label: "Sample",
     stamp: "Tuesday 8:30 AM",
     messages: [
       {
@@ -37,7 +37,7 @@ const threads: {
     ],
   },
   {
-    label: "Prompt 88 (Mandala Monday)",
+    label: "Sample (Mandala Monday)",
     stamp: "Monday 8:30 AM",
     note: "Sample design. Wouldn't want to spoil the reveal :)",
     media: { src: tiles88, alt: revealGifAlt.tiles88 },
@@ -59,7 +59,7 @@ const threads: {
   },
 ];
 
-/** The Prompt 14 / Prompt 88 (Mandala Monday) switch. */
+/** The Sample / Sample (Mandala Monday) switch. */
 export function PromptToggle({
   active,
   onChange,

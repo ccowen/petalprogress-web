@@ -63,7 +63,10 @@ export function TextsPage() {
           <h2 className={`${styles.title} ${styles.lookTitle}`}>
             What it <em>looks like.</em>
           </h2>
-          <PromptToggle active={prompt} onChange={setPrompt} className={styles.lookToggle} />
+          <div className={styles.lookControls}>
+            <PromptToggle active={prompt} onChange={setPrompt} className={styles.lookToggle} />
+            <p className={styles.lookTagline}>One journal, two ways to engage.</p>
+          </div>
           <ExampleText index={prompt} className={styles.lookThread} />
           <div className={styles.cloudStack}>
             <Cloud>
