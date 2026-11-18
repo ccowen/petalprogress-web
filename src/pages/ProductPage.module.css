@@ -662,6 +662,14 @@
   color: var(--pp-amber);
 }
 
+/* "Coming soon" on the dark journal hero: solid fill, dark text, for contrast. */
+.pillSoonOnDark {
+  background: var(--pp-marigold);
+  border: 1px solid var(--pp-marigold);
+  color: var(--pp-dark);
+  font-weight: 600;
+}
+
 /* ── PROMPT STACK ── */
 /* Two prompts side by side, in a narrow section. */
 .promptPair {
@@ -913,6 +921,24 @@
    left, the example text on the right, the cloud under the toggle.
    1180px+: the cloud moves to float just off the text's right edge. */
 /* Prefixed with .lookLayout so these win over the toggle's own styles. */
+/* The toggle and the tagline under it, centred on each other. */
+.lookLayout .lookControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.lookLayout .lookTagline {
+  font-family: var(--pp-font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--pp-text-soft);
+  margin: 14px 0 0;
+  text-align: center;
+}
+
 .lookLayout .lookToggle {
   display: flex;
   width: fit-content;
@@ -944,9 +970,13 @@
     text-align: left;
   }
 
-  .lookLayout .lookToggle {
+  .lookLayout .lookControls {
     grid-area: toggle;
     margin: 4px 0 0;
+  }
+
+  .lookLayout .lookToggle {
+    margin: 0;
   }
 
   .lookLayout .lookThread {
@@ -980,7 +1010,7 @@
   }
 
   .centerHead .lookTitle,
-  .lookLayout .lookToggle {
+  .lookLayout .lookControls {
     margin-right: 72px;
   }
 

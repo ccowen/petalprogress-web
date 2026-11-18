@@ -4,7 +4,6 @@ export function PhilosophyPage() {
   return (
     <>
       <div className={styles.hero}>
-        <div className={styles.eyebrow}>❋ Philosophy</div>
         <h1 className={styles.title}>
           A focus on the <em>present moment.</em>
         </h1>
@@ -89,7 +88,7 @@ export function PhilosophyPage() {
         <section className={styles.about}>
           <h2 className={styles.aboutTitle}>About the creator</h2>
           <p className={styles.aboutText}>
-            Hi, my name is Caitlin Cowen, based in Chicago, USA. I am following
+            Hi, my name is Caitlin, based in Chicago, USA. I am following
             a creative idea to see where it lands. I think the last prompt in
             the guided journal will make my views on creativity pretty clear,
             but before you might get to that point, I'll say that I believe in

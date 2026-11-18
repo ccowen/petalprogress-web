@@ -24,7 +24,7 @@
   color: var(--pp-text);
 }
 
-/* "Prompt 88 (Mandala Monday)" is a long label: tighten it so both fit on a phone. */
+/* "Sample (Mandala Monday)" is a long label: tighten it so both fit on a phone. */
 @media (max-width: 420px) {
   .toggleBtn {
     padding: 8px 12px;

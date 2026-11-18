@@ -18,7 +18,7 @@ export function JournalPage() {
               to reveal your mandala as you continue through the journal.
             </p>
             <div className={styles.heroCtas}>
-              <span className={`${styles.pill} ${styles.pillSoon}`} style={{ margin: 0 }}>
+              <span className={`${styles.pill} ${styles.pillSoonOnDark}`} style={{ margin: 0 }}>
                 Coming soon
               </span>
             </div>
