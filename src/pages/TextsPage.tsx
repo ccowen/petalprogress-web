@@ -137,8 +137,10 @@ export function TextsPage() {
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Reviewed without your name</h3>
               <p className={styles.cardText}>
-                When we review answers to improve the prompts, they don&rsquo;t
-                include your name, number or other personal information.
+                We review replies to see which prompts resonate and keep
+                improving them. By default, replies are reviewed under a
+                randomly generated user ID, without your name, number or other
+                personal information.
               </p>
             </div>
             <div className={styles.card}>
