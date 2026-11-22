@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-// import { Link } from "react-router"; // restore with the Also-in-print section
+import { Link } from "react-router";
 import { launch } from "../launch";
 import { TextsCta, UserQuotes } from "../components/ProductBlocks";
 import { ExampleText, PromptToggle } from "../components/TextThread";
@@ -78,6 +78,22 @@ export function TextsPage() {
         </div>
       </section>
 
+      {/* ── ANSWER SIMPLY ── */}
+      <section className={`${styles.section} ${styles.sectionLilac}`}>
+        <div className={styles.sectionNarrow}>
+          <div className={styles.eyebrow}>Keep it simple</div>
+          <h2 className={styles.title}>
+            A single word <em>is enough.</em>
+          </h2>
+          <p className={styles.desc}>
+            Every reply moves your mandala forward, whether it&rsquo;s one word,
+            a number or a few sentences. If a prompt sparks something and you
+            want to keep going, you can, but it&rsquo;s never required for
+            progress.
+          </p>
+        </div>
+      </section>
+
       {/* ── MANDALA MONDAYS ── */}
       <section className={styles.section}>
         <div className={`${styles.sectionInner} ${styles.mondayHead}`}>
@@ -103,6 +119,43 @@ export function TextsPage() {
 
       {/* ── WHAT PEOPLE SAY ── */}
       <UserQuotes status={launch.texts} />
+
+      {/* ── PRIVACY ── */}
+      <section className={`${styles.section} ${styles.sectionLilac}`}>
+        <div className={`${styles.sectionInner} ${styles.centerHead}`}>
+          <div className={styles.eyebrow}>A focus on privacy</div>
+          <h2 className={styles.title}>
+            Your answers <em>stay yours.</em>
+          </h2>
+          <div className={styles.grid3}>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Never shared publicly</h3>
+              <p className={styles.cardText}>
+                Your replies are never shown publicly or to other subscribers.
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Saved under a random ID</h3>
+              <p className={styles.cardText}>
+                Replies are stored under a randomly generated user ID, not your
+                name or number.
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Never sold</h3>
+              <p className={styles.cardText}>
+                We don&rsquo;t sell your information, and your number is never
+                shared for marketing.
+              </p>
+            </div>
+          </div>
+          <div style={{ marginTop: 28, textAlign: "center" }}>
+            <Link to="/privacy" className={styles.cardLink}>
+              Read the full privacy policy
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Also-in-print section hidden until the journal is in print — see RESTORE_LATER.md
       <section className={styles.section}>
