@@ -135,10 +135,10 @@ export function TextsPage() {
               </p>
             </div>
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Saved under a random ID</h3>
+              <h3 className={styles.cardTitle}>Never tied to you</h3>
               <p className={styles.cardText}>
-                Replies are stored under a randomly generated user ID, not your
-                name or number.
+                If we ever shared any replies, they would never include your
+                name, number or other personal information.
               </p>
             </div>
             <div className={styles.card}>
