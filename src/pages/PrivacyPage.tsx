@@ -60,8 +60,9 @@ export function PrivacyPage() {
           </li>
           <li>They're never shown publicly or to other subscribers.</li>
           <li>
-            If we ever shared any replies, they would never include your name,
-            number or other personal information.
+            If replies are ever used or shared beyond improving the prompts,
+            for example for research or analysis, they would never include
+            your name, number or other personal information.
           </li>
           <li>
             Replies are handled automatically. We don't respond to what you
