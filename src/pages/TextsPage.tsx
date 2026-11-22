@@ -88,7 +88,7 @@ export function TextsPage() {
           <p className={styles.desc}>
             Every reply moves your mandala forward, whether it&rsquo;s one word,
             a number or a few sentences. If a prompt sparks something and you
-            want to keep going, you can, but it&rsquo;s never required for
+            want to keep going, you can, but it&rsquo;s not required for
             progress.
           </p>
         </div>
