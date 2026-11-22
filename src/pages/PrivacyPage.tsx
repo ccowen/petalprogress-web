@@ -13,7 +13,7 @@ export function PrivacyPage() {
         <p>
           This policy explains what PetalProgress guided-journal texts collect,
           why, and who else handles it. The short version: your answers stay
-          private, and we don't sell your information.
+          private, and we don't sell your personal information.
         </p>
 
         <h2>What we collect</h2>
@@ -98,7 +98,8 @@ export function PrivacyPage() {
           </li>
         </ul>
         <p>
-          We don't sell your information. No mobile information will be shared
+          We don't sell your personal information, like your name, phone
+          number or email address. No mobile information will be shared
           with third parties or affiliates for marketing or promotional
           purposes. Your text-message opt-in and consent are never shared with
           any third party.
