@@ -27,8 +27,8 @@ export function PrivacyPage() {
             gentle_heron_42), shown on your mandala images.
           </li>
           <li>
-            <strong>Your progress images</strong>: after you reply, we text you
-            an image of the PetalProgress mandala. Everyone gets the same
+            <strong>Your progress images</strong>: throughout your subscription,
+            we text you an image of the PetalProgress mandala on Mondays. Everyone gets the same
             mandala design. The order its tiles are revealed is different for
             each person, and your signature appears on it. We keep each image
             for a few days so it can be delivered, then delete it.
