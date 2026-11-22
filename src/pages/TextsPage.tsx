@@ -127,7 +127,7 @@ export function TextsPage() {
           <h2 className={styles.title}>
             Your answers <em>stay yours.</em>
           </h2>
-          <div className={styles.grid3}>
+          <div className={styles.grid2} style={{ maxWidth: 820, marginInline: "auto" }}>
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Never shared publicly</h3>
               <p className={styles.cardText}>
@@ -141,13 +141,6 @@ export function TextsPage() {
                 improving them. By default, replies are reviewed under a
                 randomly generated user ID, without your name, number or other
                 personal information.
-              </p>
-            </div>
-            <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Never sold</h3>
-              <p className={styles.cardText}>
-                We don&rsquo;t sell your information, and your number is never
-                shared for marketing.
               </p>
             </div>
           </div>
