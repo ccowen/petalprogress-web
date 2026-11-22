@@ -125,13 +125,13 @@ export function TextsPage() {
         <div className={`${styles.sectionInner} ${styles.centerHead}`}>
           <div className={styles.eyebrow}>A focus on privacy</div>
           <h2 className={styles.title}>
-            Your answers <em>stay yours.</em>
+            Your answers <em>are private.</em>
           </h2>
           <div className={styles.grid2} style={{ maxWidth: 820, marginInline: "auto" }}>
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Never shared publicly</h3>
+              <h3 className={styles.cardTitle}>Not shared publicly</h3>
               <p className={styles.cardText}>
-                Your replies are never shown publicly or to other subscribers.
+                Your replies are not shown publicly or to other subscribers.
               </p>
             </div>
             <div className={styles.card}>

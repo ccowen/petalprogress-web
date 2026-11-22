@@ -12,7 +12,7 @@ export function PrivacyPage() {
       <div className={styles.body}>
         <p>
           This policy explains what PetalProgress guided-journal texts collect,
-          why, and who else handles it. The short version: your answers stay
+          why, and who else handles it. The short version: your answers are
           private, and we don't sell your personal information.
         </p>
 
@@ -58,10 +58,10 @@ export function PrivacyPage() {
             them. By default, replies are reviewed under a randomly generated
             user ID, without your name, number or other personal information.
           </li>
-          <li>They're never shown publicly or to other subscribers.</li>
+          <li>They're not shown publicly or to other subscribers.</li>
           <li>
             If replies are ever used or shared beyond improving the prompts,
-            for example for research or analysis, they would never include
+            for example for research or analysis, they would not include
             your name, number or other personal information.
           </li>
           <li>
