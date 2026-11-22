@@ -135,10 +135,10 @@ export function TextsPage() {
               </p>
             </div>
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Never tied to you</h3>
+              <h3 className={styles.cardTitle}>Reviewed without your name</h3>
               <p className={styles.cardText}>
-                If we ever shared any replies, they would never include your
-                name, number or other personal information.
+                When we review answers to improve the prompts, they don&rsquo;t
+                include your name, number or other personal information.
               </p>
             </div>
             <div className={styles.card}>

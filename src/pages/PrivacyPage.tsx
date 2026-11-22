@@ -6,7 +6,7 @@ export function PrivacyPage() {
       <div className={styles.eyebrow}>Legal</div>
       <h1 className={styles.title}>Privacy Policy</h1>
       <p className={styles.meta}>
-        Last updated: November 8, 2026
+        Last updated: November 22, 2026
       </p>
 
       <div className={styles.body}>
@@ -54,8 +54,9 @@ export function PrivacyPage() {
         <h2>Your answers</h2>
         <ul>
           <li>
-            Your replies are saved under a randomly generated user ID, so we can
-            see which prompts resonate and keep improving them.
+            We review replies to see which prompts resonate and keep improving
+            them. By default, replies are reviewed under a randomly generated
+            user ID, without your name, number or other personal information.
           </li>
           <li>They're never shown publicly or to other subscribers.</li>
           <li>
